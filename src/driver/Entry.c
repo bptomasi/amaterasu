@@ -21,7 +21,7 @@ NTSTATUS DriverEntry(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_STRING Regi
     NTSTATUS status;
 
     /*
-     *  
+     *  Makes non-paged pools (kernel pools) allocations non-executable.
      */
     ExInitializeDriverRuntime(DrvRtPoolNxOptIn);
 
@@ -34,13 +34,13 @@ NTSTATUS DriverEntry(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_STRING Regi
      */
     status = FltRegisterFilter(DriverObject, &FilterRegistration, &Amaterasu.FilterHandle);
     if(!NT_SUCCESS(status)) {
-        Debug("FltRegisterFilter()\n%s\nError!\n", __function__);
+        DbgPrint("FltRegisterFilter()\n%s\nError!\n", __function__);
         return status;
     }
 
     status = AmaterasuSetup(RegistryPath);
     if(!NT_SUCCESS(status)) {
-        Debug("AmaterasuSetup()\n%s\nError!\n", __function__);
+        DbgPrint("AmaterasuSetup()\n%s\nError!\n", __function__);
 
         /*
          *  If something has gone wrong, 'FltUnregisterFilter()' will
@@ -63,7 +63,7 @@ NTSTATUS DriverEntry(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_STRING Regi
      */
     status = FltStartFiltering(Amaterasu.FilterHandle);
     if(!NT_SUCCESS(status)) {
-        Debug("FltStartFiltering()\n%s\nError!\n", __function__);
+        DbgPrint("FltStartFiltering()\n%s\nError!\n", __function__);
         AmaterasuCleanup();
         FltUnregisterFilter(Amaterasu.FilterHandle);
     }

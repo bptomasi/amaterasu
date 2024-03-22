@@ -33,5 +33,7 @@ NTSTATUS AmaterasuConnect(
     Amaterasu.ClientPort  = ClientPort;
     Amaterasu.UserProcess = PsGetCurrentProcess();
 
+    DbgPrint("!!! amaterasu.sys --- connected, port=0x%p\n", ClientPort);
+
     return status;
 }

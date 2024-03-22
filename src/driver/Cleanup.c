@@ -9,11 +9,17 @@
 /*
  *  AmaterasuClosePorts() - 
  *
+ *  Closes the ports opened by 'AmaterasuOpenPorts()', setting the ports to
+ *  'NULL'. Besides that, in the case of 'Amaterasu.ClientPort', this port is
+ *  closed automatically by the filter manager when it invokes the disconnect
+ *  callback function.
  */
 void AmaterasuClosePorts(void) {
     
     PAGED_CODE();
+
     FltCloseCommunicationPort(Amaterasu.ServerPort);
+    Amaterasu.ServerPort = NULL;
 }
 
 /*

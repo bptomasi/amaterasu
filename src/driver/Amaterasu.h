@@ -1,13 +1,6 @@
 #ifndef AMATERASU_H
 #define AMATERASU_H
 
-#ifdef AMATERASUDEBUG
-    #define Debug(fmt, __VA_ARGS__) \
-        DbgPrint(fmt, __VA_ARGS__)
-#else
-    #define Debug() (void)(0)
-#endif
-
 /*
  *
  */

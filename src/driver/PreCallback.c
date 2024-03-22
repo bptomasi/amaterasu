@@ -1,12 +1,39 @@
 
 #include "Amaterasu.h"
 
+static void
+AmaterasuGetOperation(
+        _In_ PFLT_CALLBACK_DATA Data,
+        _Inout_ PUNICODE_STRING op
+    );
+
 #ifdef ALLOCA_PRAGMA
 #   pragma alloc_text(NONPAGED, AmaterasuPreCallback)
 #endif
 
+#define MajorFunction(Data) Data->Iopb->MajorFunction
+
+/*
+ *  AmaterasuGetOperation() -
+ *
+ */
+static void AmaterasuGetOperation(_In_ PFLT_CALLBACK_DATA Data, __Inout_ PUNICODE_STRING op) {
+
+    /*
+     *
+     */
+    switch(MajorFunction(Data)) {
+        
+    }
+}
+
 /*
  *  AmaterasuPreCallback() -
+ *
+ *  Return:
+ *    -
+ *    -
+ *    -
  */
 FLT_PREOP_CALLBACK_STATUS AmaterasuPreCallback(
         _Inout_ PFLT_CALLBACK_DATA Data,
@@ -14,10 +41,7 @@ FLT_PREOP_CALLBACK_STATUS AmaterasuPreCallback(
         _Flt_CompletionContext_Outptr_ PVOID *CompletionContext
     ) {
 
-    /*
-     *  We are not interested on callbacks related to file system
-     *  filter operations.
-     */
+    /* We are not interested on file system filter callback operations */
     if(FLT_IS_FS_FILTER_OPERATION(Data)) {
         /*
          *  There's no need to call the post operation callback for

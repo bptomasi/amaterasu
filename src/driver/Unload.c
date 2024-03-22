@@ -16,11 +16,14 @@
  */
 NTSTATUS AmaterasuUnload(_In_ FLT_FILTER_UNLOAD_FLAGS Flags) {
 
-    PAGED_CODE();
     UNREFERENCED_PARAMETER(Flags);
+
+    PAGED_CODE();
 
     AmaterasuCleanup();
     FltUnregisterFilter(Amaterasu.FilterHandle);
+
+    Amaterasu.FilterHandle = NULL;
 
     return STATUS_SUCCESS;
 }
