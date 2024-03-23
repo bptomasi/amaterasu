@@ -9,6 +9,9 @@ struct Amaterasu {
     PDRIVER_OBJECT  DriverObject;
     PFLT_FILTER     FilterHandle;
 
+    KSPIN_LOCK      ListLock;
+    KSPIN_LOCK      ConnectionLock;
+
     PFLT_PORT       ServerPort;
     PFLT_PORT       ClientPort;
 

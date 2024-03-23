@@ -151,13 +151,20 @@ static NTSTATUS AmaterasuOpenPorts(void) {
 
 /*
  *  AmaterasuInitLists() -
- *
  */
 static __forceinline void AmaterasuInitLists(void) {
     
     InitializeListHead(&Amaterasu.RegistryList);
     InitializeListHead(&Amaterasu.ProcessList);
     InitializeListHead(&Amaterasu.FileList);
+}
+
+/*
+ *  AmaterasuInitLocks() - 
+ */
+static __forceinline void AmaterasuInitLocks(void) {
+
+    KeInitializeLock(Amaterasu.ConnectionLock);
 }
 
 /*
@@ -185,6 +192,7 @@ NTSTATUS AmaterasuSetup(_In_ PUNICODE_STRING RegistryPath) {
         return status;
     }
 
+    AmaterasuInitLocks();
     AmaterasuInitLists();
 
     return status;

@@ -27,6 +27,10 @@ static void AmaterasuGetOperation(_In_ PFLT_CALLBACK_DATA Data, __Inout_ PUNICOD
     }
 }
 
+static void AmaterasuGetFileName(void) {
+
+}
+
 /*
  *  AmaterasuPreCallback() -
  *
@@ -41,6 +45,8 @@ FLT_PREOP_CALLBACK_STATUS AmaterasuPreCallback(
         _Flt_CompletionContext_Outptr_ PVOID *CompletionContext
     ) {
 
+    NTSTATUS status;
+
     /* We are not interested on file system filter callback operations */
     if(FLT_IS_FS_FILTER_OPERATION(Data)) {
         /*
@@ -50,7 +56,10 @@ FLT_PREOP_CALLBACK_STATUS AmaterasuPreCallback(
         return FLT_PREOP_SUCCESS_NO_CALLBACK;
     }
 
-    
+    status = FltGetFileNameInformation(Data, );    
+    if(!NT_SUCCESS(status)) {
+
+    }
 
 
     return FLT_PREOP_SUCCESS_WITH_CALLBACK;

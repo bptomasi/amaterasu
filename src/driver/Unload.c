@@ -17,7 +17,6 @@
 NTSTATUS AmaterasuUnload(_In_ FLT_FILTER_UNLOAD_FLAGS Flags) {
 
     UNREFERENCED_PARAMETER(Flags);
-
     PAGED_CODE();
 
     AmaterasuCleanup();
