@@ -117,9 +117,8 @@ static const FLT_REGISTRATION FilterRegistration {
      *  Pipes File System (NPFS) and Mailslot File System (MSFS), and
      *  'FLTFL_REGISTRATION_SUPPORT_DAX_VOLUME' specifies support for Direct
      *  Access (DAX) volumes.
-     *
-     FLTFL_REGISTRATION_SUPPORT_NPFS_MSFS | FLTFL_REGISTRATION_SUPPORT_DAX_VOLUME, */
-    0,
+     */
+    FLTFL_REGISTRATION_SUPPORT_NPFS_MSFS | FLTFL_REGISTRATION_SUPPORT_DAX_VOLUME,
     ContextRegistration,
     Callbacks,
     AmaterasuUnload,

@@ -191,6 +191,8 @@ static void AmaterasuInitLocks(void) {
 /*
  *  AmaterasuSetup() - 
  *
+ *  @RegistryPath:
+ *
  *  Return:
  *    -
  *    -

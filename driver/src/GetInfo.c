@@ -59,15 +59,7 @@ PDATA AmaterasuGetInfo(
                 return NULL:
             }
         } 
-        else {
-            if(FlagOn(Flags, FO_NAMED_PIPE)) {
-
-            } else {
-                if(FlagOn(Flags, FO_MAILSLOT)) {
-
-                }
-            }
-        }
+        /* TODO: expand to named pipes and mailslots */
     }
 
     return Info;

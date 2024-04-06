@@ -1,7 +1,7 @@
 
 #include "Amaterasu.h"
 
-status NTSTATUS
+static NTSTATUS
 AmaterasuInitFileData(
         _Inout_ PFILE_DATA FileData,
         _In_ PFLT_FILE_NAME_INFORMATION NameInfo
@@ -45,6 +45,11 @@ static NTSTATUS AmaterasuInitFileData(
             FileData->Path = NULL;
             return status;
         }
+
+        /*
+         *
+         */
+        RtlCopyBytes(FileData->Path, NameInfo->Name.Buffer, NameByteSize);
     }
 
     /*
@@ -60,13 +65,10 @@ static NTSTATUS AmaterasuInitFileData(
             FileData->Path = NULL;
             return status;
         }
+        RtlCopyBytes(FileData->FinalName, NameInfo->FinalComponent.Buffer, FinalNameByteSize);
     }
 
-    status = STATUS_SUCCESS;
-    RtlCopyBytes(FileData->Path, NameInfo->Name.Buffer, NameByteSize);
-    RtlCopyBytes(FileData->FinalName, NameInfo->FinalComponent.Buffer, FinalNameByteSize);
-
-    return status;
+    return STATUS_SUCCESS;
 }
 
 /*
@@ -93,7 +95,7 @@ NTSTATUS AmaterasuGetFileNameInfo(
     if(!NT_SUCCESS(status)) {
 
         /*
-         *  If it was not possible to get t he "normalized" name, we try
+         *  If it was not possible to get the "normalized" name, we try
          *  to get the "opened" name. The opened name refers to the name of the file 
          *  as it was specified when the file was opened, including the full path
          *  if available.
