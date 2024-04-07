@@ -1,10 +1,53 @@
 
-#include "Amaterasu.h"
-#include "FilterRegistration.h"
+#include "amaterasu.h"
 
 #ifdef ALLOC_PRAGMA
 #   pragma alloc_text(INIT, DriverEntry)
 #endif
+
+static const FLT_OPERATION_REGISTRATION Callbacks[] = {
+    {
+        IRP_MJ_CREATE,
+        0,
+        AmaterasuFileDefaultPreCallback,
+        AmaterasuFileDefaultPosCallback
+    },
+    {
+        IRP_MJ_READ,
+        0,
+        AmaterasuFileDefaultPreCallback,
+        AmaterasuFileDefaultPosCallback
+    },
+    {
+        IRP_MJ_WRITE,
+        0,
+        AmaterasuFileDefaultPreCallback,
+        AmaterasuFileDefaultPosCallback
+    },
+    {IRP_MJ_OPERATION_END}
+};
+
+/*
+ *  'FLT_REGISTRATION' structure provides a framework for defining the behavior
+ *  of a file system filter driver within the Windows Filter Manager.
+ */
+static const FLT_REGISTRATION FilterRegistration = {
+    
+    sizeof(FLT_REGISTRATION),
+    FLT_REGISTRATION_VERSION,  
+
+    /*
+     *  'FLTFL_REGISTRATION_SUPPORT_NPFS_MSFS' specifies support for Named
+     *  Pipes File System (NPFS) and Mailslot File System (MSFS), and
+     *  'FLTFL_REGISTRATION_SUPPORT_DAX_VOLUME' specifies support for Direct
+     *  Access (DAX) volumes.
+     */
+    FLTFL_REGISTRATION_SUPPORT_NPFS_MSFS | FLTFL_REGISTRATION_SUPPORT_DAX_VOLUME,
+    ContextRegistration,
+    Callbacks,
+    AmaterasuUnload,
+
+};
 
 /*
  *	DriverEntry() - Initializes the driver upon loading into memory.
@@ -27,25 +70,21 @@ NTSTATUS DriverEntry(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_STRING Regi
      *  Adds 'Amaterasu' to the global list of minifilter drivers, as well as
      *  provides the Filter Manager with a list of callback functions and other
      *  information about the minifilter driver.
-     *
-     *  'FltRegisterFilter()' sets 'Amaterasu.FilterHandle'.
      */
     status = FltRegisterFilter(DriverObject, &FilterRegistration, &Amaterasu.FilterHandle);
     if(!NT_SUCCESS(status)) {
-        DbgPrint("FltRegisterFilter()\n%s\nError!\n", __function__);
+        DbgPrint("by FltRegisterFilter(), status: 0x%X.\n%s\nError!\n", status, __function__);
         return status;
     }
 
     status = AmaterasuSetup(RegistryPath);
     if(!NT_SUCCESS(status)) {
-        DbgPrint("AmaterasuSetup()\n%s\nError!\n", __function__);
+        DbgPrint("at AmaterasuSetup()\n%s\nError!\n", __function__);
 
         /*
          *  If something has gone wrong, 'FltUnregisterFilter()' will
          *  unregister 'Amaterasu' from the Filter Manager so that it doesn't
          *  receive any further callback requests or filtering operations.
-         *
-         *  This function will be called from 'DriverUnload()' as well.
          */ 
         FltUnregisterFilter(Amaterasu.FilterHandle);
         return status;
@@ -54,14 +93,10 @@ NTSTATUS DriverEntry(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_STRING Regi
     /*
      *  'FltStartFiltering()' notifies the Filter Manager that 'Amaterasu' is
      *  ready to begin attaching to volumes and filtering I/O requests.
-     *
-     *  After this function call, the Filter Manager will treat the minifilter
-     *  driver as being fully active, presenting it with volumes to attach to,
-     *  as well as I/O requests.
      */
     status = FltStartFiltering(Amaterasu.FilterHandle);
     if(!NT_SUCCESS(status)) {
-        DbgPrint("FltStartFiltering()\n%s\nError!\n", __function__);
+        DbgPrint("by FltStartFiltering(), status: 0x%X.\n%s\nError!\n", status, __function__);
         AmaterasuCleanup();
         FltUnregisterFilter(Amaterasu.FilterHandle);
     }

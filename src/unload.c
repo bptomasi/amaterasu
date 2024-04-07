@@ -1,5 +1,5 @@
 
-#include "Amaterasu.h"
+#include "amaterasu.h"
 
 #ifdef ALLOCA_PRAGMA
 #   pragma alloc_text(PAGED, AmaterasuUnload)

@@ -1,12 +1,8 @@
-#include "Amaterasu.h"
+
+#include "amaterasu.h"
 
 #define AMATERASU_SERVER_PORT L"AmaterasuServerPort"
 
-/* 
- * The 'static' function prototypes below are just 
- * for the pragma as 'alloc_text' must be placed between a function
- * declarator and the function definition.
- */
 static NTSTATUS
 AmaterasuCreatePort(
         _In_ PSECURITY_DESCRIPTOR sd,
@@ -33,10 +29,10 @@ AmaterasuOpenPorts(
  *  AmaterasuCreatePort() - Creates a communication port for inter-process
  *                          communication.
  *
- *  @sd      : Security descriptor.
+ *  @sd: Security descriptor.
  *  @PortName: Name of the communication port.
- *  @Port    : Pointer to a FLT_PORT structure that will receive the created
- *             port handle.
+ *  @Port: Pointer to a FLT_PORT structure that will receive the created
+ *         port handle.
  *
  *  @ConnectCallback: Callback routine to be called when a client connects
  *                    to the port.
@@ -171,24 +167,6 @@ static NTSTATUS AmaterasuOpenPorts(void) {
 }
 
 /*
- *  AmaterasuInitLists() -
- */
-static void AmaterasuInitLists(void) {
-    
-    InitializeListHead(&Amaterasu.RegistryList);
-    InitializeListHead(&Amaterasu.ProcessList);
-    InitializeListHead(&Amaterasu.FileList);
-}
-
-/*
- *  AmaterasuInitLocks() - 
- */
-static void AmaterasuInitLocks(void) {
-
-    KeInitializeLock(Amaterasu.ConnectionLock);
-}
-
-/*
  *  AmaterasuSetup() - 
  *
  *  @RegistryPath:
@@ -210,7 +188,7 @@ NTSTATUS AmaterasuSetup(_In_ PUNICODE_STRING RegistryPath) {
     Amaterasu.DriverObject = DriverObject;
 
     /* TODO: get this info from registry */
-    Amaterasu.FileNameQueryMethod = FLT_FILE_NAME_QUERY_ALWAYS_ALLOW_CACHE_LOOKUP;
+    Amaterasu.Options.FileNameQueryMethod = FLT_FILE_NAME_QUERY_ALWAYS_ALLOW_CACHE_LOOKUP;
 
     status = AmaterasuOpenPorts();
     if(!NT_SUCCESS(status)) {
@@ -218,8 +196,9 @@ NTSTATUS AmaterasuSetup(_In_ PUNICODE_STRING RegistryPath) {
         return status;
     }
 
+    /*
     AmaterasuInitLocks();
     AmaterasuInitLists();
-
+    */
     return status;
 }

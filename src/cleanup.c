@@ -1,5 +1,5 @@
 
-#include "Amaterasu.h"
+#include "amaterasu.h"
 
 #ifdef ALLOCA_PRAGMA
 #   pragma alloc_text(PAGED, AmaterasuClosePorts)
@@ -7,7 +7,7 @@
 #endif
 
 /*
- *  AmaterasuClosePorts() - 
+ *  AmaterasuClosePorts() - Closes the 'IPC Ports' used by 'Amaterasu'.
  *
  *  Closes the ports opened by 'AmaterasuOpenPorts()', setting the ports to
  *  'NULL'. Besides that, in the case of 'Amaterasu.ClientPort', this port is
