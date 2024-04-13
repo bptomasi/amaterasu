@@ -2,11 +2,11 @@
 #include "fileinfo.h"
 
 #ifdef ALLOCA_PRAGMA
-#   pragma alloc_text(NONPAGED, AllocFileInfo)
+#   pragma alloc_text(NONPAGED, FileInfoAlloc)
 #endif
 
 /*
- *  AllocFileInfo() - Allocate a 'FILE_INFO' structure.
+ *  FileInfoAlloc() - Allocate a 'FILE_INFO' structure.
  *
  *  @PoolType: The type of memory pool to allocate from (paged or nonpaged).
  *
@@ -14,22 +14,20 @@
  *    - Pointer to the allocated 'FILE_INFO' structure on success.
  *    - 'NULL' if memory allocation fails.
  */
-PFILE_INFO AllocFileInfo(__drv_strictTypeMatch(__drv_typeExpr)POOL_TYPE PoolType) {
+PFILE_INFO FileInfoAlloc(_In_ POOL_TYPE PoolType) {
 
     PFILE_INFO FileInfo;
 
     FileInfo = ExAllocatePoolWithTag(PoolType, sizeof *FileInfo, 'file');
     if(!FileInfo) {
-        DbgPrint("by ExAllocatePoolWithTag(), status: 0x%X.\n", status);
         return NULL;
     }
     
-    /* Initialize 'FileInfo' fields to zero. */
     RtlZeroMemory(FileInfo, sizeof *FileInfo);
 
     /*
-     *  Store the pool type used for allocation in 'FileInfo' to ensure 
-     *  correct handling, regardless of whether the caller routine is 
+     *  Store the pool type used for the allocation in 'FileInfo' to ensure 
+     *  correct memory handling, regardless of whether the caller routine is 
      *  paged or nonpaged.
      */
     FileInfo->PoolType = PoolType;

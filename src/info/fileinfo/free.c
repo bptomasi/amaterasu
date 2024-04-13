@@ -2,19 +2,19 @@
 #include "fileinfo.h"
 
 #ifdef ALLOCA_PRAGMA
-#   pragma alloc_text(NONPAGED, FreeFileInfo)
+#   pragma alloc_text(NONPAGED, FileInfoFree)
 #endif
 
 /*
- *  FreeFileInfo() - Deallocates the memory associated with a 'FILE_INFO'
+ *  FileInfoFree() - Deallocates the memory associated with a 'FILE_INFO'
  *                   struct dynamically allocated.
  *
  *  @FileInfo: Pointer to a reference of a 'FILE_INFO' structure.
  */
-void FreeFileInfo(PFILE_INFO* FileInfo) {
+void FileInfoFree(_Inout_ PFILE_INFO* FileInfo) {
 
     if(FileInfo) {
-        DeInitFileInfo(*FileInfo);
+        FileInfoDeInit(*FileInfo);
         ExFreePoolWithTag(*FileInfo, 'file');
 
        /*

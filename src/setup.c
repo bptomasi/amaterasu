@@ -1,33 +1,9 @@
 
 #include "amaterasu.h"
 
-#define AMATERASU_SERVER_PORT L"AmaterasuServerPort"
-
-static NTSTATUS
-AmaterasuCreatePort(
-        _In_ PSECURITY_DESCRIPTOR sd,
-        _In_ PCWSTR PortName,
-        _In_ PFLT_PORT Port,
-        _In_ PFLT_CONNECT_NOTIFY ConnectCallback,
-        _In_ PFLT_DISCONNECT_NOTIFY DisconnectCallback,
-        _In_ PFLT_MESSAGE_NOTIFY MessageCallback,
-        _In_ LONG MaxConnections
-    );
-
-static NTSTATUS
-AmaterasuOpenPorts(
-        void
-    );
-
-#ifdef ALLOCA_PRAGMA
-#   pragma alloc_text(INIT, AmaterasuCreatePort)
-#   pragma alloc_text(INIT, AmaterasuOpenPorts)
-#   pragma alloc_text(INIT, AmaterasuSetup)
-#endif
-
 /*
- *  AmaterasuCreatePort() - Creates a communication port for inter-process
- *                          communication.
+ *  CreatePort() - Creates a communication port for inter-process
+ *                 communication.
  *
  *  @sd: Security descriptor.
  *  @PortName: Name of the communication port.
@@ -50,7 +26,7 @@ AmaterasuOpenPorts(
  *    - 'STATUS_SUCCESS' on success;
  *    - The appropriate 'NTSTATUS' is returned to indicate failure.
  */
-static NTSTATUS AmaterasuCreatePort(
+static NTSTATUS CreatePort(
         _In_ PSECURITY_DESCRIPTOR sd,
         _In_ PCWSTR PortName,
         _In_ PFLT_PORT Port,
@@ -65,7 +41,6 @@ static NTSTATUS AmaterasuCreatePort(
     OBJECT_ATTRIBUTES objAttr;
 
     RtlInitUnicodeString(&uniString, PortName);
-
     InitializeObjectAttributes(
         &objAttr,
         &uniString,
@@ -95,31 +70,26 @@ static NTSTATUS AmaterasuCreatePort(
         MaxConnections
     );
 
-    if(!NT_SUCCESS(status)) {
-        DbgPrint("FltCreateCommunicationPort()\n");
-        return status;
-    }
-
     return status;
 }
 
 /*
- *  AmaterasuOpenPorts() - Opens communication ports for the Amaterasu filter
- *                         driver.
+ *  OpenPorts() - Opens communication ports for the Amaterasu filter
+ *                driver.
  *
- *  'AmaterasuOpenPorts()' opens the communication ports needed to 
- *  communicate with user mode applications. More specifically, this function
- *  opens 'Amaterasu.ServerPort'.
+ *  'OpenPorts()' opens the communication ports needed to communicate with user
+ *  mode applications. More specifically, this function opens
+ *  'Amaterasu.ServerPort'.
  *
- *  Besides that, 'AmaterasuOpenPorts()' is essentially just a wrapper
- *  to 'AmaterasuCreatePort()', serving as a unified interface for port creation,
+ *  Besides that, 'OpenPorts()' is essentially just a wrapper to
+ *  'CreatePort()', serving as a unified interface for port creation,
  *  facilitating the expansion to open other communication ports if needed.
  *
  *  Return:
- *    - STATUS_SUCCESS if the communication ports are successfully opened.
- *    - An appropriate NTSTATUS error code if an error occurs.
+ *    - 'STATUS_SUCCESS' if the communication ports are successfully opened.
+ *    - An appropriate 'NTSTATUS' error code if an error occurs.
  */
-static NTSTATUS AmaterasuOpenPorts(void) {
+static NTSTATUS OpenPorts(void) {
 
     NTSTATUS status;
     PSECURITY_DESCRIPTOR sd;
@@ -137,11 +107,10 @@ static NTSTATUS AmaterasuOpenPorts(void) {
      */
     status = FltBuildDefaultSecurityDescriptor(&sd, FLT_PORT_ALL_ACCESS);
     if(!NT_SUCCESS(status)) {
-        DbgPrint("FltBuildDefaultSecurityDescriptor()\n");
         return status;
     }
 
-    status = AmaterasuCreatePort(
+    status = CreatePort(
         sd,
         AMATERASU_SERVER_PORT,
         Amaterasu.ServerPort,
@@ -152,14 +121,13 @@ static NTSTATUS AmaterasuOpenPorts(void) {
     );
 
     if(!NT_SUCCESS(status)) {
-        DbgPrint("AmaterasuCreatePort() - %s\n", AMATERASU_SERVER_PORT);
         FltFreeSecurityDescriptor(sd);
         return status;
     }
 
     /*
      *  After all the communication ports have been created
-     *  the security descriptor is not needed anymore.
+     *  the security descriptor is no longer needed.
      */
     FltFreeSecurityDescriptor(sd);
 
@@ -169,36 +137,23 @@ static NTSTATUS AmaterasuOpenPorts(void) {
 /*
  *  AmaterasuSetup() - 
  *
+ *  @DriverObject:
  *  @RegistryPath:
  *
  *  Return:
  *    -
  *    -
  */
-NTSTATUS AmaterasuSetup(_In_ PUNICODE_STRING RegistryPath) {
+NTSTATUS AmaterasuSetup(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_STRING RegistryPath) {
 
     NTSTATUS status;
 
-    /*
-     *  'AmaterasuSetup()' may be expanded to handle informations
-     *  stored in the system registry, pointed by 'RegistryPath'.
-     */
-    UNREFERENCED_PARAMETER(RegistryPath);
-
     Amaterasu.DriverObject = DriverObject;
 
-    /* TODO: get this info from registry */
-    Amaterasu.Options.FileNameQueryMethod = FLT_FILE_NAME_QUERY_ALWAYS_ALLOW_CACHE_LOOKUP;
-
-    status = AmaterasuOpenPorts();
+    status = OpenPorts();
     if(!NT_SUCCESS(status)) {
-        DbgPrint("AmaterasuOpenPorts()\n");
         return status;
     }
 
-    /*
-    AmaterasuInitLocks();
-    AmaterasuInitLists();
-    */
     return status;
 }

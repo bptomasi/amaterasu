@@ -27,8 +27,7 @@ void AmaterasuDisconnect(_In_opt_ PVOID ConnectionCookie) {
 
     /*
      *  Closes a communication client port that was created by the minifilter
-     *  driver's ConnectNotifyCallback routine (AmaterasuConnect), setting it
-     *  to 'NULL' afterwards.
+     *  driver's ConnectNotifyCallback routine (AmaterasuConnect).
      */
     FltCloseClientPort(Amaterasu.FilterHandle, &Amaterasu.ClientPort);
     Amaterasu.UserProcess = NULL;

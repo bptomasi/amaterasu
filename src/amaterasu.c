@@ -1,0 +1,2 @@
+
+struct Amaterasu Amaterasu;

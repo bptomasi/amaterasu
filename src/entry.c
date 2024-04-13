@@ -66,26 +66,14 @@ NTSTATUS DriverEntry(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_STRING Regi
     /* Makes non-paged pools (kernel pools) allocations non-executable. */
     ExInitializeDriverRuntime(DrvRtPoolNxOptIn);
 
-    /*
-     *  Adds 'Amaterasu' to the global list of minifilter drivers, as well as
-     *  provides the Filter Manager with a list of callback functions and other
-     *  information about the minifilter driver.
-     */
+    /* Adds 'Amaterasu' to the global list of minifilter drivers. */
     status = FltRegisterFilter(DriverObject, &FilterRegistration, &Amaterasu.FilterHandle);
     if(!NT_SUCCESS(status)) {
-        DbgPrint("by FltRegisterFilter(), status: 0x%X.\n%s\nError!\n", status, __function__);
         return status;
     }
 
-    status = AmaterasuSetup(RegistryPath);
+    status = AmaterasuSetup(DriverObject, RegistryPath);
     if(!NT_SUCCESS(status)) {
-        DbgPrint("at AmaterasuSetup()\n%s\nError!\n", __function__);
-
-        /*
-         *  If something has gone wrong, 'FltUnregisterFilter()' will
-         *  unregister 'Amaterasu' from the Filter Manager so that it doesn't
-         *  receive any further callback requests or filtering operations.
-         */ 
         FltUnregisterFilter(Amaterasu.FilterHandle);
         return status;
     }
@@ -96,7 +84,6 @@ NTSTATUS DriverEntry(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_STRING Regi
      */
     status = FltStartFiltering(Amaterasu.FilterHandle);
     if(!NT_SUCCESS(status)) {
-        DbgPrint("by FltStartFiltering(), status: 0x%X.\n%s\nError!\n", status, __function__);
         AmaterasuCleanup();
         FltUnregisterFilter(Amaterasu.FilterHandle);
     }
