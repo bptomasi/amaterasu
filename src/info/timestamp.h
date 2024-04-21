@@ -1,12 +1,9 @@
 #ifndef TIMESTAMP_H
 #define TIMESTAMP_H
 
-struct TimeStamp {
-
-    PWSTR Str;
-    ULONG Len;
-};
-
-typedef struct TimeStamp TIMESTAMP, *PTIMESTAMP;
+extern void
+TimeStampInit(
+        _Out_ PTIME_FIELDS TimeStamp
+    );
 
 #endif  /* TIMESTAMP_H */

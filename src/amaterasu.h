@@ -25,8 +25,6 @@ struct Amaterasu {
         
         ULONG NameQueryMethod;
 
-        BOOL NaoDeleteArquivos;
-
     } Options;
 };
 
@@ -53,7 +51,5 @@ AmaterasuSetup(
         _In_ PDRIVER_OBJECT DriverObject,
         _In_ PUNICODE_STRING RegistryPath
     );
-
-
 
 #endif  /* AMATERASU_H */

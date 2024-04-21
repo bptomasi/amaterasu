@@ -1,5 +1,15 @@
+#ifndef PROC_INFO_H
+#define PROC_INFO_H
 
-#include "procinfo.h"
+struct ProcInfo {
+
+    ULONG PID;
+    ULONG SID;
+
+    BOOL IsElevated;
+};
+
+typedef struct ProcInfo PROC_INFO, *PPROC_INFO;
 
 /*
  *  ProcInitInfo() - Initializes a 'PROC_INFO' structure based on 
@@ -14,19 +24,10 @@
  *    - Upon success, returns 'STATUS_SUCCESS'.
  *    - The appropriate error code in case of failure.
  */
-NTSTATUS ProcInfoInit(_Out_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data) {
+extern NTSTATUS
+ProcInfoInit(
+        _Out_ PPROC_INFO ProcInfo,
+        _In_ PFLT_CALLBACK_DATA Data
+    );
 
-    NTSTATUS status;
-
-    PEPROCESS Process;
-    HANDLE Handle;
-
-    Process = FltGetRequestorProcess(Data);
-    if(!Process) {
-        return 'STATUS_CODE';
-    }
-
-    ProcInfo->PID = FltGetRequestProcessId(Data);
-
-    return status;
-}
+#endif  /* PROC_INFO_H */

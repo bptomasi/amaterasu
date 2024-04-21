@@ -1,5 +1,5 @@
 
-#inclulde "utils.h"
+#include "utils.h"
 
 /*
  *  UnicodeStrToWSTR() -

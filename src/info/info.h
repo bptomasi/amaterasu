@@ -1,26 +1,19 @@
 #ifndef INFO_H
 #define INFO_H
 
-#include "fileinfo/fileinfo.h"
-#include "procinfo/procinfo.h"
-
-#include "timestamp.h"
-#include "mjfunc.h"
+#include "procinfo.h"
+#include "fileinfo.h"
 
 struct Info {
 
-    POOL_TYPE   PoolType;
-    INFO_TYPE   InfoType;
-
     MJFUNC      MjFunc;
-    TIMESTAMP   TimeStamp;
+    TIME_FIELDS TimesStamp;
     PROC_INFO   ProcInfo;
+    LIST_ENTRY  ListEntry;
 
     union {
         PFILE_INFO FileInfo;
     } Info;
-
-    LIST_ENTRY ListEntry;
 };
 
 typedef struct Info INFO, *PINFO;
