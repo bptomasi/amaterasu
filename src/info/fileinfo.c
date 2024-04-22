@@ -1,4 +1,3 @@
-
 #include "fileinfo.h"
 
 /*
@@ -10,7 +9,7 @@
  *    - Pointer to the allocated 'FILE_INFO' structure on success.
  *    - 'NULL' if memory allocation fails.
  */
-PFILE_INFO FileInfoAlloc(_In_ POOL_TYPE PoolType) {
+PFILE_INFO FileInfoAlloc(__drv_strictTypeMatch(__drv_typeExpr) POOL_TYPE PoolType) {
 
     PFILE_INFO FileInfo;
 
@@ -45,7 +44,7 @@ PFILE_INFO FileInfoAlloc(_In_ POOL_TYPE PoolType) {
  *    - Pointer to the allocated 'FILE_INFO' structure on success.
  *    - 'NULL' if memory allocation or initialization fails.
  */
-PFILE_INFO FileInfoGet(POOL_TYPE PoolType, _In_ PFLT_CALLBACK_DATA Data) {
+PFILE_INFO FileInfoGet(__drv_strictTypeMatch(__drv_typeExpr) POOL_TYPE PoolType, _In_ ULONG NameQueryMethod, _In_ PFLT_CALLBACK_DATA Data) {
 
     NTSTATUS Status;
     PFILE_INFO FileInfo;
@@ -55,9 +54,9 @@ PFILE_INFO FileInfoGet(POOL_TYPE PoolType, _In_ PFLT_CALLBACK_DATA Data) {
         return NULL;
     }
 
-    Status = FileInfoInit(FileInfo, Data);
+    Status = FileInfoInit(FileInfo, FLT_FILE_NAME_QUERY_DEFAULT,Data);
     if(!NT_SUCCESS(Status)) {
-        FileInfoFree(FileInfo);
+        FileInfoFree(&FileInfo);
         return NULL;
     }
 
@@ -83,7 +82,7 @@ static NTSTATUS InitFileInfoFields(_Out_ PFILE_INFO FileInfo, _In_ PFLT_FILE_NAM
         return Status;
     }
 
-    Status = UnicodeStrToWSTR(FileName->PoolType, &NameInfo->FinalComponent, &FileInfo->FinalName, &FileInfo->FinalNameSize);
+    Status = UnicodeStrToWSTR(FileInfo->PoolType, &NameInfo->FinalComponent, &FileInfo->FinalName, &FileInfo->FinalNameSize);
     if(!NT_SUCCESS(Status)) {
         ExFreePoolWithTag(FileInfo->FinalName, 'wstr');
         return Status;
@@ -103,7 +102,7 @@ static NTSTATUS InitFileInfoFields(_Out_ PFILE_INFO FileInfo, _In_ PFLT_FILE_NAM
  *    -
  *    -
  */
-static NTSTATUS GetNameInfo(_Out_ PFLT_FILE_NAME_INFORMATION NameInfo, _In_ PFLT_CALLBACK_DATA Data, _In_ ULONG QueryMethod) {
+static NTSTATUS GetNameInfo(_Out_ PFLT_FILE_NAME_INFORMATION* NameInfo, _In_ PFLT_CALLBACK_DATA Data, _In_ ULONG QueryMethod) {
 
     NTSTATUS Status;
 
@@ -116,15 +115,15 @@ static NTSTATUS GetNameInfo(_Out_ PFLT_FILE_NAME_INFORMATION NameInfo, _In_ PFLT
          *  as it was specified when the file was opened, including the full path
          *  if available.
          */
-        Status = FltGetNameInformation(Data, FLT_FILE_OPENED | QueryMethod, NameInfo);
+        Status = FltGetFileNameInformation(Data, FLT_FILE_NAME_OPENED | QueryMethod, NameInfo);
         if(!NT_SUCCESS(Status)) {
             return Status;
         }
     }
 
-    Status = FltParseNameInformation(*pNameInfo);
+    Status = FltParseFileNameInformation(*NameInfo);
     if(!NT_SUCCESS(Status)) {
-        FltReleaseFileNameInformation(NameInfo);
+        FltReleaseFileNameInformation(*NameInfo);
     }
 
     return Status;
@@ -147,9 +146,10 @@ static NTSTATUS GetNameInfo(_Out_ PFLT_FILE_NAME_INFORMATION NameInfo, _In_ PFLT
 NTSTATUS FileInfoInit(_Out_ PFILE_INFO FileInfo, _In_ ULONG NameQueryMethod, _In_ PFLT_CALLBACK_DATA Data) {
 
     NTSTATUS Status;
-    PFLT_FILE_NAME_INFORMATION NameInfo;
+    PFLT_FILE_NAME_INFORMATION NameInfo  ;
 
-    Status = GetNameInfo(Data, NameQueryMethod);
+
+    Status = GetNameInfo(&NameInfo,Data, NameQueryMethod);
     if(!NT_SUCCESS(Status)) {
         return Status;
     }
