@@ -3,11 +3,12 @@
 
 #include "procinfo.h"
 #include "fileinfo.h"
+#include "mjfunc.h"
 
 struct Info {
 
     MJFUNC      MjFunc;
-    TIME_FIELDS TimesStamp;
+    TIME_FIELDS TimeFields;
     PROC_INFO   ProcInfo;
     LIST_ENTRY  ListEntry;
 
