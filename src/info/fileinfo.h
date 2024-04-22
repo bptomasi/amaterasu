@@ -1,12 +1,27 @@
+#ifndef MAIN_HEADER_H
+#define MAIN_HEADER_H
+#include <fltKernel.h>
+#include <dontuse.h>
+#include <suppress.h>
+#include <wdm.h>
+#include <ntstrsafe.h>
+#endif
 
 #ifndef FILE_INFO_H
 #define FILE_INFO_H
 
-#include "../../utils/utils.h"
+extern NTSTATUS
+UnicodeStrToWSTR(
+    _In_ POOL_TYPE PoolType,
+    _In_ PUNICODE_STRING Src,
+    _Out_ PWSTR* Dest,
+    _Out_ PULONG pSize
+);
+
 
 struct FileInfo {
 
-    PoolType PoolType;
+    POOL_TYPE PoolType;
 
     ULONG PathSize;
     ULONG FinalNameSize;
@@ -15,7 +30,7 @@ struct FileInfo {
     PWSTR FinalName;
 };
 
-typedef struct FileInfo FILE_INFO, *PFILE_INFO;
+typedef struct FileInfo FILE_INFO, * PFILE_INFO;
 
 /*
  *  FileInfoAlloc() - Allocate a 'FILE_INFO' structure.
@@ -28,8 +43,8 @@ typedef struct FileInfo FILE_INFO, *PFILE_INFO;
  */
 extern PFILE_INFO
 FileInfoAlloc(
-        __drv_strictTypeMatch(__drv_typeExpr)POOL_TYPE PoolType
-    );
+    __drv_strictTypeMatch(__drv_typeExpr)POOL_TYPE PoolType
+);
 
 /*
  *  FileInfoGet() - Allocates and initializes a 'FILE_INFO' structure.
@@ -38,8 +53,8 @@ FileInfoAlloc(
  *  @NameQueryMethod:
  *  @Data: Pointer to a FLT_CALLBACK_DATA object containing file-related data.
  *
- *  'GetFileInfo()' is a wrapper for 'FileInfoAlloc()' and 'FileInfoInit()', 
- *  providing a simple interface to obtain an allocated and initialized 
+ *  'GetFileInfo()' is a wrapper for 'FileInfoAlloc()' and 'FileInfoInit()',
+ *  providing a simple interface to obtain an allocated and initialized
  *  'FILE_INFO' structure.
  *
  *  Returns:
@@ -48,10 +63,10 @@ FileInfoAlloc(
  */
 extern PFILE_INFO
 FileInfoGet(
-        __drv_strictTypeMatch(__drv_typeExpr)POOL_TYPE PoolType,
-        _In_ ULONG NameQueryMethod,
-        _In_ PFLT_CALLBACK_DATA Data
-    );
+    __drv_strictTypeMatch(__drv_typeExpr)POOL_TYPE PoolType,
+    _In_ ULONG NameQueryMethod,
+    _In_ PFLT_CALLBACK_DATA Data
+);
 
 /*
  *  FileInfoInit() - Initializes a 'FILE_INFO' structure allocate by 'FileInfoAlloc()'
@@ -59,7 +74,7 @@ FileInfoGet(
  *
  *  @Info: Pointer to the 'FILE_INFO' structure to be initialized.
  *  @NameQueryMethod:
- *  @Data: Pointer to the 'FLT_CALLBACK_DATA' structure containing file-related 
+ *  @Data: Pointer to the 'FLT_CALLBACK_DATA' structure containing file-related
  *         and process related data.
  *
  *  Return:
@@ -69,10 +84,10 @@ FileInfoGet(
  */
 extern NTSTATUS
 FileInfoInit(
-        _Out_ PFILE_INFO FileInfo,
-        _In_ NameQueryMethod,
-        _In_ PFLT_CALLBACK_DATA Data
-    );
+    _Out_ PFILE_INFO FileInfo,
+    _In_ ULONG NameQueryMethod,
+    _In_ PFLT_CALLBACK_DATA Data
+);
 
 /*
  *  FileInfoDeInit() - Deinitializes and frees the internal resources
@@ -82,8 +97,8 @@ FileInfoInit(
  */
 extern void
 FileInfoDeInit(
-        _Inout_ PFILE_INFO FileInfo
-    )
+    _Inout_ PFILE_INFO FileInfo
+);
 
 /*
  *  FileInfoFree() - Deallocates the memory associated with a 'FILE_INFO'
@@ -93,7 +108,7 @@ FileInfoDeInit(
  */
 extern void
 FileInfoFree(
-        _Inout_ PFILE_INFO* FileInfo
-    );
+    _Inout_ PFILE_INFO* FileInfo
+);
 
 #endif  /* FILE_INFO_H */
