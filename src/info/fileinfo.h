@@ -1,23 +1,19 @@
+
 #ifndef MAIN_HEADER_H
 #define MAIN_HEADER_H
+
 #include <fltKernel.h>
 #include <dontuse.h>
 #include <suppress.h>
 #include <wdm.h>
 #include <ntstrsafe.h>
-#endif
+
+#endif  /* MAIN_HEADER_H */
 
 #ifndef FILE_INFO_H
 #define FILE_INFO_H
 
-extern NTSTATUS
-UnicodeStrToWSTR(
-    _In_ POOL_TYPE PoolType,
-    _In_ PUNICODE_STRING Src,
-    _Out_ PWSTR* Dest,
-    _Out_ PULONG pSize
-);
-
+#include "util.h"
 
 struct FileInfo {
 

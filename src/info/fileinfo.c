@@ -1,3 +1,4 @@
+
 #include "fileinfo.h"
 
 /*
@@ -54,7 +55,7 @@ PFILE_INFO FileInfoGet(__drv_strictTypeMatch(__drv_typeExpr) POOL_TYPE PoolType,
         return NULL;
     }
 
-    Status = FileInfoInit(FileInfo, FLT_FILE_NAME_QUERY_DEFAULT,Data);
+    Status = FileInfoInit(FileInfo, NameQueryMethod, Data);
     if(!NT_SUCCESS(Status)) {
         FileInfoFree(&FileInfo);
         return NULL;
@@ -146,7 +147,7 @@ static NTSTATUS GetNameInfo(_Out_ PFLT_FILE_NAME_INFORMATION* NameInfo, _In_ PFL
 NTSTATUS FileInfoInit(_Out_ PFILE_INFO FileInfo, _In_ ULONG NameQueryMethod, _In_ PFLT_CALLBACK_DATA Data) {
 
     NTSTATUS Status;
-    PFLT_FILE_NAME_INFORMATION NameInfo  ;
+    PFLT_FILE_NAME_INFORMATION NameInfo;
 
 
     Status = GetNameInfo(&NameInfo,Data, NameQueryMethod);
