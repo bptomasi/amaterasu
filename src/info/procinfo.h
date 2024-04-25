@@ -1,3 +1,13 @@
+#ifndef MAIN_HEADER_H
+#define MAIN_HEADER_H
+#include <fltKernel.h>
+#include <dontuse.h>
+#include <suppress.h>
+#include <wdm.h>
+#include <ntstrsafe.h>
+#include <ntifs.h>
+#endif
+
 #ifndef PROC_INFO_H
 #define PROC_INFO_H
 
@@ -6,7 +16,7 @@ struct ProcInfo {
     ULONG PID;
     ULONG SID;
 
-    BOOL IsElevated;
+    BOOLEAN IsElevated;
 };
 
 typedef struct ProcInfo PROC_INFO, *PPROC_INFO;
@@ -28,6 +38,12 @@ extern NTSTATUS
 ProcInfoInit(
         _Out_ PPROC_INFO ProcInfo,
         _In_ PFLT_CALLBACK_DATA Data
+    );
+
+extern PPROC_INFO
+ProcInfoGet(
+    _Out_ PPROC_INFO ProcInfo,
+    _In_ PFLT_CALLBACK_DATA Data
     );
 
 #endif  /* PROC_INFO_H */
