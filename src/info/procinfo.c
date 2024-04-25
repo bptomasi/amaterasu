@@ -11,12 +11,15 @@
  *    -
  *    -
  */
+
+/*
 static NTSTATUS GetRequestorProcStatus(_Out_ PBOOL ProcStatus, _In_ PFLT_CALLBACK_DATA Data) {
 
     NTSTATUS Status;
 
     return Status;
 }
+*/
 
 /*
  *  GetRequestorSID() -
@@ -55,6 +58,60 @@ static inline ULONG GetRequestorPID(_In_ PFLT_CALLBACK_DATA Data) {
     return FltGetRequestorProcessId(Data);
 }
 
+static inline NTSTATUS GetEProcess(ULONG pid, PEPROCESS* eprocess) {
+    return PsLookupProcessByProcessId((HANDLE)pid, eprocess);
+}
+
+/*
+ *  AcquireElevationStatus() - Retrieves TOKEN_ELEVATION structure.
+ *
+ *  @proc: Pointer to a EPROCESS structure
+ * 
+ *  @tokenInfo: Pointer to TOKEN_ELEVATION to be filled
+ *
+ *  Return:
+ *    - NTSTATUS .
+ */
+NTSTATUS AcquireElevationStatus(_In_ PEPROCESS proc, _Out_ TOKEN_ELEVATION* tokenInfo) {
+    PACCESS_TOKEN ptoken;
+    
+    /*Acquires reference to the primary token*/
+    ptoken= PsReferencePrimaryToken(proc);
+    
+    if (ptoken == NULL) {
+        tokenInfo = NULL;
+        return STATUS_SUCCESS;
+    }
+
+    return SeQueryInformationToken(ptoken, TokenElevation, &tokenInfo);
+}
+
+/*
+ *  GetElevationStatus() - Retrieves Elevation status.
+ *
+ *  @proc: Pointer to a EPROCESS structure
+ *
+ *  Return:
+ *    - NTSTATUS .
+ */
+NTSTATUS GetElevationStatus(_Out_ PPROC_INFO ProcInfo) {
+    NTSTATUS Status;
+    TOKEN_ELEVATION tokenInfo;
+    PEPROCESS eprocess;
+    
+    Status = GetEProcess(ProcInfo->PID, &eprocess);
+    if (!NT_SUCCESS(Status))
+        return Status;
+
+    Status = AcquireElevationStatus(eprocess, &tokenInfo);
+    if (!NT_SUCCESS(Status))
+        return Status;
+
+    ProcInfo->IsElevated = tokenInfo.TokenIsElevated;
+
+    return STATUS_SUCCESS;
+}
+
 /*
  *  ProcInfoInit() -
  *
@@ -68,18 +125,29 @@ static inline ULONG GetRequestorPID(_In_ PFLT_CALLBACK_DATA Data) {
 NTSTATUS ProcInfoInit(_Out_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data) {
 
     NTSTATUS Status;
+    PVOID tokenInfo;
+    PEPROCESS eprocess;
 
     ProcInfo->PID = GetRequestorPID(Data);
 
     Status = GetRequestorSID(&ProcInfo->PID, Data);
-    if(!NT_SUCCESS(Status)) {
+    if(!NT_SUCCESS(Status))
         return Status;
-    }
 
+    Status = GetElevationStatus(ProcInfo);
+    if (!NT_SUCCESS(Status))
+        return Status;
+
+    /*
     Status = GetRequestorStatus(&ProcInfo->Status, Data);
     if(!NT_SUCCESS(Status)) {
         return Status;
     }
+    */
 
     return Status;
+}
+
+PPROC_INFO ProcInfoGet(_Out_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data) {
+
 }
