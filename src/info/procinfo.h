@@ -17,6 +17,8 @@ struct ProcInfo {
     ULONG SID;
 
     BOOLEAN IsElevated;
+
+    POOL_TYPE PoolType;
 };
 
 typedef struct ProcInfo PROC_INFO, *PPROC_INFO;
@@ -42,8 +44,13 @@ ProcInfoInit(
 
 extern PPROC_INFO
 ProcInfoGet(
-    _Out_ PPROC_INFO ProcInfo,
+    _In_ POOL_TYPE PoolType,
     _In_ PFLT_CALLBACK_DATA Data
     );
+
+extern void
+ProcInfoFree(
+    _Inout_  PPROC_INFO* ProcInfo
+   );
 
 #endif  /* PROC_INFO_H */

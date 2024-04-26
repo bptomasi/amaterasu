@@ -58,8 +58,8 @@ static inline ULONG GetRequestorPID(_In_ PFLT_CALLBACK_DATA Data) {
     return FltGetRequestorProcessId(Data);
 }
 
-static inline NTSTATUS GetEProcess(ULONG pid, PEPROCESS* eprocess) {
-    return PsLookupProcessByProcessId((HANDLE)pid, eprocess);
+static inline PEPROCESS GetEProcess(PFLT_CALLBACK_DATA Data) {
+    return FltGetRequestorProcess(Data);
 }
 
 /*
@@ -94,18 +94,23 @@ NTSTATUS AcquireElevationStatus(_In_ PEPROCESS proc, _Out_ TOKEN_ELEVATION* toke
  *  Return:
  *    - NTSTATUS .
  */
-NTSTATUS GetElevationStatus(_Out_ PPROC_INFO ProcInfo) {
+NTSTATUS GetElevationStatus(_Out_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data) {
     NTSTATUS Status;
     TOKEN_ELEVATION tokenInfo;
     PEPROCESS eprocess;
     
-    Status = GetEProcess(ProcInfo->PID, &eprocess);
-    if (!NT_SUCCESS(Status))
-        return Status;
+    eprocess = GetEProcess(Data);
+    if (eprocess == NULL) {
+        KdPrint(("GetEProcessFalhou\n"));
+        return 1;
+        //TODO: Find the proper NTSTATUS value to return
+    }
 
     Status = AcquireElevationStatus(eprocess, &tokenInfo);
-    if (!NT_SUCCESS(Status))
+    if (!NT_SUCCESS(Status)) {
+        KdPrint(("Acquire falhou\n"));
         return Status;
+    }
 
     ProcInfo->IsElevated = tokenInfo.TokenIsElevated;
 
@@ -123,20 +128,24 @@ NTSTATUS GetElevationStatus(_Out_ PPROC_INFO ProcInfo) {
  *    -
  */
 NTSTATUS ProcInfoInit(_Out_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data) {
-
     NTSTATUS Status;
     PVOID tokenInfo;
     PEPROCESS eprocess;
 
     ProcInfo->PID = GetRequestorPID(Data);
+    KdPrint(("%lu %p\n", ProcInfo->PID,ProcInfo->PID));
 
     Status = GetRequestorSID(&ProcInfo->PID, Data);
-    if(!NT_SUCCESS(Status))
+    if (!NT_SUCCESS(Status)) {
+        KdPrint(("GetRequestorSid falhou %x\n", Status));
         return Status;
+    }
 
-    Status = GetElevationStatus(ProcInfo);
-    if (!NT_SUCCESS(Status))
+    Status = GetElevationStatus(ProcInfo, Data);
+    if (!NT_SUCCESS(Status)) {
+        KdPrint(("GetElevationStatus falhou %x\n",Status));
         return Status;
+    }
 
     /*
     Status = GetRequestorStatus(&ProcInfo->Status, Data);
@@ -148,6 +157,63 @@ NTSTATUS ProcInfoInit(_Out_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data) {
     return Status;
 }
 
-PPROC_INFO ProcInfoGet(_Out_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data) {
+/*
+ *  ProcInfoAlloc() - Allocates PROC_INFO structure
+ *
+ *  @PoolType: The type of memory pool to allocate from (paged or nonpaged).
+ *
+ *  Return:
+ *    - Pointer to the allocated 'PROC_INFO' structure on success.
+ *    - 'NULL' if memory allocation fails.
+ */
+PPROC_INFO ProcInfoAlloc(POOL_TYPE PoolType) {
+    PPROC_INFO ProcInfo;
+
+    ProcInfo = ExAllocatePoolWithTag(PoolType, sizeof(PROC_INFO), 'proc');
+    if (ProcInfo == NULL)
+        return NULL;
+
+    RtlZeroMemory(ProcInfo, sizeof(PROC_INFO));
+
+    ProcInfo->PoolType = PoolType;
+
+    return ProcInfo;
+
+}
+
+
+/*
+ *  ProcInfoFree() - Deallocates the memory associated with a 'PROC_INFO'
+ *                   struct dynamically allocated.
+ *
+ *  @ProcInfo: Pointer to a reference of a 'PROC_INFO' structure.
+ */
+void ProcInfoFree(_Inout_ PPROC_INFO* ProcInfo) {
+
+    ExFreePoolWithTag(*ProcInfo, 'proc');
+
+    *ProcInfo = NULL;
+}
+
+
+PPROC_INFO ProcInfoGet(_In_ POOL_TYPE PoolType, _In_ PFLT_CALLBACK_DATA Data) {
+    NTSTATUS status;
+    PPROC_INFO ProcInfo;
+
+    ProcInfo = ProcInfoAlloc(PoolType);
+
+    if (ProcInfo == NULL) {
+        KdPrint(("ProcInfoAlloc\n"));
+        return NULL;
+    }
+
+    status = ProcInfoInit(ProcInfo, Data);
+    if (!NT_SUCCESS(status)) {
+        KdPrint(("ProcInfoInit falhou\n"));
+        ProcInfoFree(&ProcInfo);
+        return NULL;
+    }
+
+    return ProcInfo;
 
 }
