@@ -15,9 +15,11 @@ struct Info {
     union {
         PFILE_INFO FileInfo;
     } Info;
+
+    POOL_TYPE PoolType;
 };
 
-typedef struct Info INFO, *PINFO;
+typedef struct Info INFO, * PINFO;
 
 /*
  *  InfoAlloc() - Allocate a 'INFO' structure.
@@ -30,29 +32,31 @@ typedef struct Info INFO, *PINFO;
  */
 extern PINFO
 InfoAlloc(
-        __drv_stricttypematch(__drv_typeexpr)POOL_TYPE PoolType
-    );
+    __drv_strictTypeMatch(__drv_typeExpr)POOL_TYPE PoolType
+);
 
 extern PINFO
 InfoGet(
-        __drv_stricttypematch(__drv_typeexpr)POOL_TYPE PoolType,
-        _In_ PFLT_CALLBACK_DATA Data
-    );
+    __drv_strictTypeMatch(__drv_typeExpr)POOL_TYPE PoolType,
+    _In_ ULONG NameQueryMethod,
+    _In_ PFLT_CALLBACK_DATA Data
+);
 
 extern NTSTATUS
 InfoInit(
-        _Out_ PINFO Info,
-        _In_ PFLT_CALLBACK_DATA Data
-    );
+    _Out_ PINFO Info,
+    _In_ ULONG NameQueryMethod,
+    _In_ PFLT_CALLBACK_DATA Data
+);
 
 extern void
 InfoDeInit(
-        _Inout_ PINFO Info
-    );
+    _Inout_ PINFO Info
+);
 
 extern void
 InfoFree(
-        _Inout_ PINFO* Info
-    );
+    _Inout_ PINFO* Info
+);
 
 #endif  /* INFO_H */

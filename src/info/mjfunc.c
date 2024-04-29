@@ -34,28 +34,28 @@ static const MJFUNC MajorFunctions[] = {
  *    -
  *    -
  */
-static inline BOOL MjImplemented(_In_ UCHAR Code) {
-    
+static inline BOOLEAN MjImplemented(_In_ UCHAR Code) {
+
     return MajorFunctions[Code].Len;
 }
 
 /*
- *  MjFuncInit() - 
+ *  MjFuncInit() -
  *
- *  @MjFunc: 
+ *  @MjFunc:
  *  @MjFuncCode:
  *
  *  Return:
  *    -
  *    -
  */
-NTSTATUS MjFuncInit(_Out_ PMJFUNCTION MjFunc, _In_ UCHAR Code) {
+NTSTATUS MjFuncInit(_Out_ PMJFUNC MjFunc, _In_ UCHAR Code) {
 
-    if(!MjImplemented(Code)) {
+    if (!MjImplemented(Code)) {
         return STATUS_INVALID_PARAMETER;
     }
 
-    RltCopyBytes(MjFunc, &MajorFunctions[Code], sizeof *MjFunc);
+    RtlCopyBytes(MjFunc, &MajorFunctions[Code], sizeof * MjFunc);
 
     return STATUS_SUCCESS;
 }
