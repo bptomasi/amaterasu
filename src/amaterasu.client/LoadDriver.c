@@ -1,6 +1,10 @@
 #include "LoadDriver.h"
 
 /*
+ * Must be run with administrative privileges
+ */
+
+/*
  * LoadDriver - Loads Driver
  *
  * @hService: pointer to a SC_HANDLE for opening a service
