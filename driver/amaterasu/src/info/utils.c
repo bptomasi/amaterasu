@@ -23,7 +23,7 @@ NTSTATUS UnicodeStrToWSTR(_In_ POOL_TYPE PoolType, _In_ PUNICODE_STRING Src, _Ou
      *  add '1' to it.
      */
     Size = Src->Length + 1;
-    Wstr = ExAllocatePoolWithTag(PoolType, Size, 'wstr');
+    Wstr = ExAllocatePoolWithTag(PoolType, 2*Size, 'wstr');
     if(!Wstr) {
         return STATUS_INSUFFICIENT_RESOURCES;
     }
