@@ -13,6 +13,7 @@ PPTNOTIFY ProcessCreateAlloc(_In_ POOL_TYPE PoolType)
 {
 	PPTNOTIFY ProcessInfo;
 
+	// Allocate memory for the PTNOTIFY structure
 	ProcessInfo = ExAllocatePoolWithTag(PoolType, sizeof(*ProcessInfo), 'prnf');
 	if (!ProcessInfo) {
 		return NULL;
@@ -38,6 +39,7 @@ PPTNOTIFY ThreadCreateAlloc(_In_ POOL_TYPE PoolType)
 {
 	PPTNOTIFY ThreadInfo;
 
+	// Allocate memory for the PTNOTIFY structure
 	ThreadInfo = ExAllocatePoolWithTag(PoolType, sizeof(*ThreadInfo), 'trnf');
 	if (!ThreadInfo) {
 		return NULL;
@@ -61,23 +63,27 @@ PPTNOTIFY ThreadCreateAlloc(_In_ POOL_TYPE PoolType)
  *    - Upon success, returns STATUS_SUCCESS.
  *    - The appropriate error code in case of failure.
  */
-NTSTATUS GetCreateProcessName(HANDLE processID, PUNICODE_STRING processName)
+NTSTATUS GetCreateProcessName(_In_ HANDLE processID, _Out_ PUNICODE_STRING processName)
 {
 	PEPROCESS process;
 	NTSTATUS status;
 	PUNICODE_STRING imageName;
 
+	// Look up the process by its ID
 	status = PsLookupProcessByProcessId(processID, &process);
 	if (!NT_SUCCESS(status)) {
 		return status;
 	}
 
+	// Locate the image name of the process
 	status = SeLocateProcessImageName(process, &imageName);
 	if (!NT_SUCCESS(status)) {
+		ObDereferenceObject(process);
 		return status;
 	}
 
-	RtlCopyUnicodeString(processName, imageName);
+	// Copy the process name to the provided PUNICODE_STRING
+	RtlCopyUnicodeString(processName, &imageName);
 	ExFreePool(imageName);
 
 	ObDereferenceObject(process);
@@ -88,69 +94,81 @@ NTSTATUS GetCreateProcessName(HANDLE processID, PUNICODE_STRING processName)
 /*
  * GetCreateProcessInfo - Fills in process creation info in the provided 'PTNOTIFY' structure.
  *
- * @pInfo: A pointer to the 'PTNOTIFY' structure to populate with process info.
+ * @ParentId: ID of the parent process.
+ * @ChildId: ID of the child process.
+ * @pCreate: Pointer to process creation information.
+ * @pInfo: Pointer to the 'PTNOTIFY' structure to populate with process info.
  */
-void GetCreateProcessInfo(_In_ PPTNOTIFY pInfo)
+void GetCreateProcessInfo(_In_ HANDLE ParentId, _In_ HANDLE ChildId, _In_ HANDLE pCreate, _Inout_ PPTNOTIFY pInfo)
 {
 	PEPROCESS process;
 	NTSTATUS status;
 
-	HANDLE ParentID = NULL;
-	HANDLE ChildID = NULL;
-	BOOLEAN pCreate = 0;
-
-	UNICODE_STRING parentProcessName;
-	UNICODE_STRING childProcessName;
+	PUNICODE_STRING parentProcessName;
+	PUNICODE_STRING childProcessName;
 
 	if (pInfo == NULL) {
 		return;
 	}
 
-	// Inicializacao das estruturas
+	// Initialize the UNICODE_STRING
 	RtlInitEmptyUnicodeString(&parentProcessName, NULL, 0);
 	RtlInitEmptyUnicodeString(&childProcessName, NULL, 0);
 
-	// Inicializacao dos buffers
-	parentProcessName.MaximumLength = 255 * sizeof(WCHAR);
-	parentProcessName.Buffer = ExAllocatePoolWithTag(NonPagedPool, parentProcessName.MaximumLength, 'name');
-	childProcessName.MaximumLength = 255 * sizeof(WCHAR);
-	childProcessName.Buffer = ExAllocatePoolWithTag(NonPagedPool, childProcessName.MaximumLength, 'name');
+	// Initialize the buffers for the UNICODE_STRING
+	parentProcessName->MaximumLength = 512 * sizeof(WCHAR);
+	parentProcessName->Buffer = ExAllocatePoolWithTag(NonPagedPool, parentProcessName->MaximumLength, 'name');
+	childProcessName->MaximumLength = 512 * sizeof(WCHAR);
+	childProcessName->Buffer = ExAllocatePoolWithTag(NonPagedPool, childProcessName->MaximumLength, 'name');
 
 	// Get Parent infos
-	status = PsLookupProcessByProcessId(ParentID, &process);
-	if (NT_SUCESS(status)) {
-		pInfo->parentID = ParentID;
+	status = PsLookupProcessByProcessId(ParentId, &process);
+	if (!NT_SUCCESS(status)) {
+		return;
 	}
+	pInfo->parentID = ParentId;
 
 	// Get Parent name infos
-	status = GetCreateProcessName(pInfo->parentID, &parentProcessName);
-	if (NT_SUCESS(status)) {
-		pInfo->parentName = parentProcessName;
-		pInfo->parentNameSize = parentProcessName.Length;
+	status = GetCreateProcessName(pInfo->parentID, parentProcessName);
+	if (!NT_SUCCESS(status)) {
+		ObDereferenceObject(process);
+		return;
+	}
+	status = UnicodeStrToWSTR(pInfo->PoolType, parentProcessName, &pInfo->parentName, &pInfo->parentNameSize);
+	if (!NT_SUCCESS(status)) {
+		ExFreePoolWithTag(pInfo->parentName, 'wstr');
+		ObDereferenceObject(process);
+		return;
 	}
 
 	// Get Child infos
-	status = PsLookupProcessByProcessId(ChildID, &process);
-	if (NT_SUCESS(status)) {
-		pInfo->ctID.childID = ChildID;
+	status = PsLookupProcessByProcessId(ChildId, &process);
+	if (!NT_SUCCESS(status)) {
+		ExFreePoolWithTag(pInfo->parentName, 'wstr');
+		ExFreePoolWithTag(parentProcessName->Buffer, 'name');
+		return;
 	}
+	pInfo->ctID.childID = ChildId;
 
 	// Get Child name infos
-	status = GetCreateProcessName(pInfo->ctID.childID, &childProcessName);
-	if (NT_SUCESS(status)) {
-		pInfo->ctID.childName = childProcessName;
-		pInfo->ctID.childNameSize = childProcessName.Length;
+	status = GetCreateProcessName(pInfo->ctID.childID, childProcessName);
+	if (!NT_SUCCESS(status)) {
+		ExFreePoolWithTag(pInfo->parentName, 'wstr');
+		ExFreePoolWithTag(parentProcessName->Buffer, 'name');
+		ObDereferenceObject(process);
+		return;
+	}
+	status = UnicodeStrToWSTR(pInfo->PoolType, childProcessName, &pInfo->childName, &pInfo->childNameSize);
+	if (!NT_SUCCESS(status)) {
+		ExFreePoolWithTag(pInfo->parentName, 'wstr');
+		ExFreePoolWithTag(parentProcessName->Buffer, 'name');
+		ExFreePoolWithTag(childProcessName->Buffer, 'name');
+		ObDereferenceObject(process);
+		return;
 	}
 
 	pInfo->create = pCreate; // Create info
 
-	// Free buffers
-	if (parentProcessName.Buffer) {
-		ExFreePoolWithTag(parentProcessName.Buffer, 'name');
-	}
-	if (childProcessName.Buffer) {
-		ExFreePoolWithTag(childProcessName.Buffer, 'name');
-	}
 	ObDereferenceObject(process);
 	return;
 }
@@ -159,16 +177,14 @@ void GetCreateProcessInfo(_In_ PPTNOTIFY pInfo)
 /*
  * GetCreateThreadInfo - Fills in thread creation info in the provided 'PTNOTIFY' structure.
  *
- * @tInfo: A pointer to the 'PTNOTIFY' structure to populate with thread info.
+ * @ParentId: ID of the parent thread.
+ * @ThreadId: ID of the thread.
+ * @tCreate: Pointer to thread creation information.
+ * @tInfo: Pointer to the 'PTNOTIFY' structure to populate with thread info.
  */
-void GetCreateThreadInfo(_In_ PPTNOTIFY tInfo)
+void GetCreateThreadInfo(_In_ HANDLE ParentId, _In_ HANDLE ThreadId, _In_ HANDLE tCreate, _Inout_ PPTNOTIFY tInfo)
 {
 	PEPROCESS process;
-
-	HANDLE ParentID;
-	HANDLE ThreadID;
-	BOOLEAN tCreate;
-
 	NTSTATUS status;
 
 	if (tInfo == NULL) {
@@ -176,16 +192,18 @@ void GetCreateThreadInfo(_In_ PPTNOTIFY tInfo)
 	}
 
 	// Get Parent Thread id
-	status = PsLookupThreadByThreadId(ParentID, &process);
-	if (NT_SUCESS(status)) {
-		tInfo->parentID = ParentID;
+	status = PsLookupThreadByThreadId(ParentId, &process);
+	if (!NT_SUCCESS(status)) {
+		return;
 	}
+	tInfo->parentID = ParentId;
 
 	// Get Thread id
-	status = PsLookupThreadByThreadId(ThreadID, &process);
-	if (!NT_SUCESS(status)) {
-		tInfo->ctID.threadID = ThreadID;
+	status = PsLookupThreadByThreadId(ThreadId, &process);
+	if (!NT_SUCCESS(status)) {
+		return;
 	}
+	tInfo->ctID.threadID = ThreadId;
 
 	tInfo->create = tCreate; // Create info
 
@@ -197,11 +215,14 @@ void GetCreateThreadInfo(_In_ PPTNOTIFY tInfo)
  * ProcessCreateInit - Initializes a process notification structure.
  *
  * @PoolType: The type of pool memory to allocate.
+ * @ParentId: ID of the parent process.
+ * @ChildId: ID of the child process.
+ * @pCreate: Pointer to process creation information.
  *
  * Return:
- *    - A pointer to the initialized 'PTNOTIFY' structure, or NULL if initialization fails.
+ *    - Pointer to the initialized 'PTNOTIFY' structure, or NULL if initialization fails.
  */
-PPTNOTIFY ProcessCreateInit(_In_ POOL_TYPE PoolType)
+PPTNOTIFY ProcessCreateInit(_In_ POOL_TYPE PoolType, _In_ HANDLE ParentId, _In_ HANDLE ChildId, _In_ HANDLE pCreate)
 {	
 	PPTNOTIFY processInfo;
 	processInfo = ProcessCreateAlloc(PoolType);
@@ -209,7 +230,7 @@ PPTNOTIFY ProcessCreateInit(_In_ POOL_TYPE PoolType)
 		retunr NULL;
 	}
 
-	GetCreateProcessInfo(processInfo);
+	GetCreateProcessInfo(ParentId, ChildId, pCreate, processInfo);
 
 	return processInfo;
 }
@@ -218,11 +239,14 @@ PPTNOTIFY ProcessCreateInit(_In_ POOL_TYPE PoolType)
  * ThreadCreateInit - Initializes a thread notification structure.
  *
  * @PoolType: The type of pool memory to allocate.
+ * @ParentId: ID of the parent thread.
+ * @ThreadId: ID of the thread.
+ * @tCreate: Pointer to thread creation information.
  *
  * Return:
- *    - A pointer to the initialized 'PTNOTIFY' structure, or NULL if initialization fails.
+ *    - Pointer to the initialized 'PTNOTIFY' structure, or NULL if initialization fails.
  */
-PPTNOTIFY ThreadCreateInit(_In_ POOL_TYPE PoolType)
+PPTNOTIFY ThreadCreateInit(_In_ POOL_TYPE PoolType, _In_ HANDLE ParentId, _In_ HANDLE ThreadId, _In_ HANDLE tCreate)
 {
 	PPTNOTIFY threadInfo;
 	threadInfo = ThreadCreateAlloc(PoolType);
@@ -230,7 +254,7 @@ PPTNOTIFY ThreadCreateInit(_In_ POOL_TYPE PoolType)
 		return NULL;
 	}
 
-	GetCreateThreadInfo(threadInfo);
+	GetCreateThreadInfo(ParentId, ThreadId, tCreate, threadInfo);
 
 	return threadInfo;
 }
@@ -238,27 +262,25 @@ PPTNOTIFY ThreadCreateInit(_In_ POOL_TYPE PoolType)
 /*
  * ProcessNameFree - Frees memory allocated for process names in the 'PTNOTIFY' structure.
  *
- * @ProcessInfo: A pointer to the 'PTNOTIFY' structure whose names are to be freed.
+ * @ProcessInfo: Pointer to the 'PTNOTIFY' structure whose names are to be freed.
  */
-void ProcessNameFree(PPTNOTIFY ProcessInfo)
+void ProcessNameFree(_In_ PPTNOTIFY ProcessInfo)
 {
-	if (ProcessInfo->parentName.Buffer) {
-		ExFreePoolWithTag(ProcessInfo->parentName.Buffer, 'name');
-		ProcessInfo->parentName.Buffer = NULL;
+	if (ProcessInfo) {
+		if (ProcessInfo->parentName) {
+			ExFreePoolWithTag(ProcessInfo->parentName, 'wstr');
+		}
+		if (ProcessInfo->childName) {
+			ExFreePoolWithTag(ProcessInfo->childName, 'wstr');
+		}
 	}
-
-	if (ProcessInfo->ctID.childName.Buffer) {
-		ExFreePoolWithTag(ProcessInfo->ctID.childName.Buffer, 'name');
-		ProcessInfo->ctID.childName.Buffer = NULL;
-	}
-
 	return;
 }
 
 /*
  * ProcessCreateFree - Frees the process notification structure and its contents.
  *
- * @ProcessInfo: A double pointer to the 'PTNOTIFY' structure to be freed.
+ * @ProcessInfo: Double pointer to the 'PTNOTIFY' structure to be freed.
  */
 void ProcessCreateFree(_Inout_ PPTNOTIFY* ProcessInfo)
 {
@@ -273,7 +295,7 @@ void ProcessCreateFree(_Inout_ PPTNOTIFY* ProcessInfo)
 /*
  * ThreadCreateFree - Frees the thread notification structure.
  *
- * @ThreadInfo: A double pointer to the 'PTNOTIFY' structure to be freed.
+ * @ThreadInfo: Double pointer to the 'PTNOTIFY' structure to be freed.
  */
 void ThreadCreateFree(_Inout_ PPTNOTIFY* ThreadInfo)
 {

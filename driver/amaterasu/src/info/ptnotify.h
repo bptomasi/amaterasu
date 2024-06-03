@@ -10,13 +10,13 @@ typedef struct PTNotify {
 
 	ULONG parentID;
 	ULONG parentNameSize;
-	UNICODE_STRING parentName;
+	PWSTR parentName;
+
+	ULONG childNameSize;
+	PWSTR childName;
 
 	union {
 		ULONG childID;
-		ULONG childNameSize;
-		UNICODE_STRING childName;
-
 		ULONG threadID;
 	} ctID;
 
@@ -62,28 +62,40 @@ PPTNOTIFY ThreadCreateAlloc(_In_ POOL_TYPE PoolType);
  *    - The appropriate error code in case of failure.
  */
 NTSTATUS GetCreateProcessName(
-	HANDLE processID,
-	PUNICODE_STRING processName
+	_In_ HANDLE processID,
+	_Out_ PUNICODE_STRING processName
 );
 
 
 /*
  * GetCreateProcessInfo - Fills in process creation info in the provided 'PTNOTIFY' structure.
  *
- * @pInfo: A pointer to the 'PTNOTIFY' structure to populate with process info.
+ * @ParentId: ID of the parent process.
+ * @ChildId: ID of the child process.
+ * @pCreate: Pointer to process creation information.
+ * @pInfo: Pointer to the 'PTNOTIFY' structure to populate with process info.
  */
 void GetCreateProcessInfo(
-	_In_ PPTNOTIFY pInfo
+	_In_ HANDLE ParentId,
+	_In_ HANDLE ChildId,
+	_In_ HANDLE pCreate,
+	_Inout_ PPTNOTIFY pInfo
 );
 
 
 /*
  * GetCreateThreadInfo - Fills in thread creation info in the provided 'PTNOTIFY' structure.
  *
- * @tInfo: A pointer to the 'PTNOTIFY' structure to populate with thread info.
+ * @ParentId: ID of the parent thread.
+ * @ThreadId: ID of the thread.
+ * @tCreate: Pointer to thread creation information.
+ * @tInfo: Pointer to the 'PTNOTIFY' structure to populate with thread info.
  */
 void GetCreateThreadInfo(
-	_In_ PPTNOTIFY tInfo
+	_In_ HANDLE ParentId,
+	_In_ HANDLE ThreadId,
+	_In_ HANDLE tCreate,
+	_Inout_ PPTNOTIFY tInfo
 );
 
 
@@ -91,12 +103,18 @@ void GetCreateThreadInfo(
  * ProcessCreateInit - Initializes a process notification structure.
  *
  * @PoolType: The type of pool memory to allocate.
+ * @ParentId: ID of the parent process.
+ * @ChildId: ID of the child process.
+ * @pCreate: Pointer to process creation information.
  *
  * Return:
- *    - A pointer to the initialized 'PTNOTIFY' structure, or NULL if initialization fails.
+ *    - Pointer to the initialized 'PTNOTIFY' structure, or NULL if initialization fails.
  */
 PPTNOTIFY ProcessCreateInit(
-	_In_ POOL_TYPE PoolType
+	_In_ POOL_TYPE PoolType,
+	_In_ HANDLE ParentId,
+	_In_ HANDLE ChildId,
+	_In_ HANDLE pCreate
 );
 
 
@@ -104,27 +122,33 @@ PPTNOTIFY ProcessCreateInit(
  * ThreadCreateInit - Initializes a thread notification structure.
  *
  * @PoolType: The type of pool memory to allocate.
+ * @ParentId: ID of the parent thread.
+ * @ThreadId: ID of the thread.
+ * @tCreate: Pointer to thread creation information.
  *
  * Return:
- *    - A pointer to the initialized 'PTNOTIFY' structure, or NULL if initialization fails.
+ *    - Pointer to the initialized 'PTNOTIFY' structure, or NULL if initialization fails.
  */
 PPTNOTIFY ThreadCreateInit(
-	_In_ POOL_TYPE PoolType
+	_In_ POOL_TYPE PoolType,
+	_In_ HANDLE ParentId,
+	_In_ HANDLE ThreadId,
+	_In_ HANDLE tCreate
 );
 
 
 /*
  * ProcessNameFree - Frees memory allocated for process names in the 'PTNOTIFY' structure.
  *
- * @ProcessInfo: A pointer to the 'PTNOTIFY' structure whose names are to be freed.
+ * @ProcessInfo: Pointer to the 'PTNOTIFY' structure whose names are to be freed.
  */
-void ProcessNameFree(PPTNOTIFY ProcessInfo);
+void ProcessNameFree(_In_ PPTNOTIFY ProcessInfo);
 
 
 /*
  * ProcessCreateFree - Frees the process notification structure and its contents.
  *
- * @ProcessInfo: A double pointer to the 'PTNOTIFY' structure to be freed.
+ * @ProcessInfo: Double pointer to the 'PTNOTIFY' structure to be freed.
  */
 void ProcessCreateFree(_Inout_ PPTNOTIFY* ProcessdInfo);
 
@@ -132,7 +156,7 @@ void ProcessCreateFree(_Inout_ PPTNOTIFY* ProcessdInfo);
 /*
  * ThreadCreateFree - Frees the thread notification structure.
  *
- * @ThreadInfo: A double pointer to the 'PTNOTIFY' structure to be freed.
+ * @ThreadInfo: Double pointer to the 'PTNOTIFY' structure to be freed.
  */
 void ThreadCreateFree(_Inout_ PPTNOTIFY* ThreadInfo);
 
