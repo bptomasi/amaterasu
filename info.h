@@ -134,7 +134,7 @@ InfoFree(
  */
 extern void
 InfoCopy(
-    _Out_ PINFO_STATIC Dest,
+    _Inout_ PINFO_STATIC Dest,
     _In_ PINFO Src
 );
 

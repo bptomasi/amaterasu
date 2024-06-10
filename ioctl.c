@@ -17,7 +17,10 @@ static PINFO InfoListRemoveTail(_Inout_ PINFO_LIST InfoList) {
 	}
 
 	KeReleaseSpinLock(&InfoList->Lock, OldIrql);
-	DbgPrint("TESTE: %d -- %p\n", Info->InfoType, &Info->InfoType);
+	if (Info)
+		DbgPrint("TESTE: %d\n", Info->InfoType);
+	else
+		DbgPrint("elseee\n");
 	return Info;
 }
 
@@ -46,7 +49,11 @@ NTSTATUS InfoClone(PIRP Irp, PIO_STACK_LOCATION IrpIoStack, PULONG InfoSize) {
 	PINFO_STATIC InfoBuffer;
 	ULONG InfoBufferLen;
 
-	CloneSetup(Irp,IrpIoStack, &Info, &InfoBuffer, &InfoBufferLen);
+	status = CloneSetup(Irp,IrpIoStack, &Info, &InfoBuffer, &InfoBufferLen);
+	if (!NT_SUCCESS(status)) {
+		*InfoSize = 0;
+		return STATUS_SUCCESS;
+	}
 
 	if ((InfoBuffer != NULL) && (sizeof(Info) <= InfoBufferLen)) {
 		InfoCopy(InfoBuffer, Info);

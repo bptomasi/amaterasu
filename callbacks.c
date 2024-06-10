@@ -19,7 +19,10 @@ AmaterasuDefaultPreCallback(
 	
 		PPROC_INFO ProcInfo;
 		PINFO Info;
-			
+		
+		if (FLT_IS_FS_FILTER_OPERATION(Data)) {
+			return FLT_PREOP_SUCCESS_NO_CALLBACK;
+		}
 	
 		//Get Process name 
 		PsLookupProcessByProcessId(pid, &proc);
