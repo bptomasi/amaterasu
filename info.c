@@ -188,7 +188,7 @@ void InfoFree(_Inout_ PINFO* Info) {
  *    -
  *    -
  */
-void InfoCopy(_Out_ PINFO_STATIC Dest, _In_ PINFO Src) {
+void InfoCopy(_Inout_ PINFO_STATIC Dest, _In_ PINFO Src) {
 
     if (Dest && Src) {
         DbgPrint("Entrou no InfoCopy");

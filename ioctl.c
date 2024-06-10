@@ -17,7 +17,7 @@ static PINFO InfoListRemoveTail(_Inout_ PINFO_LIST InfoList) {
 	}
 
 	KeReleaseSpinLock(&InfoList->Lock, OldIrql);
-
+	DbgPrint("TESTE: %d -- %p\n", Info->InfoType, &Info->InfoType);
 	return Info;
 }
 
