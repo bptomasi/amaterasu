@@ -76,6 +76,7 @@ PINFO InfoGet(_PoolType_ POOL_TYPE PoolType, _In_ PVOID Data, _In_ INFO_TYPE Inf
 
     Status = InfoInit(Info, Data, InfoType);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintSt("InfoInit failed", Status);
         InfoFree(&Info);
     }
 
@@ -118,16 +119,16 @@ NTSTATUS InfoInit(_Out_ PINFO Info, _In_ PVOID Data, _In_ INFO_TYPE InfoType) {
 
     InitTimeFields(&Info->TimeFields);
 
-    //Info->InfoType = InfoType;
+    Info->InfoType = InfoType;
     //Info->Info.Data = funcs[InfoType].get(Info->PoolType, Data);
     switch (InfoType) {
-    case INFO_FS:
-        Info->Info.FsInfo = FsInfoGet(Info->PoolType, Data);
-        break;
+    //case INFO_FS:
+    //    Info->Info.FsInfo = FsInfoGet(Info->PoolType, Data);
+    //    break;
 
-   // case INFO_PROC:
-   //     Info->Info.ProcData = ProcDataGet(Info->PoolType, Data);
-   //     break;
+    case INFO_PROC:
+        Info->Info.ProcData = ProcDataGet(Info->PoolType, Data);
+        break;
 
     //case INFO_LOAD:
     //    Info->Info.LoadImageInfo = LoadImageInfoGet(Info->PoolType, Data);
@@ -190,12 +191,8 @@ void InfoFree(_Inout_ PINFO* Info) {
  */
 void InfoCopy(_Inout_ PINFO_STATIC Dest, _In_ PINFO Src) {
 
+    DbgPrint("Entrou no InfoCopy\n");
     if (Dest && Src) {
-        DbgPrint("Entrou no InfoCopy");
-        int k = Dest->InfoType;
-        DbgPrint("%d\n", k);
-        int b = Src->InfoType;
-        DbgPrint("%d\n", b);
         RtlCopyMemory(&Dest->TimeFields, &Src->TimeFields, sizeof Dest->TimeFields);
         //funcs[Dest->InfoType].copy(
             /*
@@ -205,9 +202,11 @@ void InfoCopy(_Inout_ PINFO_STATIC Dest, _In_ PINFO Src) {
           //  &Dest->Info.Data,
             //Src->Info.Data
         //);
-        if (Dest->InfoType == INFO_FS) {
+        if (Src->InfoType == INFO_FS) {
             FsInfoCopy(&Dest->Info.FsInfo, Src->Info.FsInfo);
-            DbgPrint("Passou do FsInfoCopy");
+        }
+        else if (Src->InfoType == INFO_PROC) {
+            ProcDataCopy(&Dest->Info.ProcData, Src->Info.ProcData);
         }
     }
 }

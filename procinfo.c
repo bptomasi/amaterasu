@@ -55,11 +55,13 @@ static NTSTATUS GetImageName(_In_ HANDLE ID, _Out_ PWSTR ImageBuf) {
 
     Status = PsLookupProcessByProcessId(ID, &eProc);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "PsLookupProcessById failed\n");
         return Status;
     }
 
     Status = SeLocateProcessImageName(eProc, &pImageName);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "SeLocateProcessImageName failed\n");
         ObDereferenceObject(eProc);
         return Status;
     }
@@ -127,12 +129,13 @@ static NTSTATUS GetIDs(_Inout_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data
 
     Status = GetSID(&ProcInfo->SID, Data);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "GetSID failed\n");
         return Status;
     }
 
+
     return Status;
 }
-
 
 /*
  *  ProcInitInfo() - Initializes a 'PROC_INFO' structure based on
@@ -150,19 +153,23 @@ static NTSTATUS GetIDs(_Inout_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data
 NTSTATUS ProcInfoInit(_Inout_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data) {
 
     NTSTATUS Status;
+    PEPROCESS ProcOb;
 
     Status = GetIDs(ProcInfo, Data);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "GetIDs failed\n");
         return Status;
     }
 
-    Status = TokenInfoGet(&ProcInfo->TokenInfo, (HANDLE) ProcInfo->PID);
+    Status = TokenInfoGet(&ProcInfo->TokenInfo, ProcInfo->PID);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "TokenInfo failed\n");
         return Status;
     }
 
     Status = GetImageName((HANDLE)ProcInfo->PID, ProcInfo->ImageName);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "GetImageName failed\n");
         return Status;
     }
 

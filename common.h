@@ -18,6 +18,10 @@ typedef struct LoadImageInfo LOAD_IMAGE_INFO, * PLOAD_IMAGE_INFO;
 typedef struct LoadImageInfoStatic LOAD_IMAGE_INFO_STATIC, * PLOAD_IMAGE_INFO_STATIC;
 typedef enum InfoType INFO_TYPE, * PINFO_TYPE;
 
+#define DbgPrint(fmt, ...) \
+		DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, fmt, __VA_ARGS__);
 
+#define DbgPrintSt(fmt, ...) \
+	DbgPrint(fmt##" -- %x\n", __VA_ARGS__)
 
 #endif  /* COMMON_H */

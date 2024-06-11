@@ -59,10 +59,13 @@ PFS_INFO FsInfoGet(_PoolType_ POOL_TYPE PoolType, _In_ PVOID Data) {
 
     Status = FsInfoInit(FsInfo, Data);
     if (!NT_SUCCESS(Status)) {
-        DbgPrint("Deu ruim FsInfoInit");
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FsInfoInit failed\n");
         FsInfoFree(&FsInfo);
     }
-    DbgPrint("FsInfoGet");
+    else {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FsInfoInit succeded\n");
+    }
+
     return FsInfo;
 }
 
@@ -86,13 +89,21 @@ NTSTATUS FsInfoInit(_Out_ PFS_INFO FsInfo, _In_ PFLT_CALLBACK_DATA Data) {
     FsInfo->MjFunc = MajorFunction(Data);
     FsInfo->ProcInfo = ProcInfoGet(FsInfo->PoolType, Data);
     if (!FsInfo->ProcInfo) {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "ProcInfoGet failed\n");
         return STATUS_UNSUCCESSFUL;
+    }
+    else {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "ProcInfoGet succeded\n");
     }
     
     FsInfo->FileInfo = FileInfoGet(FsInfo->PoolType ,Data);
     if (!FsInfo->FileInfo) {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FileInfoGet failed\n");
         ProcInfoFree(&FsInfo->ProcInfo);
         return STATUS_UNSUCCESSFUL;
+    }
+    else {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FileInfoGet succeded\n");
     }
 
     return STATUS_SUCCESS;
@@ -145,8 +156,8 @@ void FsInfoFree(_Inout_ PFS_INFO* FsInfo) {
  */
 void FsInfoCopy(_Out_ PFS_INFO_STATIC Dest, _In_ PFS_INFO Src) {
 
+    DbgPrint("Entrou no FsInfoCopy\n");
     if (Dest && Src) {
-        DbgPrint("Entrou no FsInfoCopy");
         Dest->MjFunc = Src->MjFunc;
         FileInfoCopy(&Dest->FileInfo, Src->FileInfo);
         DbgPrint("Saiu do FileInfoCopy");

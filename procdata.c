@@ -53,13 +53,14 @@ PPROC_DATA ProcDataGet(_In_ POOL_TYPE PoolType, _In_ PIDENTIFIER Data) {
 
     ProcData = ProcDataAlloc(PoolType);
     if (!ProcData) {
+        DbgPrint("ProcDataAlloc failed\n");
         return NULL;
     }
 
     Status = ProcDataInit(ProcData, Data);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintSt("ProcDataInit failed", Status);
         ProcDataFree(&ProcData);
-        return NULL;
     }
 
     return ProcData;
@@ -88,15 +89,16 @@ static NTSTATUS GetImageName(_In_ HANDLE ID, _Inout_ WCHAR ImageBuf[MAX_PATH]) {
 
     Status = PsLookupProcessByProcessId(ID, &eProc);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintSt("PsLookupProcessByProcessId failed", Status);
         return Status;
     }
 
     Status = SeLocateProcessImageName(eProc, &pImageName);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintSt("SeLocalteProcessImageName failed", Status);
         ObDereferenceObject(eProc);
         return Status;
     }
-
     
     UnicodeStrToStaticWSTR(ImageBuf, pImageName, &ImageNameSize);
 
@@ -125,13 +127,32 @@ NTSTATUS ProcDataInit(_Out_ PPROC_DATA ProcData, _In_ PIDENTIFIER Data) {
 
     Status = TokenInfoGet(&ProcData->TokenInfo, Data->PPID);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintSt("TokenInfoGet failed", Status);
         return Status;
     }
 
     RtlCopyMemory(&ProcData->Ids, Data, sizeof ProcData->Ids);
 
-    GetImageName(Data->PPID, ProcData->ParentName);
-    GetImageName(Data->Id.ID, ProcData->ChildName);
+    DbgPrint("Active: %d\n", Data->Active);
+	Status = GetImageName(Data->PPID, ProcData->ParentName);
+	if (!NT_SUCCESS(Status)) {
+		DbgPrintSt("GetImageName 1 failed -- %ws", ProcData->ParentName, Status);
+		return Status;
+	}
+	else {
+		DbgPrintSt("GetImageName 1 succeded", Status);
+	}
+
+    if (Data->Active) {
+        Status = GetImageName(Data->Id.ID, ProcData->ChildName);
+        if (!NT_SUCCESS(Status)) {
+            DbgPrintSt("GetImageName 2 failed", Status);
+            return Status;
+        }
+        else {
+            DbgPrintSt("GetImageName 2 succeded", Status);
+        }
+    }
 
     return Status;
 }

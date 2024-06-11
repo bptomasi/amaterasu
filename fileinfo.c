@@ -110,7 +110,7 @@ static NTSTATUS GetNameInfo(_Out_ PFLT_FILE_NAME_INFORMATION* NameInfo, _In_ PFL
 
     Status = FltGetFileNameInformation(Data, FLT_FILE_NAME_NORMALIZED | QueryMethod, NameInfo);
     if (!NT_SUCCESS(Status)) {
-
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FltGetFileNameInformation failed\n");
         /*
          *  If it was not possible to get the "normalized" name, we try
          *  to get the "opened" name. The opened name refers to the name of the file
@@ -119,12 +119,14 @@ static NTSTATUS GetNameInfo(_Out_ PFLT_FILE_NAME_INFORMATION* NameInfo, _In_ PFL
          */
         Status = FltGetFileNameInformation(Data, FLT_FILE_NAME_OPENED | QueryMethod, NameInfo);
         if (!NT_SUCCESS(Status)) {
+            DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FltGetFileNameInformation 2 failed\n");
             return Status;
         }
     }
 
     Status = FltParseFileNameInformation(*NameInfo);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FltParseFileNameInformation failed\n");
         FltReleaseFileNameInformation(*NameInfo);
     }
 
@@ -152,10 +154,14 @@ NTSTATUS FileInfoInit(_Out_ PFILE_INFO FileInfo, _In_ PFLT_CALLBACK_DATA Data) {
 
     Status = GetNameInfo(&NameInfo, Data);
     if (!NT_SUCCESS(Status)) {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FsInfoInit failed 1\n");
         return Status;
     }
 
     Status = InitFileInfoFields(FileInfo, NameInfo);
+    if (!NT_SUCCESS(Status)) {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FsInfoInit failed 2\n");
+    }
 
     /* As 'NameInfo' is no longer necessary, we deallocate it. */
     FltReleaseFileNameInformation(NameInfo);

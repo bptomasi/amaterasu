@@ -6,7 +6,7 @@ DECLARE_CONST_UNICODE_STRING(REG_CALLBACK_ALTITUDE, L"388990");
 
 NTSTATUS AmaterasuCleanup(FLT_FILTER_UNLOAD_FLAGS Flags);
 
-BOOLEAN EnabledCallbacks[] = {1,0,0,0};
+BOOLEAN EnabledCallbacks[] = {0,1,0,0};
 
 static const FLT_OPERATION_REGISTRATION Callbacks[] = {
     {
@@ -262,8 +262,7 @@ NTSTATUS DriverEntry(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_STRING Regi
 
     NTSTATUS Status;
 
-    DbgPrint("Entry");
-    KdPrint(("driverentry\n"));
+    DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "Entry alo\n");
 
     /* Makes non-paged pools (kernel pools) allocations non-executable. */
     ExInitializeDriverRuntime(DrvRtPoolNxOptIn);

@@ -143,13 +143,14 @@ static void AppendInfo(_Inout_ PINFO_LIST InfoList, _In_ PINFO Info) {
     PINFO RemovedInfo;
 
     KeAcquireSpinLock(&InfoList->Lock, &OldIrql);
-
+    DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "InfoList size = %ul\n", InfoList->RecordsAllocated);
     /*
      *  If there's already 'MaxRecords - 1' members allocated in the list,
      *  we remove the tail element (the oldest) and insert the new 'Info'
      *  at the head.
      */
     if (InfoList->RecordsAllocated + 1 >= InfoList->MaxRecords) {
+        DbgPrint("Removing Node before inserting InfoList\n");
         RemovedInfo = InfoListRemoveTail(InfoList);
         InfoFree(&RemovedInfo);
     }
@@ -158,6 +159,7 @@ static void AppendInfo(_Inout_ PINFO_LIST InfoList, _In_ PINFO Info) {
     }
 
     InsertHeadList(&InfoList->Head, &Info->ListEntry);
+    DbgPrint("Info Inserted into InfoList\n");
 
     KeReleaseSpinLock(&InfoList->Lock, OldIrql);
 }
@@ -178,6 +180,7 @@ NTSTATUS InfoListAppend(_Inout_ PINFO_LIST InfoList, _In_ PVOID Data, _In_ INFO_
 
     Info = InfoGet(InfoList->PoolType, Data, InfoType);
     if (!Info) {
+        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "InfoGet failed\n");
         return STATUS_INSUFFICIENT_RESOURCES;
     }
 

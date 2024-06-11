@@ -6,6 +6,7 @@ static PINFO InfoListRemoveTail(_Inout_ PINFO_LIST InfoList) {
 	KIRQL OldIrql;
 	PLIST_ENTRY Entry;
 
+	DbgPrint("Entrou no InfoListRemoveTail\n");
 	Info = NULL;
 	KeAcquireSpinLock(&InfoList->Lock, &OldIrql);
 
@@ -17,10 +18,7 @@ static PINFO InfoListRemoveTail(_Inout_ PINFO_LIST InfoList) {
 	}
 
 	KeReleaseSpinLock(&InfoList->Lock, OldIrql);
-	if (Info)
-		DbgPrint("TESTE: %d\n", Info->InfoType);
-	else
-		DbgPrint("elseee\n");
+
 	return Info;
 }
 
@@ -37,6 +35,10 @@ static inline NTSTATUS CloneSetup(
 		return STATUS_UNSUCCESSFUL;
 
 	*Info = InfoListRemoveTail(Amaterasu.InfoList);
+	if (!*Info) {
+		DbgPrint("InfoListRemoveTail returned NULL\n");
+		DbgPrint("List Size = %u\n", Amaterasu.InfoList->RecordsAllocated);
+	}
 	*InfoBuffer = SystemBuffer(Irp);
 	*InfoBufferLen = OutputBufferLength(IrpIoStack);
 
@@ -50,7 +52,7 @@ NTSTATUS InfoClone(PIRP Irp, PIO_STACK_LOCATION IrpIoStack, PULONG InfoSize) {
 	ULONG InfoBufferLen;
 
 	status = CloneSetup(Irp,IrpIoStack, &Info, &InfoBuffer, &InfoBufferLen);
-	if (!NT_SUCCESS(status)) {
+	if (!NT_SUCCESS(status) || !InfoBuffer) {
 		*InfoSize = 0;
 		return STATUS_SUCCESS;
 	}
@@ -72,7 +74,7 @@ NTSTATUS IoControl(PDEVICE_OBJECT Device, PIRP Irp) {
 	PIO_STACK_LOCATION IrpIoStack = IoGetCurrentIrpStackLocation(Irp);
 	ULONG IoCtl, ClonedInfoSize = 0;
 	NTSTATUS status = STATUS_SUCCESS;
-	KdPrint(("IoControl\n"));
+	//KdPrint(("IoControl\n"));
 	if (IrpIoStack != NULL) {
 		IoCtl = IrpIoStack->Parameters.DeviceIoControl.IoControlCode;
 		switch (IoCtl) {

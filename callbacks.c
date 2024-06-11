@@ -56,7 +56,7 @@ AmaterasuDefaultPreCallback(
 				}
 				else
 					KdPrint(("ProcInfoGet failed\n"));*/
-				InfoListAppend(&Amaterasu.InfoList, Data, INFO_FS);
+				InfoListAppend(Amaterasu.InfoList, Data, INFO_FS);
 				Info = InfoGet(NonPagedPool, Data, INFO_FS);
 				//InsertHeadList(&RecordList, &(Info->ListEntry));
 				if (Info != NULL) {
@@ -120,19 +120,17 @@ void AmaterasuProcCallback(_In_ HANDLE PPID, _In_ HANDLE PID, _In_ BOOLEAN Activ
 
 	NTSTATUS Status;
 
-	IDENTIFIER IDs = {
-		PPID,
-		PID,
-		FALSE,
-		Active
-	};
+	IDENTIFIER IDs;
+
+	IDs.Active = Active;
+	IDs.PPID = PPID;
+	IDs.Id.PID = PID;
+	IDs.isThread = FALSE;
 	
-	DbgPrint("foiiii");
 	Status = InfoListAppend(Amaterasu.InfoList, &IDs, INFO_PROC);
 	if (!NT_SUCCESS(Status)) {
 		return;
 	}
-	KdPrint(("Proc deu bom %ul", PPID));
 
 }
 
@@ -140,18 +138,17 @@ void AmaterasuThreadCallback(_In_ HANDLE PPID, _In_ HANDLE TID, _In_ BOOLEAN Act
 
 	NTSTATUS Status;
 
-	IDENTIFIER IDs = {
-		PPID,
-		TID,
-		TRUE,
-		Active
-	};
+	IDENTIFIER IDs;
+
+	IDs.Active = Active;
+	IDs.PPID = PPID;
+	IDs.Id.TID = TID;
+	IDs.isThread = TRUE;
 
 	Status = InfoListAppend(Amaterasu.InfoList, &IDs, INFO_PROC);
 	if (!NT_SUCCESS(Status)) {
 		return;
 	}
-	KdPrint(("Thread deu bom %ul", PPID));
 }
 
 
