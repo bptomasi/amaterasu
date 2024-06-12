@@ -17,6 +17,7 @@ PPROC_INFO ProcInfoAlloc(_PoolType_ PoolType) {
 
     ProcInfo = ExAllocatePoolWithTag(PoolType, sizeof * ProcInfo, 'proc');
     if (!ProcInfo) {
+        Assert(ProcInfo != NULL, "ay ExAllocatePoolWithTag().");
         return NULL;
     }
 
@@ -55,13 +56,15 @@ static NTSTATUS GetImageName(_In_ HANDLE ID, _Out_ PWSTR ImageBuf) {
 
     Status = PsLookupProcessByProcessId(ID, &eProc);
     if (!NT_SUCCESS(Status)) {
-        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "PsLookupProcessById failed\n");
+        Assert(NT_SUCCESS(Status), "at PsLookupProcessByProcessId().");
+        //DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "PsLookupProcessById failed\n");
         return Status;
     }
 
     Status = SeLocateProcessImageName(eProc, &pImageName);
     if (!NT_SUCCESS(Status)) {
-        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "SeLocateProcessImageName failed\n");
+        Assert(NT_SUCCESS(Status), "at SeLocateProcessImageName().");
+        //DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "SeLocateProcessImageName failed\n");
         ObDereferenceObject(eProc);
         return Status;
     }
@@ -126,10 +129,11 @@ static NTSTATUS GetIDs(_Inout_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data
 
     GetPID(&ProcInfo->PID, Data);
     //GetTID(&ProcInfo->TID, Data);
-
+    DbgPrint("ProcInfo PID: %u\n", ProcInfo->PID);
     Status = GetSID(&ProcInfo->SID, Data);
     if (!NT_SUCCESS(Status)) {
-        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "GetSID failed\n");
+        Assert(NT_SUCCESS(Status), "by GetSID().");
+        //DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "GetSID failed\n");
         return Status;
     }
 
@@ -157,19 +161,22 @@ NTSTATUS ProcInfoInit(_Inout_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data)
 
     Status = GetIDs(ProcInfo, Data);
     if (!NT_SUCCESS(Status)) {
-        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "GetIDs failed\n");
+        Assert(NT_SUCCESS(Status), "by GetIDs().");
+        //DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "GetIDs failed\n");
         return Status;
     }
 
     Status = TokenInfoGet(&ProcInfo->TokenInfo, ProcInfo->PID);
     if (!NT_SUCCESS(Status)) {
-        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "TokenInfo failed\n");
+        Assert(NT_SUCCESS(Status), "by TokenInfoGet().");
+        //DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "TokenInfo failed\n");
         return Status;
     }
 
     Status = GetImageName((HANDLE)ProcInfo->PID, ProcInfo->ImageName);
     if (!NT_SUCCESS(Status)) {
-        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "GetImageName failed\n");
+        Assert(NT_SUCCESS(Status), "by GetImageName().");
+        //DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "GetImageName failed\n");
         return Status;
     }
 
@@ -248,6 +255,7 @@ PPROC_INFO ProcInfoGet(_PoolType_ POOL_TYPE PoolType, _In_ PFLT_CALLBACK_DATA Da
 
     Status = ProcInfoInit(ProcInfo, Data);
     if (!NT_SUCCESS(Status)) {
+        Assert(NT_SUCCESS(Status), "by ProcInfoInit()");
         ProcInfoFree(&ProcInfo);
     }
 

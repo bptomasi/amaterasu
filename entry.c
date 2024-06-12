@@ -6,7 +6,7 @@ DECLARE_CONST_UNICODE_STRING(REG_CALLBACK_ALTITUDE, L"388990");
 
 NTSTATUS AmaterasuCleanup(FLT_FILTER_UNLOAD_FLAGS Flags);
 
-BOOLEAN EnabledCallbacks[] = {0,1,0,0};
+BOOLEAN EnabledCallbacks[] = {0,0,0,1};
 
 static const FLT_OPERATION_REGISTRATION Callbacks[] = {
     {

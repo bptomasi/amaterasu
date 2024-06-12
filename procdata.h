@@ -36,7 +36,7 @@ typedef struct ProcData PROC_DATA, * PPROC_DATA;
 struct ProcDataStatic {
 
     IDENTIFIER Ids;
-    TOKEN_INFO TokenInfo;
+    TOKEN_INFO_STATIC TokenInfo;
 
     WCHAR ParentName[MAX_PATH];
     WCHAR ChildName[MAX_PATH];

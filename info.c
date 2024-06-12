@@ -122,21 +122,21 @@ NTSTATUS InfoInit(_Out_ PINFO Info, _In_ PVOID Data, _In_ INFO_TYPE InfoType) {
     Info->InfoType = InfoType;
     //Info->Info.Data = funcs[InfoType].get(Info->PoolType, Data);
     switch (InfoType) {
-    //case INFO_FS:
-    //    Info->Info.FsInfo = FsInfoGet(Info->PoolType, Data);
-    //    break;
+    case INFO_FS:
+        Info->Info.FsInfo = FsInfoGet(Info->PoolType, Data);
+        break;
 
     case INFO_PROC:
         Info->Info.ProcData = ProcDataGet(Info->PoolType, Data);
         break;
 
-    //case INFO_LOAD:
-    //    Info->Info.LoadImageInfo = LoadImageInfoGet(Info->PoolType, Data);
-    //    break;
+    case INFO_LOAD:
+        Info->Info.LoadImageInfo = LoadImageInfoGet(Info->PoolType, Data);
+        break;
 
-    //case INFO_REG:
-        //Info->Info.RegInfo = RegInfoGet(Info->PoolType, Data);
-        //break;
+    case INFO_REG:
+        Info->Info.RegInfo = RegInfoGet(Info->PoolType, Data);
+        break;
     }
     if (!Info->Info.Data) {
         return STATUS_UNSUCCESSFUL;
@@ -202,11 +202,22 @@ void InfoCopy(_Inout_ PINFO_STATIC Dest, _In_ PINFO Src) {
           //  &Dest->Info.Data,
             //Src->Info.Data
         //);
-        if (Src->InfoType == INFO_FS) {
+
+        Dest->InfoType = Src->InfoType;
+        DbgPrint("InfoType: %d %d\n", Dest->InfoType, Src->InfoType);
+        switch (Src->InfoType) {
+        case INFO_FS:
             FsInfoCopy(&Dest->Info.FsInfo, Src->Info.FsInfo);
-        }
-        else if (Src->InfoType == INFO_PROC) {
+            break;
+        case INFO_PROC:
             ProcDataCopy(&Dest->Info.ProcData, Src->Info.ProcData);
+            break;
+        case INFO_LOAD:
+            LoadImageCopy(&Dest->Info.LoadImageInfo, Src->Info.LoadImageInfo);
+            break;
+        case INFO_REG:
+            RegInfoCopy(&Dest->Info.RegInfo, Src->Info.RegInfo);
+            break;
         }
     }
 }

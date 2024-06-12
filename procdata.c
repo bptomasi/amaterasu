@@ -76,7 +76,7 @@ PPROC_DATA ProcDataGet(_In_ POOL_TYPE PoolType, _In_ PIDENTIFIER Data) {
  *    -
  *    -
  */
-static NTSTATUS GetImageName(_In_ HANDLE ID, _Inout_ WCHAR ImageBuf[MAX_PATH]) {
+static NTSTATUS GetImageName(_In_ BOOLEAN isThread,_In_ HANDLE ID, _Inout_ WCHAR ImageBuf[MAX_PATH]) {
 
     NTSTATUS Status;
     PEPROCESS eProc;
@@ -89,7 +89,7 @@ static NTSTATUS GetImageName(_In_ HANDLE ID, _Inout_ WCHAR ImageBuf[MAX_PATH]) {
 
     Status = PsLookupProcessByProcessId(ID, &eProc);
     if (!NT_SUCCESS(Status)) {
-        DbgPrintSt("PsLookupProcessByProcessId failed", Status);
+        DbgPrintSt("PsLookupProcessByProcessId failed no get image name %d", isThread,Status);
         return Status;
     }
 
@@ -134,20 +134,19 @@ NTSTATUS ProcDataInit(_Out_ PPROC_DATA ProcData, _In_ PIDENTIFIER Data) {
     RtlCopyMemory(&ProcData->Ids, Data, sizeof ProcData->Ids);
 
     DbgPrint("Active: %d\n", Data->Active);
-	Status = GetImageName(Data->PPID, ProcData->ParentName);
+	Status = GetImageName(ProcData->Ids.isThread,Data->PPID, ProcData->ParentName);
 	if (!NT_SUCCESS(Status)) {
 		DbgPrintSt("GetImageName 1 failed -- %ws", ProcData->ParentName, Status);
-		return Status;
 	}
 	else {
 		DbgPrintSt("GetImageName 1 succeded", Status);
 	}
 
-    if (Data->Active) {
-        Status = GetImageName(Data->Id.ID, ProcData->ChildName);
+ 
+    if (!ProcData->Ids.isThread) {
+        Status = GetImageName(ProcData->Ids.isThread, Data->Id.ID, ProcData->ChildName);
         if (!NT_SUCCESS(Status)) {
             DbgPrintSt("GetImageName 2 failed", Status);
-            return Status;
         }
         else {
             DbgPrintSt("GetImageName 2 succeded", Status);

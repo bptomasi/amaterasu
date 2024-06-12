@@ -108,6 +108,17 @@ NTSTATUS AmaterasuRegCallback(
 	
 	REG_INFO_DATA RegInfoData;
 
+	Status = STATUS_SUCCESS;
+	switch ((REG_NOTIFY_CLASS)RegNotifyClass)
+	{
+	case RegNtSetValueKey:
+	case RegNtDeleteValueKey:
+		break;
+
+	default:
+		return Status;
+	}
+	
 	RegInfoData.RegNotifyClass = (REG_NOTIFY_CLASS)RegNotifyClass;
 	RegInfoData.RegStruct = RegStruct;
 

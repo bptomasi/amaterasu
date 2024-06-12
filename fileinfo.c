@@ -16,6 +16,7 @@ PFILE_INFO FileInfoAlloc(__drv_strictTypeMatch(__drv_typeExpr)POOL_TYPE PoolType
 
     FileInfo = ExAllocatePoolWithTag(PoolType, sizeof * FileInfo, 'file');
     if (!FileInfo) {
+        Assert(FileInfo != NULL, "at ExAllocatePoolWithTag().");
         return NULL;
     }
 
@@ -52,11 +53,13 @@ PFILE_INFO FileInfoGet(__drv_strictTypeMatch(__drv_typeExpr)POOL_TYPE PoolType, 
 
     FileInfo = FileInfoAlloc(PoolType);
     if (!FileInfo) {
+        Assert(FileInfo != NULL, "by FileInfoAlloc().");
         return NULL;
     }
 
     Status = FileInfoInit(FileInfo, Data);
     if (!NT_SUCCESS(Status)) {
+        Assert(NT_SUCCESS(Status), "by FileInfoInit().");
         FileInfoFree(&FileInfo);
         return NULL;
     }
@@ -76,16 +79,10 @@ PFILE_INFO FileInfoGet(__drv_strictTypeMatch(__drv_typeExpr)POOL_TYPE PoolType, 
  */
 static NTSTATUS InitFileInfoFields(_Out_ PFILE_INFO FileInfo, _In_ PFLT_FILE_NAME_INFORMATION NameInfo) {
 
+    ULONG useless = 0;
 
-    if (NameInfo->Name.Length) {
-        RtlCopyMemory(&FileInfo->Path, &NameInfo->Name, NameInfo->Name.Length);
-    }
-
-    RtlCopyMemory(
-        &FileInfo->Name,
-        &NameInfo->FinalComponent,
-        NameInfo->FinalComponent.Length
-    );
+    UnicodeStrToStaticWSTR(FileInfo->Path, &NameInfo->Name, &useless);
+    UnicodeStrToStaticWSTR(FileInfo->Name, &NameInfo->FinalComponent, &useless);
 
     return STATUS_SUCCESS;
 }
@@ -119,14 +116,15 @@ static NTSTATUS GetNameInfo(_Out_ PFLT_FILE_NAME_INFORMATION* NameInfo, _In_ PFL
          */
         Status = FltGetFileNameInformation(Data, FLT_FILE_NAME_OPENED | QueryMethod, NameInfo);
         if (!NT_SUCCESS(Status)) {
-            DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FltGetFileNameInformation 2 failed\n");
+            Assert(NT_SUCCESS(Status), "at FltGetNameInformation().");
             return Status;
         }
     }
 
     Status = FltParseFileNameInformation(*NameInfo);
     if (!NT_SUCCESS(Status)) {
-        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FltParseFileNameInformation failed\n");
+        Assert(NT_SUCCESS(Status), "at FltParseFileNameInformation().");
+        //DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FltParseFileNameInformation failed\n");
         FltReleaseFileNameInformation(*NameInfo);
     }
 
@@ -151,16 +149,18 @@ NTSTATUS FileInfoInit(_Out_ PFILE_INFO FileInfo, _In_ PFLT_CALLBACK_DATA Data) {
     NTSTATUS Status;
     PFLT_FILE_NAME_INFORMATION NameInfo;
 
-
     Status = GetNameInfo(&NameInfo, Data);
     if (!NT_SUCCESS(Status)) {
-        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FsInfoInit failed 1\n");
+        Assert(NT_SUCCESS(Status), "by GetNameInfo().");
+        //DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FsInfoInit failed 1\n");
         return Status;
     }
-
+    NameInfo->Name.Buffer[NameInfo->Name.Length / sizeof *NameInfo->Name.Buffer - 1] = 0;
+    DbgPrint("NameInfo->Name: %ws\n", NameInfo->Name.Buffer);
     Status = InitFileInfoFields(FileInfo, NameInfo);
     if (!NT_SUCCESS(Status)) {
-        DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FsInfoInit failed 2\n");
+        Assert(NT_SUCCESS(Status), "by InitFileInfoFields().");
+        //DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "FsInfoInit failed 2\n");
     }
 
     /* As 'NameInfo' is no longer necessary, we deallocate it. */
@@ -201,8 +201,16 @@ void FileInfoFree(_Inout_ PFILE_INFO* FileInfo) {
  */
 void FileInfoCopy(_Out_ PFILE_INFO_STATIC Dest, _In_ PFILE_INFO Src) {
 
+    Assert(Dest != NULL, "Dest is NULL");
+    Assert(Src != NULL, "Src is NULL");
+
     if (Dest && Src) {
+        DbgPrint("sizeof Dest->Name = %zu\n", sizeof Dest->Name);
+        DbgPrint("Src->Name: %ws\n", Src->Name);
+        DbgPrint("Src->Path: %ws\n", Src->Path);
         RtlCopyMemory(Dest->Name, Src->Name, sizeof Dest->Name);
+        DbgPrint("Dest->Name: %ws\n", Dest->Name);
         RtlCopyMemory(Dest->Path, Src->Path, sizeof Dest->Path);
+        DbgPrint("Dest->Path: %ws\n", Dest->Path);
     }
 }

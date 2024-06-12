@@ -29,7 +29,7 @@ void WORDDataToUnicodeSTR(
 );
 
 NTSTATUS UnicodeStrToStaticWSTR(
-    _Out_ WCHAR Dest[MAX_PATH],
+    _Inout_ WCHAR Dest[MAX_PATH],
     _In_ PUNICODE_STRING Src,
     _Inout_ PULONG pSize
 );

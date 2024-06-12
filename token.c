@@ -159,7 +159,7 @@ NTSTATUS TokenInfoGet(
 
 	Status = PsLookupProcessByProcessId(PID, &eProc);
 	if (!NT_SUCCESS(Status)) {
-		DbgPrintSt("PsLookupProcessByProcessId failed", Status);
+		DbgPrintSt("PsLookupProcessByProcessId failed No token info get\n", Status);
 		return Status;
 	}
 		
@@ -174,7 +174,8 @@ NTSTATUS TokenInfoGet(
 		DbgPrintSt("AcquireTokenInfo2 failed", Status);
 		return Status;
 	}
-
+	
+	ObDereferenceObject(eProc);
 	//Status = NtOpenProcessToken(PID, TOKEN_QUERY | TOKEN_QUERY_SOURCE, &TokenHandle);
 	//if (!NT_SUCCESS(Status)) {
 	//	DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "NtQueryInformationToken failed 5 %x\n", Status);

@@ -11,8 +11,10 @@ PLOAD_IMAGE_INFO LoadImageInfoAlloc(_In_ POOL_TYPE PoolType)
     PLOAD_IMAGE_INFO LoadImageInfo;
 
     LoadImageInfo = ExAllocatePoolWithTag(PoolType, sizeof(*LoadImageInfo), 'load');
-    if (!LoadImageInfo)
+    if (!LoadImageInfo) {
+        Assert(LoadImageInfo != NULL, "at ExAllocatePoolWithTag().");
         return NULL;
+    }
 
     LoadImageInfo->PoolType = PoolType;
 
@@ -37,8 +39,10 @@ NTSTATUS GetExtendedInfo(_In_ PLOAD_IMAGE_INFO LoadImageInfo, _In_ PIMAGE_INFO I
 
     LoadImageInfo->FileNameSize = MAX_PATH;
     Status = UnicodeStrToStaticWSTR(LoadImageInfo->FileName, FileName, &LoadImageInfo->FileNameSize);
-    if (!NT_SUCCESS(Status))
+    if (!NT_SUCCESS(Status)) {
+        Assert(NT_SUCCESS(Status), "by UnicodeStrToStatic().");
         ExFreePoolWithTag(LoadImageInfo->FullImageName, 'wstr');
+    }
 
     return Status;
 }
@@ -58,16 +62,21 @@ NTSTATUS InitLoadImageInfoFields(_In_ PLOAD_IMAGE_INFO LoadImageInfo, _In_ PIMAG
     LoadImageInfo->FullImageNameSize = MAX_PATH;
     Status = UnicodeStrToStaticWSTR(LoadImageInfo->FullImageName, FullImageName, &LoadImageInfo->FullImageNameSize);
     if (!NT_SUCCESS(Status)) {
+        Assert(NT_SUCCESS(Status), "by UnicodeStrToStaticWSTR().");
         ExFreePoolWithTag(LoadImageInfo->FullImageName, 'wstr');
         return Status;
     }
 
     if (!ImageInfo->ExtendedInfoPresent) {
+        Assert(ImageInfo->ExtendedInfoPresent != NULL, "ImageInfo->ExtendedInfoPresent is NULL.");
         //LoadImageInfo->FileName = NULL;
         return Status;
     }
 
     Status = GetExtendedInfo(LoadImageInfo, ImageInfo);
+    if (!NT_SUCCESS(Status)) {
+        Assert(NT_SUCCESS(Status), "by GetExtendedInfo().");
+    }
     return Status;
 }
 
@@ -84,8 +93,10 @@ NTSTATUS LoadImageInfoInit(_In_ PLOAD_IMAGE_INFO LoadImageInfo, _In_ PIMAGE_INFO
     NTSTATUS Status;
 
     Status = InitLoadImageInfoFields(LoadImageInfo, ImageInfo, FullImageName);
-    if (!NT_SUCCESS(Status))
+    if (!NT_SUCCESS(Status)) {
+        Assert(NT_SUCCESS(Status), "by InitLoadImageInfoFields().");
         return Status;
+    }
 
     RtlCopyMemory(&LoadImageInfo->ImageInfo, ImageInfo, sizeof(*ImageInfo));
 
@@ -112,6 +123,7 @@ void LoadImageInfoDeInit(_In_ PLOAD_IMAGE_INFO LoadImageInfo)
  */
 void LoadImageInfoFree(_Inout_ PLOAD_IMAGE_INFO* LoadImageInfo)
 {
+
     if (LoadImageInfo || *LoadImageInfo)
         return;
 
@@ -135,14 +147,18 @@ PLOAD_IMAGE_INFO LoadImageInfoGet(_In_ POOL_TYPE PoolType, PLOAD_IMAGE_DATA Load
     PLOAD_IMAGE_INFO LoadImageInfo;
 
     LoadImageInfo = LoadImageInfoAlloc(PoolType);
-    if (!LoadImageInfo)
+    if (!LoadImageInfo) {
+        Assert(LoadImageInfo != NULL, "by LoadImageInfoAlloc().");
         return NULL;
+    }
 
     LoadImageInfo->PID = LoadData->ProcessId;
 
     Status = LoadImageInfoInit(LoadImageInfo, LoadData->ImageInfo, LoadData->FullImageName);
-    if (!NT_SUCCESS(Status))
+    if (!NT_SUCCESS(Status)) {
+        Assert(NT_SUCCESS(Status), "by LoadImageInfoInit().");
         LoadImageInfoFree(&LoadImageInfo);
+    }
 
     return LoadImageInfo;
 }
@@ -152,12 +168,15 @@ static inline void ImageInfoCopy(PIMAGE_INFO Dest, PIMAGE_INFO Src) {
 }
 
 void LoadImageCopy(PLOAD_IMAGE_INFO_STATIC Dest, PLOAD_IMAGE_INFO Src) {
-    ImageInfoCopy(&Dest->ImageInfo, &Src->ImageInfo);
 
-    Dest->PID = Src->PID;
-    Dest->FullImageNameSize = Src->FullImageNameSize;
-    Dest->FileNameSize = Src->FileNameSize;
+    if (Dest && Src) {
+        ImageInfoCopy(&Dest->ImageInfo, &Src->ImageInfo);
 
-    RtlCopyMemory(Dest->FullImageName, Src->FullImageName, sizeof Dest->FullImageName );
-    RtlCopyMemory(Dest->FileName, Src->FileName, sizeof Dest->FileName);
+        Dest->PID = Src->PID;
+        Dest->FullImageNameSize = Src->FullImageNameSize;
+        Dest->FileNameSize = Src->FileNameSize;
+
+        RtlCopyMemory(Dest->FullImageName, Src->FullImageName, sizeof Dest->FullImageName);
+        RtlCopyMemory(Dest->FileName, Src->FileName, sizeof Dest->FileName);
+    }
 }

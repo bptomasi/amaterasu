@@ -24,4 +24,27 @@ typedef enum InfoType INFO_TYPE, * PINFO_TYPE;
 #define DbgPrintSt(fmt, ...) \
 	DbgPrint(fmt##" -- %x\n", __VA_ARGS__)
 
+#define Debug(fmt, ...)				\
+DbgPrintEx(							\
+	DPFLTR_IHVDRIVER_ID,			\
+	DPFLTR_ERROR_LEVEL,				\
+	fmt"\n",						\
+	__VA_ARGS__						\
+)
+
+#define AssertExpr(expr, fmt, ...)							\
+((expr)														\
+	? (void)0												\
+	: Debug(												\
+		"Assertion failed - %s:%s:%d: "#expr" - "fmt,		\
+		__FILE__,											\
+		__func__,											\
+		__LINE__,											\
+		__VA_ARGS__											\
+	)														\
+)
+
+#define Assert(expr, ...) AssertExpr(expr, __VA_ARGS__)
+
+
 #endif  /* COMMON_H */
