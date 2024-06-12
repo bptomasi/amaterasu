@@ -9,7 +9,7 @@ ClassGuid   = {b86dff51-a31e-4bac-b3cf-e8cfe75c9fc2}
 Class = "ActivityMonitor"
 ClassGuid = {b86dff51-a31e-4bac-b3cf-e8cfe75c9fc2}
 Provider    = %ManufacturerName%
-DriverVer = 06/12/2024,16.43.35.249
+DriverVer = 06/12/2024,16.45.24.819
 CatalogFile = MiniFilter.cat
 PnpLockDown=1
 
