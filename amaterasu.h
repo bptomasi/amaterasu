@@ -13,6 +13,13 @@
 #define CALLBACK_NUMBER 4
 
 
+struct _DriverSettings {
+    BOOLEAN EnabledCallbacks[CALLBACK_NUMBER];
+    ULONG ListMaxRecords;
+};
+
+typedef struct _DriverSettings DRIVER_SETTINGS, * PDRIVER_SETTINGS;
+
 enum CallbacksTypes {
     FS_CALLBACK,
     PROC_CALLBACK,
@@ -26,6 +33,7 @@ typedef enum CallbacksTypes CALLBACK_TYPES, * PCALLBACK_TYPES;
 struct Amaterasu {
 
     PDRIVER_OBJECT  DriverObject;
+    PUNICODE_STRING RegistryPath;
     PFLT_FILTER     FilterHandle;
     
     PINFO_LIST      InfoList;
@@ -39,10 +47,12 @@ struct Amaterasu {
 extern struct Amaterasu Amaterasu;
 
 
-
 NTSTATUS Create(PDEVICE_OBJECT DeviceObject, PIRP Irp);
 
 NTSTATUS Close(PDEVICE_OBJECT DeviceObject, PIRP Irp);
+
+NTSTATUS AmaterasuSetup(PIRP Irp, PIO_STACK_LOCATION IrpIoStack, PULONG InfoSize);
+
 
 /*
  *	DriverEntry() - Initializes the driver upon loading into memory.

@@ -47,10 +47,14 @@ typedef struct RegInfo REG_INFO, * PREG_INFO;
 
 typedef struct RegInfoStatic REG_INFO_STATIC, * PREG_INFO_STATIC;
 
+PREG_INFO RegInfoAlloc(_PoolType_ POOL_TYPE PoolType);
+
 PREG_INFO RegInfoGet(
 	_PoolType_ POOL_TYPE PoolType,
 	PREG_INFO_DATA RegInfoData
 );
+
+extern NTSTATUS RegInfoInit(PREG_INFO RegInfo, REG_NOTIFY_CLASS RegOperation, PVOID RegStruct);
 
 void RegInfoCopy(
 	PREG_INFO_STATIC StaticRegInfo,

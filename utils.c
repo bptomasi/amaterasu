@@ -59,20 +59,34 @@ NTSTATUS UnicodeStrToWSTR(_In_ POOL_TYPE PoolType, _In_ PUNICODE_STRING Src, _Ou
      *  add '1' to it.
      */
     Size = Src->Length + sizeof *Wstr;
+    
+    DbgPrint("Src_>lenghth %ul\n", Size );
     Wstr = ExAllocatePoolWithTag(PoolType, Size, 'wstr');
+    
+    DbgPrint("teste 2\n");
     if(!Wstr) {
         Assert(Wstr != NULL, "at ExAllocatePoolWithTag().\n");
         return STATUS_INSUFFICIENT_RESOURCES;
     }
 
+    DbgPrint("teste 3\n");
     SIZE_T Ind = Size / sizeof * Wstr;
+    DbgPrint("Ind; %lu", Ind);
 
+
+    DbgPrint("teste 4\n");
     /* null terminate the string. */
     Wstr[Ind - 1] = 0;
-    RtlCopyBytes(Wstr, Src->Buffer, Size);
+    
+    DbgPrint("teste 5\n");
+    RtlCopyMemory(Wstr, Src->Buffer, Src->Length);
 
+    DbgPrint("pSize %p %llx\n",pSize, pSize );
     *pSize = Size;
+    DbgPrint("teste 7\n");
     *Dest = Wstr;
+    DbgPrint("teste 8\n");
+
 
     DbgPrint("Saiu do UnicodeStrToWSTR");
     return STATUS_SUCCESS;

@@ -167,12 +167,13 @@ static NTSTATUS AmaterasuInit(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_ST
         return STATUS_UNSUCCESSFUL;
     }
 
-
-
     Amaterasu.DriverObject = DriverObject;
+    Amaterasu.RegistryPath = RegistryPath;
 
     return Status;
 }
+
+
 
 NTSTATUS Create(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
     return STATUS_SUCCESS;
@@ -181,6 +182,27 @@ NTSTATUS Create(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
 NTSTATUS Close(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
     return STATUS_SUCCESS;
 }
+
+NTSTATUS AmaterasuSetup(PIRP Irp, PIO_STACK_LOCATION IrpIoStack, PULONG InfoSize) {
+	NTSTATUS Status = STATUS_SUCCESS;
+    PDRIVER_SETTINGS DriverSettings; 
+    ULONG BufferLen;
+    
+    DriverSettings = SystemBuffer(Irp);
+	BufferLen = OutputBufferLength(IrpIoStack);
+
+    RtlCopyMemory(Amaterasu.EnabledCallbacks, DriverSettings->EnabledCallbacks, CALLBACK_NUMBER * sizeof * DriverSettings->EnabledCallbacks);
+
+	AmaterasuInitFilters(Amaterasu.DriverObject);
+
+    Amaterasu.InfoList = InfoListGet(NonPagedPool, DriverSettings->ListMaxRecords);
+    if (!Amaterasu.InfoList) {
+        return STATUS_UNSUCCESSFUL;
+    }
+
+	return Status;
+}
+
 
 NTSTATUS DeviceSetup(PDRIVER_OBJECT DriverObject) {
     NTSTATUS Status;

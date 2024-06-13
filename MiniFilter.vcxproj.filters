@@ -81,6 +81,9 @@
     <ClCompile Include="callbacks.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="reginfotest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MiniFilter.rc">

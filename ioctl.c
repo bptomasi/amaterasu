@@ -23,7 +23,7 @@ static PINFO InfoListRemoveTail(_Inout_ PINFO_LIST InfoList) {
 }
 
 
-static inline NTSTATUS CloneSetup(
+static inline NTSTATUS InfoCloneSetup(
 	PIRP Irp,
 	PIO_STACK_LOCATION IrpIoStack,
 	PINFO* Info,
@@ -51,7 +51,7 @@ NTSTATUS InfoClone(PIRP Irp, PIO_STACK_LOCATION IrpIoStack, PULONG InfoSize) {
 	PINFO_STATIC InfoBuffer;
 	ULONG InfoBufferLen;
 
-	status = CloneSetup(Irp,IrpIoStack, &Info, &InfoBuffer, &InfoBufferLen);
+	status = InfoCloneSetup(Irp,IrpIoStack, &Info, &InfoBuffer, &InfoBufferLen);
 	if (!NT_SUCCESS(status) || !InfoBuffer) {
 		*InfoSize = 0;
 		return STATUS_SUCCESS;
@@ -70,6 +70,8 @@ NTSTATUS InfoClone(PIRP Irp, PIO_STACK_LOCATION IrpIoStack, PULONG InfoSize) {
 }
 
 
+
+
 NTSTATUS IoControl(PDEVICE_OBJECT Device, PIRP Irp) {
 	PIO_STACK_LOCATION IrpIoStack = IoGetCurrentIrpStackLocation(Irp);
 	ULONG IoCtl, ClonedInfoSize = 0;
@@ -80,6 +82,9 @@ NTSTATUS IoControl(PDEVICE_OBJECT Device, PIRP Irp) {
 		switch (IoCtl) {
 		case IOCTL_GET_INFO:
 			status = InfoClone(Irp, IrpIoStack, &ClonedInfoSize);
+			break;
+		case IOCTL_AMATERASU_SETUP:
+			status = AmaterasuSetup(Irp,IrpIoStack, &ClonedInfoSize);
 			break;
 		default:
 			KdPrint(("default io control operation!!!\n"));

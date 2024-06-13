@@ -88,7 +88,7 @@ NTSTATUS AcquireTokenInfo(
 		return Status;
 	}
 
-	if (TokenInfo->Type == TokenImpersonation) {
+	if (*TokenInfo->Type == TokenImpersonation) {
 		Status = NtQueryInformationToken(TokenHandle, TokenImpersonationLevel, &TokenInfo->ImpersonationLevel, sizeof(TokenInfo->ImpersonationLevel), &ReturnLength);
 		if (!NT_SUCCESS(Status)) {
 			DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "NtQueryInformationToken failed 4 info : %x %d\n", Status, TokenInfo->Type);
