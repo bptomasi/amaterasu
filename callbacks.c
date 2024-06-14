@@ -109,18 +109,34 @@ NTSTATUS AmaterasuRegCallback(
 	REG_INFO_DATA RegInfoData;
 
 	Status = STATUS_SUCCESS;
+
+	PREG_SET_VALUE_KEY_INFORMATION RegSt = RegStruct;
+
 	switch ((REG_NOTIFY_CLASS)RegNotifyClass)
 	{
 	case RegNtSetValueKey:
+		DbgPrint("reg callbacks path : %ws\n",((PREG_SET_VALUE_KEY_INFORMATION)RegStruct)->ValueName->Buffer)
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		DbgPrint("%s:%d: &RegStruct: %p\n", __func__, __LINE__, RegSt);
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		DbgPrint("%s:%d: &RegStruct->ValueName: %p\n", __func__, __LINE__, RegSt->ValueName);
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		DbgPrint("%s:%d: &RegStruct->ValueName->Buffer: %p\n", __func__, __LINE__, RegSt->ValueName->Buffer);
+		DbgPrint("%s:%d: &RegStruct->ValueName->Length: %\n", __func__, __LINE__, RegSt->ValueName->Length);
+		break;
 	case RegNtDeleteValueKey:
 		break;
 
 	default:
 		return Status;
 	}
+
 	
 	RegInfoData.RegNotifyClass = (REG_NOTIFY_CLASS)RegNotifyClass;
 	RegInfoData.RegStruct = RegStruct;
+
+
 
 	Status = InfoListAppend(Amaterasu.InfoList, &RegInfoData, INFO_REG);
 

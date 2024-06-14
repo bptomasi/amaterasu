@@ -119,6 +119,9 @@ NTSTATUS InfoInit(_Out_ PINFO Info, _In_ PVOID Data, _In_ INFO_TYPE InfoType) {
 
     InitTimeFields(&Info->TimeFields);
 
+    PREG_SET_VALUE_KEY_INFORMATION RegStruct = ((PREG_INFO_DATA)Data)->RegStruct;
+    DbgPrint("%s:%d: &RegStruct = %p\n", __func__, __LINE__, RegStruct);
+
     Info->InfoType = InfoType;
     //Info->Info.Data = funcs[InfoType].get(Info->PoolType, Data);
     switch (InfoType) {

@@ -61,7 +61,7 @@ static NTSTATUS GetKeyData(PREG_INFO RegInfo, PREG_SET_VALUE_KEY_INFORMATION Reg
 
 	RegInfo->DataType = RegStruct->Type;
 	RegInfo->DataSize = RegStruct->DataSize;
-
+	DbgPrint("Entrou no GetKeyData()\n");
 	switch (RegStruct->Type) {
 	case REG_SZ:
 		RtlCopyMemory(Data.Buffer, RegStruct->Data, RegStruct->DataSize);
@@ -90,28 +90,122 @@ static NTSTATUS GetKeyData(PREG_INFO RegInfo, PREG_SET_VALUE_KEY_INFORMATION Reg
 
 	ExFreePoolWithTag(Data.Buffer, 'buf');
 
+	DbgPrint("Saiu do GetKeyData()\n\n");
 	return STATUS_SUCCESS;
 }
 
-static NTSTATUS AcquireCompleteName(PREG_INFO RegInfo, PVOID Object, PUNICODE_STRING* Out) {
-
+static NTSTATUS AcquireCompleteName(PREG_INFO RegInfo, PVOID Object, POBJECT_NAME_INFORMATION* ObjectName) {
+	DbgPrint("entrou em %s\n", __func__);
 	NTSTATUS Status;
+	ULONG ObjNameLen = 0, ReturnLen = 0;
+	POBJECT_NAME_INFORMATION auxObjName = NULL;
 
 	Assert(RegInfo);
 	Assert(Object);
 
+	DbgPrint("%s:%d\n", __func__, __LINE__);
 	Status = STATUS_UNSUCCESSFUL;
+	DbgPrint("%s:%d\n", __func__, __LINE__);
 	if (!RegInfo || !Object) {
+		DbgPrint("%s:%d\n", __func__, __LINE__);
 		return Status;
 	}
 
-	DbgPrint("%s:Antes CmCallbackGetKeyObjectID()\n", __func__);
-	Status = CmCallbackGetKeyObjectID(&Amaterasu.Cookie, Object, NULL, Out);
-	DbgPrint("%s:Depois CmCallbackGetKeyObjectID()\n", __func__);
-	if (!NT_SUCCESS(Status)) {
-		Assert(NT_SUCCESS(Status), "CmCallbackGetKeyObjectID()");
-		return Status;
+
+	DbgPrint("%s:%d\n", __func__, __LINE__);
+	KIRQL irql = KeGetCurrentIrql();
+	DbgPrint("%s:%d\n", __func__, __LINE__);
+	DbgPrint("IRQL: %u %c %p\n", irql, irql, &irql);
+	DbgPrint("%s:%d\n", __func__, __LINE__);
+
+	*ObjectName = NULL;
+	DbgPrint("%s:%d\n", __func__, __LINE__);
+	DbgPrint("Setou ObjectName == NULL\n");
+
+
+	DbgPrint("%s:%d\n", __func__, __LINE__);
+	Status = ObQueryNameString(Object, NULL, 0, &ObjNameLen);
+	DbgPrint("%s:%d\n", __func__, __LINE__);
+	DbgPrint("ObQueryNameString to get size\n");
+	if (Status = STATUS_INFO_LENGTH_MISMATCH) {
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		DbgPrint("mismatch\n");
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		ObjNameLen += sizeof(OBJECT_NAME_INFORMATION);
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		auxObjName = ExAllocatePool2(POOL_FLAG_NON_PAGED, ObjNameLen, 'obj');
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		if (!auxObjName) {
+			DbgPrint("%s:%d\n", __func__, __LINE__);
+			Status = STATUS_UNSUCCESSFUL;
+			DbgPrint("%s:%d\n", __func__, __LINE__);
+		}
+		else {
+			DbgPrint("%s:%d\n", __func__, __LINE__);
+			Status = ObQueryNameString(Object, auxObjName, ObjNameLen, &ObjNameLen);
+			DbgPrint("%s:%d\n", __func__, __LINE__);
+			if (!NT_SUCCESS(Status)) {
+				DbgPrint("%s:%d\n", __func__, __LINE__);
+				ExFreePoolWithTag(auxObjName, 'obj');
+				DbgPrint("%s:%d\n", __func__, __LINE__);
+				return STATUS_UNSUCCESSFUL;
+			}
+			DbgPrint("%s:%d\n", __func__, __LINE__);
+			*ObjectName = auxObjName;
+			DbgPrint("%s:%d\n", __func__, __LINE__);
+			DbgPrint("objectnaem : %s  %ws\n", __func__, (*ObjectName)->Name.Buffer);
+		}
 	}
+	else if (NT_SUCCESS(Status)) {
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		DbgPrint("ObQuery deu sucesso\n");
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		ObjNameLen = sizeof(OBJECT_NAME_INFORMATION);
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		auxObjName = (POBJECT_NAME_INFORMATION)ExAllocatePool2(POOL_FLAG_NON_PAGED, ObjNameLen, 'obj');
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		if (auxObjName != NULL) {
+			DbgPrint("%s:%d\n", __func__, __LINE__);
+			RtlZeroMemory(auxObjName, ObjNameLen);
+			DbgPrint("%s:%d\n", __func__, __LINE__);
+			*ObjectName = auxObjName;
+			DbgPrint("%s:%d\n", __func__, __LINE__);
+			Status = STATUS_SUCCESS;
+		}
+	}
+
+
+	//DbgPrint("%s:Antes CmCallbackGetKeyObjectID()\n", __func__);
+	////try
+	////{
+	//	DbgPrint("ObQueryNameString para pegar o tamanho\n")
+	//	//Status = ObQueryNameString(*Object, NULL, 0, &ReturnLen1);
+	//	DbgPrint("ObQueryNameString para pegar o tamanho dps\n")
+
+	//DbgPrint("Return len 1 %lu\n", ReturnLen1);
+
+	//	//Status = CmCallbackGetKeyObjectIDEx(&Amaterasu.Cookie, Object, NULL, Out,0);
+	//	DbgPrint("ObQueryNameString \n")
+	//	Status = ObQueryNameString(Object, (PVOID)Out,Out->MaximumLength,&ReturnLen);
+	//	DbgPrint("ObQueryNameString dps \n")
+	///*}
+	//except(REGISTRY_FILTER_DRIVER_EXCEPTION) {
+	//	DbgPrint("REGISTRY_FILTER_DRIVER_EXCEPTION %x\n", Status);
+	//	DbgPrint("reg path : %ws\n", (*Out)->Buffer);
+	//};*/
+
+	//DbgPrint("reg path : %ws\n", Out->Buffer);
+	//DbgPrint("Return len %lu\n", ReturnLen);
+
+	//DbgPrint("%s:Depois CmCallbackGetKeyObjectID()\n", __func__);
+	//if (!NT_SUCCESS(Status)) {
+	//	Assert(NT_SUCCESS(Status), "CmCallbackGetKeyObjectID()");
+	//	return Status;
+	//}
+	//else {
+	//	DbgPrint("deu boa o reg path : %ws\n", Out->Buffer);
+
+	//}
 
 	return Status;
 }
@@ -122,24 +216,45 @@ NTSTATUS SetValueInit(
 ) {
 
 	NTSTATUS Status;
-	PUNICODE_STRING QueryStr;
+	UNICODE_STRING QueryStr;
+	InitUnicodeString(&QueryStr);
+
+	POBJECT_NAME_INFORMATION ObjectName;
 
 	Status = STATUS_UNSUCCESSFUL;
 	if (RegInfo && RegStruct) {
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		DbgPrint("%s:%d: &RegStruct: %p\n", __func__, __LINE__, RegStruct);
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		DbgPrint("%s:%d: &RegStruct->ValueName: %p\n", __func__, __LINE__, RegStruct->ValueName);
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		if (!RegStruct->ValueName) {
+			DbgPrint("%s:%d: RegStruct->ValueName is NULL!!!!\n", __func__, __LINE__);
+			return STATUS_UNSUCCESSFUL;
+		}
 
-		DbgPrint("%s:Entrando no AcquireCompleteName()\n", __func__);
-		Status = AcquireCompleteName(RegInfo, ((PREG_SET_VALUE_KEY_INFORMATION)RegStruct)->Object, &QueryStr);
-		DbgPrint("%s:Saiu do AcquireCompleteName()\n", __func__);
+		Status = AcquireCompleteName(RegInfo, RegStruct->Object, &ObjectName);
+		DbgPrint("%s:%d\n", __func__, __LINE__);
 		if (!NT_SUCCESS(Status)) {
+			DbgPrint("%s:%d\n", __func__, __LINE__);
 			Assert(NT_SUCCESS(Status), "AcquireCompleteName().");
+			DbgPrint("%s:%d\n", __func__, __LINE__);
 			return Status;
 		}
 
-		Status = UnicodeStrToWSTR(RegInfo->PoolType, QueryStr, &RegInfo->CompleteName, &RegInfo->CompleteNameSize);
+		DbgPrint("%s:%d\n", __func__, __LINE__);
+		Status = UnicodeStrToWSTR(RegInfo->PoolType, &ObjectName->Name, &RegInfo->CompleteName, &RegInfo->CompleteNameSize);
+		DbgPrint("%s:%d RegInfo->CompleteName : %p\n", __func__, __LINE__, RegInfo->CompleteName);
+		ExFreePoolWithTag(ObjectName, 'obj');
+		DbgPrint("%s:%d\n", __func__, __LINE__);
 		if (!NT_SUCCESS(Status)) {
+			DbgPrint("%s:%d\n", __func__, __LINE__);
 			Assert(NT_SUCCESS(Status), "UnicodeStrToWSTR().");
-			ExFreePool(RegInfo->CompleteName);
+			DbgPrint("%s:%d\n", __func__, __LINE__);
+			ExFreePoolWithTag(RegInfo->CompleteName, 'wstr');
+			DbgPrint("%s:%d\n", __func__, __LINE__);
 			RegInfo->CompleteName = NULL;
+			DbgPrint("%s:%d\n", __func__, __LINE__);
 			return Status;
 		}
 
@@ -184,11 +299,13 @@ NTSTATUS RegInfoInit(PREG_INFO RegInfo, REG_NOTIFY_CLASS RegOperation, PVOID Reg
 
 	NTSTATUS Status;
 
+    DbgPrint("%s:%d: &RegStruct = %p\n", __func__, __LINE__, RegStruct);
+
 	Status = STATUS_UNSUCCESSFUL;
 	DbgPrint("Entrou no RegInfoInit()\n");
-	if (RegOperation == RegNtSetValueKey) {
+	if (RegOperation == RegNtPreSetValueKey) {
 		DbgPrint("Entrando no SetInit");
-		Status = SetValueInit(RegInfo, ((PREG_SET_VALUE_KEY_INFORMATION)RegStruct)->Object);
+		Status = SetValueInit(RegInfo, RegStruct);
 	}
 	else {
 		//Status = DeleteValueInit(RegInfo, RegStruct);
