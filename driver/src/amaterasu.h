@@ -15,6 +15,7 @@
 struct _DriverSettings {
     BOOLEAN EnabledCallbacks[CALLBACK_NUMBER];
     ULONG ListMaxRecords;
+    WCHAR TargetName[MAX_PATH];
 };
 
 typedef struct _DriverSettings DRIVER_SETTINGS, * PDRIVER_SETTINGS;
@@ -34,10 +35,14 @@ struct Amaterasu {
     PDRIVER_OBJECT  DriverObject;
     PUNICODE_STRING RegistryPath;
     PFLT_FILTER     FilterHandle;
+
+    KSPIN_LOCK      HandleArrLock;
+    SIZE_T          HandleArrSize;
+    HANDLE          HandleArr[1024];
     
     PINFO_LIST      InfoList;
 
-    BOOLEAN EnabledCallbacks[CALLBACK_NUMBER];
+    PDRIVER_SETTINGS DriverSettings;
 
     LARGE_INTEGER Cookie;
 

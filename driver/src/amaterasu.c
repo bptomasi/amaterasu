@@ -138,36 +138,36 @@ static NTSTATUS AmaterasuInitFilters(_In_ PDRIVER_OBJECT DriverObject) {
 
     NTSTATUS Status;
 
-    if(Amaterasu.EnabledCallbacks[FS_CALLBACK]) {
+    if(Amaterasu.DriverSettings->EnabledCallbacks[FS_CALLBACK]) {
         Status = AmaterasuInitFsFilter(DriverObject);
         if(!NT_SUCCESS(Status)) {
             return Status;
         }
-        Amaterasu.EnabledCallbacks[FS_CALLBACK] = 0;
+        Amaterasu.DriverSettings->EnabledCallbacks[FS_CALLBACK] = 0;
     }
 
-    if(Amaterasu.EnabledCallbacks[PROC_CALLBACK]) {
+    if(Amaterasu.DriverSettings->EnabledCallbacks[PROC_CALLBACK]) {
         Status = AmaterasuInitProcFilter();
         if(!NT_SUCCESS(Status)) {
             return Status; 
         }
-        Amaterasu.EnabledCallbacks[PROC_CALLBACK] = 0;
+        Amaterasu.DriverSettings->EnabledCallbacks[PROC_CALLBACK] = 0;
     }
 
-    if(Amaterasu.EnabledCallbacks[LOAD_IMAGE_CALLBACK]) {
+    if(Amaterasu.DriverSettings->EnabledCallbacks[LOAD_IMAGE_CALLBACK]) {
         Status = AmaterasuInitLoadImageFilter();
         if(!NT_SUCCESS(Status)) {
             return Status; 
         }
-        Amaterasu.EnabledCallbacks[LOAD_IMAGE_CALLBACK] = 0;
+        Amaterasu.DriverSettings->EnabledCallbacks[LOAD_IMAGE_CALLBACK] = 0;
     }
 
-    if(Amaterasu.EnabledCallbacks[REG_CALLBACK]) {
+    if(Amaterasu.DriverSettings->EnabledCallbacks[REG_CALLBACK]) {
         Status = AmaterasuInitRegFilter(DriverObject);
         if(!NT_SUCCESS(Status)) {
             return Status;
         }
-        Amaterasu.EnabledCallbacks[REG_CALLBACK] = 0;
+        Amaterasu.DriverSettings->EnabledCallbacks[REG_CALLBACK] = 0;
     }
 
     return Status;
@@ -188,6 +188,8 @@ static NTSTATUS AmaterasuInit(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_ST
     NTSTATUS Status;
 
     Status = STATUS_SUCCESS;
+
+    KeInitializeSpinLock(&Amaterasu.HandleArrLock);
 
     AmaterasuInitFilters(DriverObject);
     Amaterasu.InfoList = InfoListGet(NonPagedPool, MAX_RECORDS);
@@ -245,7 +247,7 @@ NTSTATUS AmaterasuSetup(_In_ PIRP Irp, _In_ PIO_STACK_LOCATION IrpIoStack, _Out_
 	NTSTATUS Status;
     PDRIVER_SETTINGS DriverSettings; 
     ULONG BufferLen;
-    o obtain h
+
     Status = STATUS_SUCCESS;
     DriverSettings = SystemBuffer(Irp);
 	BufferLen = OutputBufferLength(IrpIoStack);
@@ -255,6 +257,8 @@ NTSTATUS AmaterasuSetup(_In_ PIRP Irp, _In_ PIO_STACK_LOCATION IrpIoStack, _Out_
     if (!Amaterasu.InfoList) {
         return STATUS_UNSUCCESSFUL;
     }
+
+    Amaterasu.DriverSettings = DriverSettings;
 
 	return Status;
 }
@@ -344,20 +348,20 @@ NTSTATUS AmaterasuUnload(_In_ FLT_FILTER_UNLOAD_FLAGS Flags) {
 
     AmaterasuCleanup();
 
-    if(!Amaterasu.EnabledCallbacks[FS_CALLBACK]) {
+    if(!Amaterasu.DriverSettings->EnabledCallbacks[FS_CALLBACK]) {
         FltUnregisterFilter(Amaterasu.FilterHandle);
     }
 
-    if(!Amaterasu.EnabledCallbacks[PROC_CALLBACK]) {
+    if(!Amaterasu.DriverSettings->EnabledCallbacks[PROC_CALLBACK]) {
         PsSetCreateProcessNotifyRoutine(&AmaterasuProcCallback, TRUE);
         PsRemoveCreateThreadNotifyRoutine(&AmaterasuThreadCallback);
     }
     
-    if(!Amaterasu.EnabledCallbacks[LOAD_IMAGE_CALLBACK]) {
+    if(!Amaterasu.DriverSettings->EnabledCallbacks[LOAD_IMAGE_CALLBACK]) {
         PsRemoveLoadImageNotifyRoutine(&AmaterasuLoadImageCallback);
     }
 
-    if(!Amaterasu.EnabledCallbacks[REG_CALLBACK]) {
+    if(!Amaterasu.DriverSettings->EnabledCallbacks[REG_CALLBACK]) {
         CmUnRegisterCallback(Amaterasu.Cookie);
     }
 }

@@ -96,7 +96,7 @@ NTSTATUS IoControl(_In_ PDEVICE_OBJECT Device, _In_ PIRP Irp) {
 			    status = InfoClone(Irp, IrpIoStack, &ClonedInfoSize);
 			    break;
 		    case IOCTL_AMATERASU_SETUP:
-			    status = AmaterasuSetup(Irp,IrpIoStack, &ClonedInfoSize);
+			    status = AmaterasuSetup(Irp, IrpIoStack, &ClonedInfoSize);
 			    break;
 		    default:
 			    KdPrint(("default io control operation!!!\n"));
