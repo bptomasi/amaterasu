@@ -51,7 +51,7 @@ PREG_INFO RegInfoGet(_PoolType_ POOL_TYPE PoolType, _In_ PREG_INFO_DATA RegInfoD
 		return NULL;
 	}
 
-	Status = RegInfoInit(RegInfo, RegInfoData->RegNotifyClass, RegInfoData->RegStruct);
+	Status = RegInfoInit(RegInfo, RegInfoData);
 	if (!NT_SUCCESS(Status)) {
 		RegInfoFree(&RegInfo);
 	}
@@ -76,7 +76,7 @@ static NTSTATUS GetRegBinaryData(_PoolType_ POOL_TYPE PoolType, _Inout_ PUNICODE
     PVOID Buffer;
 
     Status = STATUS_UNSUCCESSFUL;
-	Buffer = ExAllocatePool2(NonPagedPool, RegStruct->DataSize, 'buf');
+	Buffer = ExAllocatePool2(PoolType, RegStruct->DataSize, 'buf');
 	if (!Buffer) {
 		return Status;
 	}
@@ -109,7 +109,7 @@ static NTSTATUS GetRegWORDData(_PoolType_ POOL_TYPE PoolType, _Inout_ PUNICODE_S
 
     Status = STATUS_UNSUCCESSFUL;
 	Buffer = ExAllocatePool2(PoolType, RegStruct->DataSize, 'buf');
-	if (!buffer) {
+	if (!Buffer) {
 		return Status;
 	}
 
@@ -159,7 +159,7 @@ static NTSTATUS GetKeyData(_Inout_ PREG_INFO RegInfo, _In_ PREG_SET_VALUE_KEY_IN
 	    case REG_BINARY:
 	    case REG_DWORD :
 	    case REG_QWORD :
-		    GetRegWORDData(&Data, RegStruct);
+		    GetRegWORDData(RegInfo->PoolType ,&Data, RegStruct);
 		    break;
 	}
 
@@ -180,7 +180,7 @@ static NTSTATUS GetKeyData(_Inout_ PREG_INFO RegInfo, _In_ PREG_SET_VALUE_KEY_IN
  *    -
  *    -
  */
-static NTSTATUS AcquireCompleteName(_Inout_ RegInfo PoolType, _In_ PVOID Object) {
+static NTSTATUS AcquireCompleteName(_Inout_ PREG_INFO RegInfo, _In_ PVOID Object) {
 
 	NTSTATUS Status;
 	ULONG ObjNameLen;
@@ -197,7 +197,7 @@ static NTSTATUS AcquireCompleteName(_Inout_ RegInfo PoolType, _In_ PVOID Object)
     AuxObjName = NULL;
 
 	Status = ObQueryNameString(Object, NULL, 0, &ObjNameLen);
-	if (Status = STATUS_INFO_LENGTH_MISMATCH) {
+	if (Status == STATUS_INFO_LENGTH_MISMATCH) {
 		ObjNameLen += sizeof *AuxObjName;
 		AuxObjName = ExAllocatePool2(RegInfo->PoolType, ObjNameLen, 'obj');
 		if (!AuxObjName) {
@@ -220,13 +220,15 @@ static NTSTATUS AcquireCompleteName(_Inout_ RegInfo PoolType, _In_ PVOID Object)
         }
     }
 
-    Status = UnicodeStrToWSTR(RegInfo->PoolType, &AuxObjName->Name, &RegInfo->CompleteName, &RegInfo->CompleteNameSize);
-    ExFreePoolWithTag(ObjectName, 'obj');
-    if (!NT_SUCCESS(Status)) {
-        ExFreePoolWithTag(RegInfo->CompleteName, 'wstr');
-        RegInfo->CompleteName = NULL;
-        return Status;
-    }
+	if (AuxObjName) {
+		Status = UnicodeStrToWSTR(RegInfo->PoolType, &AuxObjName->Name, &RegInfo->CompleteName, &RegInfo->CompleteNameSize);
+		ExFreePoolWithTag(AuxObjName, 'obj');
+		if (!NT_SUCCESS(Status)) {
+			ExFreePoolWithTag(RegInfo->CompleteName, 'wstr');
+			RegInfo->CompleteName = NULL;
+			return Status;
+		}
+	}
 
 	return Status;
 }
@@ -251,7 +253,7 @@ static NTSTATUS SetValueInit(_Inout_ PREG_INFO RegInfo, _In_ PREG_SET_VALUE_KEY_
 		if (!NT_SUCCESS(Status)) {
 			return Status;
 		}
-Callers of RtlCopyMemory can be running at any IRQL if the sour
+		// Callers of RtlCopyMemory can be running at any IRQL if the sour
 		Status = GetKeyData(RegInfo, RegStruct);
 	}
 
@@ -319,7 +321,7 @@ NTSTATUS RegInfoInit(_Inout_ PREG_INFO RegInfo, _In_ PREG_INFO_DATA RegInfoData)
  *  @Dest:
  *  @Src:
  */
-void RegInfoCopy(_Out_ PREG_INFO_STATIC Dest, _In_ PREG_INFO Src) {
+void RegInfoCopy(_Inout_ PREG_INFO_STATIC Dest, _In_ PREG_INFO Src) {
 
 	ULONG DataSize;
 

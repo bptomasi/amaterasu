@@ -16,7 +16,6 @@ PFILE_INFO FileInfoAlloc(_PoolType_ POOL_TYPE PoolType) {
 
     FileInfo = ExAllocatePool2(PoolType, sizeof * FileInfo, 'file');
     if (!FileInfo) {
-        Assert(FileInfo != NULL, "at ExAllocatePool2().");
         return NULL;
     }
 
@@ -53,13 +52,11 @@ PFILE_INFO FileInfoGet(_PoolType_ POOL_TYPE PoolType, _In_ PFLT_CALLBACK_DATA Da
 
     FileInfo = FileInfoAlloc(PoolType);
     if (!FileInfo) {
-        Assert(FileInfo != NULL, "by FileInfoAlloc().");
         return NULL;
     }
 
     Status = FileInfoInit(FileInfo, Data);
     if (!NT_SUCCESS(Status)) {
-        Assert(NT_SUCCESS(Status), "by FileInfoInit().");
         FileInfoFree(&FileInfo);
         return NULL;
     }

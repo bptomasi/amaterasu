@@ -55,7 +55,7 @@ NTSTATUS InfoClone(_In_ PIRP Irp, _In_ PIO_STACK_LOCATION IrpIoStack, _Out_ PULO
 
     Status = STATUS_SUCCESS;
 	Status = InfoCloneSetup(Irp,IrpIoStack, &Info, &InfoBuffer, &InfoBufferLen);
-	if (!NT_SUCCESS(status) || !InfoBuffer) {
+	if (!NT_SUCCESS(Status) || !InfoBuffer) {
 		return Status;
 	}
 
@@ -83,20 +83,22 @@ NTSTATUS IoControl(_In_ PDEVICE_OBJECT Device, _In_ PIRP Irp) {
 	PIO_STACK_LOCATION IrpIoStack;
 	NTSTATUS Status;
     ULONG IoCtl;
-    ULONG CloneInfoSize;
+    ULONG ClonedInfoSize;
+
+	UNREFERENCED_PARAMETER(Device);
 
     Status = STATUS_SUCCESS;
     IrpIoStack = IoGetCurrentIrpStackLocation(Irp);
-    CloneInfoSize = 0;
+    ClonedInfoSize = 0;
 
 	if (IrpIoStack) {
 		IoCtl = IrpIoStack->Parameters.DeviceIoControl.IoControlCode;
 		switch (IoCtl) {
 		    case IOCTL_GET_INFO:
-			    status = InfoClone(Irp, IrpIoStack, &ClonedInfoSize);
+			    Status = InfoClone(Irp, IrpIoStack, &ClonedInfoSize);
 			    break;
 		    case IOCTL_AMATERASU_SETUP:
-			    status = AmaterasuSetup(Irp, IrpIoStack, &ClonedInfoSize);
+			    Status = AmaterasuSetup(Irp, IrpIoStack, &ClonedInfoSize);
 			    break;
 		    default:
 			    KdPrint(("default io control operation!!!\n"));

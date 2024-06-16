@@ -10,7 +10,7 @@ struct Privileges {
 	LUID_AND_ATTRIBUTES Privileges[MAX_PRIV_COUNT];
 };
 
-typedef struct privileges PRIVILEGES, * PPRIVILEGES;
+typedef struct Privileges PRIVILEGES, * PPRIVILEGES;
 
 struct TokenInfo {
 	PTOKEN_TYPE Type;
@@ -31,12 +31,6 @@ struct TokenInfoStatic {
 typedef struct TokenInfoStatic TOKEN_INFO_STATIC, * PTOKEN_INFO_STATIC;
 
 extern NTSTATUS
-AcquireTokenInfo(
-	_In_ HANDLE TokenHandle,
-	_Out_ PTOKEN_INFO TokenInfo
-);
-
-extern NTSTATUS
 TokenInfoGet(
 	_Inout_ PTOKEN_INFO TokenInfo,
 	_In_ HANDLE PID
@@ -44,8 +38,8 @@ TokenInfoGet(
 
 extern void 
 TokenInfoCopy(
-	PTOKEN_INFO_STATIC Dest,
-	PTOKEN_INFO Src
+	_Out_ PTOKEN_INFO_STATIC Dest,
+	_In_ PTOKEN_INFO Src
 );
 
 #endif  /* TOKEN_INFO_H */

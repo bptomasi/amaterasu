@@ -1,5 +1,6 @@
 
 #include "callbacks.h"
+#include "amaterasu.h"
 
 static void AddPidToHandleArr(_In_ HANDLE PID) {
 
@@ -16,7 +17,7 @@ static void AddPidToHandleArr(_In_ HANDLE PID) {
 
 static BOOLEAN AreWeTrackingIt(_In_ HANDLE PID) {
 
-    BOOLEAN Ret;
+    BOOLEAN Ret = FALSE;
     NTSTATUS Status;
     PEPROCESS eProc;
     PUNICODE_STRING ImageName;
@@ -29,7 +30,7 @@ static BOOLEAN AreWeTrackingIt(_In_ HANDLE PID) {
         }
     } 
 
-    Status = PsLookupProcessById(PID, &eProc);
+    Status = PsLookupProcessByProcessId(PID, &eProc);
     if(NT_SUCCESS(Status)) {
         Status = SeLocateProcessImageName(eProc, &ImageName);
         if(NT_SUCCESS(Status)) {
@@ -49,12 +50,15 @@ FLT_PREOP_CALLBACK_STATUS AmaterasuDefaultPreCallback(
     _Flt_CompletionContext_Outptr_ PVOID* CompletionContext
 ) {
 
+    UNREFERENCED_PARAMETER(FltObjects);
+    UNREFERENCED_PARAMETER(CompletionContext);
+
     HANDLE PID;
 
-    PID = FltGetRequestorProcessId(Data);
+    PID = (HANDLE)FltGetRequestorProcessId(Data);
 
     if(AreWeTrackingIt(PID)) {
-        InfoListAppend(&Amaterasu.InfoList, Data, INFO_FS); 
+        InfoListAppend(Amaterasu.InfoList, Data, INFO_FS); 
     }
 
     return FLT_PREOP_SUCCESS_NO_CALLBACK;
@@ -91,18 +95,17 @@ NTSTATUS AmaterasuRegCallback(
 	REG_INFO_DATA RegInfoData;
     REG_NOTIFY_CLASS RegClass;
 
+    UNREFERENCED_PARAMETER(CallbackContext);
+
 	Status = STATUS_SUCCESS;
 
-    RegClass = (REG_NOTIFY_CLASS)RegNotifyClass;
-    if(RegClass == RegNtSetValueKey) {
-        PID = ((PREG_SET_VALUE_KEY_INFORMATION)RegStruct)->ProcessId;
-    } else {
-        if(RegClass == RegNtDeleteValueKey) {
-            PID = ((PREG_DELETE_VALUE_KEY_INFORMATION)RegStruct)->ProcessId;
-        } else {
-            return Status;
-        }
+    RegClass = (REG_NOTIFY_CLASS)RegNotifyClass; 
+
+    if (RegClass != RegNtSetValueKey && RegClass != RegNtDeleteValueKey) {
+        return Status;
     }
+
+    PID = PsGetCurrentProcessId();
 
     if(AreWeTrackingIt(PID)) {
 

@@ -158,7 +158,7 @@ void LoadImageCopy(_Out_ PLOAD_IMAGE_INFO_STATIC Dest, _In_ PLOAD_IMAGE_INFO Src
         Dest->FullImageNameSize = Src->FullImageNameSize;
         Dest->FileNameSize = Src->FileNameSize;
 
-        RtlCopyMemory(&Dest->ImageInfo, &Src->ImageInfo, sizeof *Src->ImageInfo);
+        RtlCopyMemory(&Dest->ImageInfo, &Src->ImageInfo, sizeof Src->ImageInfo);
         RtlCopyMemory(Dest->FullImageName, Src->FullImageName, sizeof Dest->FullImageName);
         RtlCopyMemory(Dest->FileName, Src->FileName, sizeof Dest->FileName);
     }

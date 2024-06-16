@@ -1,6 +1,9 @@
 #ifndef REGINFO_H
 #define REGINFO_H
 
+#include "common.h"
+#include "utils.h"
+
 struct RegInfoData {
 	REG_NOTIFY_CLASS RegNotifyClass;
 	PVOID RegStruct;

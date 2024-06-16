@@ -10,7 +10,7 @@
  *    -
  *    -
  */
-void InitUnicodeString(_Inout_ PUNICODE_STRING Str) {
+NTSTATUS InitUnicodeString(_Inout_ PUNICODE_STRING Str) {
 
     if(Str) {
         Str->Buffer = ExAllocatePool2(NonPagedPool, MAX_STR_SIZE, 'buf');
@@ -77,7 +77,7 @@ NTSTATUS UnicodeStrToWSTR(_In_ POOL_TYPE PoolType, _In_ PUNICODE_STRING Src, _Ou
 NTSTATUS UnicodeStrToStaticWSTR(_Inout_ WCHAR Dest[MAX_PATH], _In_ PUNICODE_STRING Src, _Inout_ PULONG pSize) {
 
     ULONG Min;
-    Min = min(Max_PATH - 1, Src->Length / sizeof(WCHAR) );
+    Min = min(MAX_PATH - 1, Src->Length / sizeof(WCHAR) );
 
     RtlZeroMemory(Dest, MAX_PATH * sizeof * Dest);
     RtlCopyMemory(Dest, Src->Buffer, Min * sizeof(WCHAR));
@@ -174,11 +174,11 @@ NTSTATUS GetImageName(_In_ HANDLE ID, _Out_ PWSTR ImageBuf) {
     NTSTATUS Status;
     PEPROCESS eProc;
     UNICODE_STRING ImageName;
-    PUNIDOCE_STRING pImageName;Callers of RtlCopyMemory can be running at any IRQL if the sour
+    PUNICODE_STRING pImageName; // Callers of RtlCopyMemory can be running at any IRQL if the sour
     ULONG ImageNameSize;
 
     pImageName = &ImageName;
-    Status     = InitUnicodeString(pImageName, MAX_PATH);
+    Status     = InitUnicodeString(pImageName);
     if(!NT_SUCCESS(Status)) {
         return Status;
     }

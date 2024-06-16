@@ -31,7 +31,7 @@ static const FLT_OPERATION_REGISTRATION Callbacks[] = {
  *  'FLT_REGISTRATION' structure provides a framework for defining the behavior
  *  of a file system filter driver within the Windows Filter Manager.
  */
-const FLT_REGISTRATION FilterRegistration = {
+FLT_REGISTRATION FilterRegistration = {
 
     sizeof(FLT_REGISTRATION),
     FLT_REGISTRATION_VERSION,
@@ -45,7 +45,7 @@ const FLT_REGISTRATION FilterRegistration = {
     FLTFL_REGISTRATION_SUPPORT_NPFS_MSFS | FLTFL_REGISTRATION_SUPPORT_DAX_VOLUME,
     NULL,
     Callbacks,
-    AmaterasuCleanup,
+    AmaterasuUnload,
     NULL,
     NULL,
     NULL,
@@ -73,7 +73,7 @@ static NTSTATUS AmaterasuInitRegFilter(_In_ PDRIVER_OBJECT DriverObject) {
     NTSTATUS Status;
 
     Status = CmRegisterCallbackEx(AmaterasuRegCallback, &REG_CALLBACK_ALTITUDE, DriverObject, NULL, &Amaterasu.Cookie, NULL);
-    if(!NT_SUCESS(Status)) {
+    if(!NT_SUCCESS(Status)) {
         return Status;
     }
 
@@ -136,7 +136,7 @@ static NTSTATUS AmaterasuInitFsFilter(_In_ PDRIVER_OBJECT DriverObject) {
  */
 static NTSTATUS AmaterasuInitFilters(_In_ PDRIVER_OBJECT DriverObject) {
 
-    NTSTATUS Status;
+    NTSTATUS Status = STATUS_SUCCESS;
 
     if(Amaterasu.DriverSettings->EnabledCallbacks[FS_CALLBACK]) {
         Status = AmaterasuInitFsFilter(DriverObject);
@@ -214,6 +214,8 @@ static NTSTATUS AmaterasuInit(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_ST
  *    -
  */
 NTSTATUS Create(_In_ PDEVICE_OBJECT DeviceObject, _In_ PIRP Irp) {
+    UNREFERENCED_PARAMETER(Irp);
+    UNREFERENCED_PARAMETER(DeviceObject);
     return STATUS_SUCCESS;
 }
 
@@ -228,6 +230,8 @@ NTSTATUS Create(_In_ PDEVICE_OBJECT DeviceObject, _In_ PIRP Irp) {
  *    -
  */
 NTSTATUS Close(_In_ PDEVICE_OBJECT DeviceObject, _In_ PIRP Irp) {
+    UNREFERENCED_PARAMETER(Irp);
+    UNREFERENCED_PARAMETER(DeviceObject);
     return STATUS_SUCCESS;
 }
 
@@ -242,7 +246,7 @@ NTSTATUS Close(_In_ PDEVICE_OBJECT DeviceObject, _In_ PIRP Irp) {
  *    -
  *    -
  */
-NTSTATUS AmaterasuSetup(_In_ PIRP Irp, _In_ PIO_STACK_LOCATION IrpIoStack, _Out_ PULONG InfoSize) {
+NTSTATUS AmaterasuSetup(PIRP Irp, PIO_STACK_LOCATION IrpIoStack, PULONG InfoSize) {
     
 	NTSTATUS Status;
     PDRIVER_SETTINGS DriverSettings; 
@@ -294,13 +298,13 @@ NTSTATUS DeviceSetup(_In_ PDRIVER_OBJECT DriverObject) {
     );
 
     if (NT_SUCCESS(Status)) {
-        Status = IoCreateSymbolicLink(&deviceSymLink, &driverName);
+        Status = IoCreateSymbolicLink(&DeviceSymLink, &DriverName);
         if (!NT_SUCCESS(Status)) {
             return Status;
         }
     }
 
-    DriverObject->DeviceObject = device;
+    DriverObject->DeviceObject = Device;
 
     return Status;
 }
@@ -345,6 +349,8 @@ NTSTATUS AmaterasuCleanup(void) {
  *    -
  */
 NTSTATUS AmaterasuUnload(_In_ FLT_FILTER_UNLOAD_FLAGS Flags) {
+
+    UNREFERENCED_PARAMETER(Flags);
 
     AmaterasuCleanup();
 

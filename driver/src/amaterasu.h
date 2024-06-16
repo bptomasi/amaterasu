@@ -64,9 +64,9 @@ Close(
 
 extern NTSTATUS
 AmaterasuSetup(
-    _In_ PIRP Irp, 
-    _In_ PIO_STACK_LOCATION IrpIoStack, 
-    _In_ PULONG InfoSize
+    PIRP Irp, 
+    PIO_STACK_LOCATION IrpIoStack, 
+    PULONG InfoSize
 );
 
 /*
@@ -84,5 +84,7 @@ DriverEntry(
     _In_ PDRIVER_OBJECT DriverObject,
     _In_ PUNICODE_STRING RegistryPath
 );
+
+NTSTATUS AmaterasuUnload(_In_ FLT_FILTER_UNLOAD_FLAGS Flags);
 
 #endif  /* AMATERASU_H */

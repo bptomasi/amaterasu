@@ -12,7 +12,7 @@
  *    - Pointer to the allocated 'PROC_INFO' structure on success.
  *    - 'NULL' if memory allocation fails.
  */
-PPROC_INFO ProcInfoAlloc(_PoolType_ PoolType) {
+PPROC_INFO ProcInfoAlloc(_PoolType_ POOL_TYPE PoolType) {
 
     PPROC_INFO ProcInfo;
 
@@ -59,7 +59,6 @@ PPROC_INFO ProcInfoGet(_PoolType_ POOL_TYPE PoolType, _In_ PFLT_CALLBACK_DATA Da
 
     Status = ProcInfoInit(ProcInfo, Data);
     if (!NT_SUCCESS(Status)) {
-        Assert(NT_SUCCESS(Status), "by ProcInfoInit()");
         ProcInfoFree(&ProcInfo);
     }
 
@@ -72,7 +71,7 @@ PPROC_INFO ProcInfoGet(_PoolType_ POOL_TYPE PoolType, _In_ PFLT_CALLBACK_DATA Da
  *  @TID:
  *  @Data:
  */
-static inline void GetTID(_Inout_ PULONG TID, _In_ PFLT_CALLBACK_DATA Data) {
+static inline void GetTID(_Inout_ PHANDLE TID, _In_ PFLT_CALLBACK_DATA Data) {
 
     *TID = PsGetThreadId(Data->Thread);
 }
@@ -156,13 +155,12 @@ static NTSTATUS GetIDs(_Inout_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data
 NTSTATUS ProcInfoInit(_Inout_ PPROC_INFO ProcInfo, _In_ PFLT_CALLBACK_DATA Data) {
 
     NTSTATUS Status;
-    PEPROCESS ProcOb;
 
     Status = GetIDs(ProcInfo, Data);
     if (NT_SUCCESS(Status)) {
-        Status = TokenInfoGet(&ProcInfo->TokenInfo, ProcInfo->PID);
+        Status = TokenInfoGet(&ProcInfo->TokenInfo, (HANDLE)ProcInfo->PID);
         if(NT_SUCCESS(Status)) {
-            Status = GetImageName(ProcInfo->PID, ProcInfo->ImageName);
+            Status = GetImageName((HANDLE)ProcInfo->PID, ProcInfo->ImageName);
         }
     }
 

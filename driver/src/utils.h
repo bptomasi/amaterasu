@@ -12,19 +12,19 @@ UnicodeStrToWSTR(
     _Out_ PULONG pSize
 );
 
-extern void
+extern NTSTATUS
 InitUnicodeString(
     PUNICODE_STRING Str
 );
 
-extern void 
+extern NTSTATUS
 BinaryDataToUnicodeSTR(
     PVOID BinData,
     PUNICODE_STRING UnicodeStr,
     ULONG DataSize
 );
 
-extern void
+extern NTSTATUS
 WORDDataToUnicodeSTR(
     PVOID WordData,
     PUNICODE_STRING UnicodeStr,

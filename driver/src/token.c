@@ -1,6 +1,5 @@
 
 #include "token.h"
-#include "common.h"
 
 /*
  *  AcquireTokenInfo() - Acquires various token information.
@@ -16,7 +15,7 @@
  *    -
  *    -
  */
-static NTSTATUS AcquireTokenInfo2(_In_ PACCESS_TOKEN pToken, _Inout_ PTOKEN_INFO TokenInfo) {
+static NTSTATUS AcquireTokenInfo(_In_ PACCESS_TOKEN pToken, _Inout_ PTOKEN_INFO TokenInfo) {
 
 	NTSTATUS Status;
 
@@ -35,7 +34,7 @@ static NTSTATUS AcquireTokenInfo2(_In_ PACCESS_TOKEN pToken, _Inout_ PTOKEN_INFO
 		return Status;
 	}
 
-	if (TokenInfo->Type == TokenImpersonation) {
+	if (*TokenInfo->Type == TokenImpersonation) {
 		Status = SeQueryInformationToken(pToken, TokenImpersonation, &TokenInfo->ImpersonationLevel);
 		if (!NT_SUCCESS(Status)) {
 			return Status;
@@ -88,7 +87,7 @@ NTSTATUS TokenInfoGet(_Inout_ PTOKEN_INFO TokenInfo, _In_ HANDLE PID) {
  */
 void TokenInfoCopy(_Out_ PTOKEN_INFO_STATIC Dest, _In_ PTOKEN_INFO Src) {
 
-    ULONG PrivCount;
+    ULONG PrivSize;
 
     if(Dest && Src) {
 
@@ -99,8 +98,8 @@ void TokenInfoCopy(_Out_ PTOKEN_INFO_STATIC Dest, _In_ PTOKEN_INFO Src) {
 	    RtlCopyMemory(&Dest->TokenElevation, Src->TokenElevation, sizeof *Src->TokenElevation);
 	    RtlCopyMemory(Dest->Privileges.Privileges, Src->Privileges->Privileges, PrivSize);
 
-        if(Src->Type == TokenImpersonation) {
-            RtlCopyMemory(&Dest->TokenImpersonation, Src->TokenImpersonation, sizeof *Src->TokenImpersonation);
+        if(*Src->Type == TokenImpersonation) {
+            RtlCopyMemory(&Dest->ImpersonationLevel, Src->ImpersonationLevel, sizeof *Src->ImpersonationLevel);
         }
     }
 }
