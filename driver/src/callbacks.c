@@ -22,8 +22,8 @@ static BOOLEAN AreWeTrackingIt(_In_ HANDLE PID) {
     PUNICODE_STRING ImageName;
 
     if(Amaterasu.HandleArrSize) {
-        for(SIZE_T i = 0; i < Amateras.HandleArrSize; i++) {
-            if(PID == Amateras.HandleArr[i]) {
+        for(SIZE_T i = 0; i < Amaterasu.HandleArrSize; i++) {
+            if(PID == Amaterasu.HandleArr[i]) {
                 return TRUE;
             }
         }
