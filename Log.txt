@@ -1,10 +1,10 @@
 [
 {
 "date": "25/6/2024",
-"time": "10:24:35",
+"time": "14:55:11",
 "info type": "INFO_PROC",
-"ppid": "5092",
-"pid": "9208",
+"ppid": "4792",
+"pid": "5204",
 "operation": "create",
 "token type": "primary token",
 "privileges": [
@@ -20,142 +20,142 @@
 },
 {
 "date": "25/6/2024",
-"time": "10:24:35",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "9208",
+"pid": "5204",
 "full image name": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
-"file name": "\DriverTets\BarelyBadMalware.exe",
+"file name": "\DriverTets\BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:35",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "9208",
+"pid": "5204",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\ntdll.dll",
-"file name": "\Windows\System32\ntdll.dll",
+"file name": "\Windows\System32\ntdll.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:35",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BARELYBADMALWARE.EXE-67CC7974.pf",
-"fileName": "\Device\HarddiskVolume4\Windows\Prefetch\BARELYBADMALWARE.EXE-67CC7974.pf"
+"path": "\Device\HarddiskVolume4\Windows\Prefetch\BARELYBADMALWARE.EXE-67CC7974.pf",
+"fileName": "BARELYBADMALWARE.EXE-67CC7974.pf"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:35",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BARELYBADMALWARE.EXE-67CC7974.pf",
-"fileName": "\Device\HarddiskVolume4\Windows\Prefetch\BARELYBADMALWARE.EXE-67CC7974.pf"
+"path": "\Device\HarddiskVolume4\Windows\Prefetch\BARELYBADMALWARE.EXE-67CC7974.pf",
+"fileName": "BARELYBADMALWARE.EXE-67CC7974.pf"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:35",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BARELYBADMALWARE.EXE-67CC7974.pf",
-"fileName": "\Device\HarddiskVolume4\Windows\Prefetch\BARELYBADMALWARE.EXE-67CC7974.pf"
+"path": "\Device\HarddiskVolume4\Windows\Prefetch\BARELYBADMALWARE.EXE-67CC7974.pf",
+"fileName": "BARELYBADMALWARE.EXE-67CC7974.pf"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "",
-"fileName": "\Device\HarddiskVolume1"
+"path": "\Device\HarddiskVolume1",
+"fileName": ""
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "",
-"fileName": "\Device\HarddiskVolume2"
+"path": "\Device\HarddiskVolume2",
+"fileName": ""
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "",
-"fileName": "\Device\HarddiskVolume4"
+"path": "\Device\HarddiskVolume4",
+"fileName": ""
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "",
-"fileName": "\Device\HarddiskVolume4\"
+"path": "\Device\HarddiskVolume4\",
+"fileName": ""
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
@@ -172,602 +172,602 @@
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "DriverTets",
-"fileName": "\Device\HarddiskVolume4\DriverTets"
+"path": "\Device\HarddiskVolume4\DriverTets",
+"fileName": "DriverTets"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "Windows",
-"fileName": "\Device\HarddiskVolume4\Windows"
+"path": "\Device\HarddiskVolume4\Windows",
+"fileName": "Windows"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "apppatch",
-"fileName": "\Device\HarddiskVolume4\Windows\apppatch"
+"path": "\Device\HarddiskVolume4\Windows\apppatch",
+"fileName": "apppatch"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "MergeSdbFilesSource",
-"fileName": "\Device\HarddiskVolume4\Windows\apppatch\MergeSdbFilesSource"
+"path": "\Device\HarddiskVolume4\Windows\apppatch\MergeSdbFilesSource",
+"fileName": "MergeSdbFilesSource"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "System32",
-"fileName": "\Device\HarddiskVolume4\Windows\System32"
+"path": "\Device\HarddiskVolume4\Windows\System32",
+"fileName": "System32"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "ucrtbased.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\ucrtbased.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\ucrtbased.dll",
+"fileName": "ucrtbased.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "ntdll.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\ntdll.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\ntdll.dll",
+"fileName": "ntdll.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "C_1252.NLS",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\C_1252.NLS"
+"path": "\Device\HarddiskVolume4\Windows\System32\C_1252.NLS",
+"fileName": "C_1252.NLS"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "C_437.NLS",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\C_437.NLS"
+"path": "\Device\HarddiskVolume4\Windows\System32\C_437.NLS",
+"fileName": "C_437.NLS"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "l_intl.nls",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\l_intl.nls"
+"path": "\Device\HarddiskVolume4\Windows\System32\l_intl.nls",
+"fileName": "l_intl.nls"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 284",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 284",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "kernel32.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\kernel32.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\kernel32.dll",
+"fileName": "kernel32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 284",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "KernelBase.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\KernelBase.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\KernelBase.dll",
+"fileName": "KernelBase.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 284",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "locale.nls",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\locale.nls"
+"path": "\Device\HarddiskVolume4\Windows\System32\locale.nls",
+"fileName": "locale.nls"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "apphelp.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\apphelp.dll"
+"path": "\Device\HarddiskVolume4\Windows\apppatch\sysmain.sdb",
+"fileName": "sysmain.sdb"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "sysmain.sdb",
-"fileName": "\Device\HarddiskVolume4\Windows\apppatch\sysmain.sdb"
+"path": "\Device\HarddiskVolume4\Windows\apppatch\MergeSdbFilesSource\sysMerge.sdb",
+"fileName": "sysMerge.sdb"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "sysMerge.sdb",
-"fileName": "\Device\HarddiskVolume4\Windows\apppatch\MergeSdbFilesSource\sysMerge.sdb"
+"path": "\Device\HarddiskVolume4\Windows\System32\advapi32.dll",
+"fileName": "advapi32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "advapi32.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\advapi32.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\msvcrt.dll",
+"fileName": "msvcrt.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "msvcrt.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\msvcrt.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\sechost.dll",
+"fileName": "sechost.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "sechost.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\sechost.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\bcrypt.dll",
+"fileName": "bcrypt.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "bcrypt.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\bcrypt.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\rpcrt4.dll",
+"fileName": "rpcrt4.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 5564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "rpcrt4.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\rpcrt4.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll",
+"fileName": "kernel.appcore.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6952",
+"sid": "5204",
+"token type": "undefined token type 284",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "kernel.appcore.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\apphelp.dll",
+"fileName": "apphelp.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "ucrtbased.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\ucrtbased.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\ucrtbased.dll",
+"fileName": "ucrtbased.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "ucrtbased.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\ucrtbased.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\ucrtbased.dll",
+"fileName": "ucrtbased.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "ucrtbased.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\ucrtbased.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\ucrtbased.dll",
+"fileName": "ucrtbased.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "ucrtbased.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\ucrtbased.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\ucrtbased.dll",
+"fileName": "ucrtbased.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "4294967295",
-"sid": "9208",
-"token type": "undefined token type 6944",
+"sid": "5204",
+"token type": "undefined token type 316",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
@@ -784,60 +784,60 @@
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "DriverTets",
-"fileName": "\Device\HarddiskVolume4\DriverTets"
+"path": "\Device\HarddiskVolume4\DriverTets",
+"fileName": "DriverTets"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "9208",
+"pid": "5204",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\kernel32.dll",
-"file name": "\Windows\System32\kernel32.dll",
+"file name": "\Windows\System32\kernel32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "9208",
+"pid": "5204",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\KernelBase.dll",
-"file name": "\Windows\System32\KernelBase.dll",
+"file name": "\Windows\System32\KernelBase.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_PROC",
-"ppid": "9208",
-"pid": "2492",
+"ppid": "5204",
+"pid": "4668",
 "operation": "create",
 "token type": "primary token",
 "privileges": [
@@ -872,1672 +872,1672 @@
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_REG",
 "registry operation": "not implemented",
 "name": "\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\bam\State\UserSettings\S-1-5-21-3592619374-3363074231-2459779869-1000",
-"data type": "REG_BINARY",
+"data type": "REG_BINARY"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
-"file name": "\Windows\System32\conhost.exe",
+"file name": "\Windows\System32\conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\ntdll.dll",
-"file name": "\Windows\System32\ntdll.dll",
+"file name": "\Windows\System32\ntdll.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 5568",
+"sid": "4668",
+"token type": "undefined token type 4648",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "Windows",
-"fileName": "\Device\HarddiskVolume4\Windows"
+"path": "\Device\HarddiskVolume4\Windows",
+"fileName": "Windows"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\kernel32.dll",
-"file name": "\Windows\System32\kernel32.dll",
+"file name": "\Windows\System32\kernel32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\KernelBase.dll",
-"file name": "\Windows\System32\KernelBase.dll",
+"file name": "\Windows\System32\KernelBase.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\msvcp_win.dll",
-"file name": "\Windows\System32\msvcp_win.dll",
+"file name": "\Windows\System32\msvcp_win.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\ucrtbase.dll",
-"file name": "\Windows\System32\ucrtbase.dll",
+"file name": "\Windows\System32\ucrtbase.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\advapi32.dll",
-"file name": "\Windows\System32\advapi32.dll",
+"file name": "\Windows\System32\advapi32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\msvcrt.dll",
-"file name": "\Windows\System32\msvcrt.dll",
+"file name": "\Windows\System32\msvcrt.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\sechost.dll",
-"file name": "\Windows\System32\sechost.dll",
+"file name": "\Windows\System32\sechost.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\bcrypt.dll",
-"file name": "\Windows\System32\bcrypt.dll",
+"file name": "\Windows\System32\bcrypt.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\rpcrt4.dll",
-"file name": "\Windows\System32\rpcrt4.dll",
+"file name": "\Windows\System32\rpcrt4.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\user32.dll",
-"file name": "\Windows\System32\user32.dll",
+"file name": "\Windows\System32\user32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\win32u.dll",
-"file name": "\Windows\System32\win32u.dll",
+"file name": "\Windows\System32\win32u.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\gdi32.dll",
-"file name": "\Windows\System32\gdi32.dll",
+"file name": "\Windows\System32\gdi32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\gdi32full.dll",
-"file name": "\Windows\System32\gdi32full.dll",
+"file name": "\Windows\System32\gdi32full.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 5568",
+"sid": "4668",
+"token type": "undefined token type 4648",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "imm32.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\imm32.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\imm32.dll",
+"fileName": "imm32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 5568",
+"sid": "4668",
+"token type": "undefined token type 4648",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "imm32.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\imm32.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\imm32.dll",
+"fileName": "imm32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\imm32.dll",
-"file name": "\Windows\System32\imm32.dll",
+"file name": "\Windows\System32\imm32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 5568",
+"sid": "4668",
+"token type": "undefined token type 4648",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "Conhost.exe.mui",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\en-US\Conhost.exe.mui"
+"path": "\Device\HarddiskVolume4\Windows\System32\en-US\Conhost.exe.mui",
+"fileName": "Conhost.exe.mui"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\combase.dll",
-"file name": "\Windows\System32\combase.dll",
+"file name": "\Windows\System32\combase.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "rpcss.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\rpcss.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\rpcss.dll",
+"fileName": "rpcss.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "rpcss.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\rpcss.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\rpcss.dll",
+"fileName": "rpcss.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "kernel.appcore.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll",
+"fileName": "kernel.appcore.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "kernel.appcore.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll",
+"fileName": "kernel.appcore.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll",
-"file name": "\Windows\System32\kernel.appcore.dll",
+"file name": "\Windows\System32\kernel.appcore.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\bcryptprimitives.dll",
-"file name": "\Windows\System32\bcryptprimitives.dll",
+"file name": "\Windows\System32\bcryptprimitives.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\clbcatq.dll",
-"file name": "\Windows\System32\clbcatq.dll",
+"file name": "\Windows\System32\clbcatq.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "Windows.StateRepositoryCore.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\Windows.StateRepositoryCore.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\Windows.StateRepositoryCore.dll",
+"fileName": "Windows.StateRepositoryCore.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "Windows.StateRepositoryCore.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\Windows.StateRepositoryCore.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\Windows.StateRepositoryCore.dll",
+"fileName": "Windows.StateRepositoryCore.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\Windows.StateRepositoryCore.dll",
-"file name": "\Windows\System32\Windows.StateRepositoryCore.dll",
+"file name": "\Windows\System32\Windows.StateRepositoryCore.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "rpcss.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\rpcss.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\rpcss.dll",
+"fileName": "rpcss.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "rpcss.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\rpcss.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\rpcss.dll",
+"fileName": "rpcss.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "KernelBase.dll.mui",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\en-US\KernelBase.dll.mui"
+"path": "\Device\HarddiskVolume4\Windows\System32\en-US\KernelBase.dll.mui",
+"fileName": "KernelBase.dll.mui"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\shell32.dll",
-"file name": "\Windows\System32\shell32.dll",
+"file name": "\Windows\System32\shell32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "uxtheme.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\uxtheme.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\uxtheme.dll",
+"fileName": "uxtheme.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "uxtheme.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\uxtheme.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\uxtheme.dll",
+"fileName": "uxtheme.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\uxtheme.dll",
-"file name": "\Windows\System32\uxtheme.dll",
+"file name": "\Windows\System32\uxtheme.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "SortDefault.nls",
-"fileName": "\Device\HarddiskVolume4\Windows\Globalization\Sorting\SortDefault.nls"
+"path": "\Device\HarddiskVolume4\Windows\Globalization\Sorting\SortDefault.nls",
+"fileName": "SortDefault.nls"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 2808",
+"sid": "4668",
+"token type": "undefined token type 4980",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe.mun",
-"fileName": "\Device\HarddiskVolume4\SystemResources\BarelyBadMalware.exe.mun"
+"path": "\Device\HarddiskVolume4\SystemResources\BarelyBadMalware.exe.mun",
+"fileName": "BarelyBadMalware.exe.mun"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "conhost.exe",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\conhost.exe"
+"path": "\Device\HarddiskVolume4\Windows\System32\conhost.exe",
+"fileName": "conhost.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\msctf.dll",
-"file name": "\Windows\System32\msctf.dll",
+"file name": "\Windows\System32\msctf.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\SHCore.dll",
-"file name": "\Windows\System32\SHCore.dll",
+"file name": "\Windows\System32\SHCore.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "user32.dll.mui",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\en-US\user32.dll.mui"
+"path": "\Device\HarddiskVolume4\Windows\System32\en-US\user32.dll.mui",
+"fileName": "user32.dll.mui"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "user32.dll.mun",
-"fileName": "\Device\HarddiskVolume4\Windows\SystemResources\user32.dll.mun"
+"path": "\Device\HarddiskVolume4\Windows\SystemResources\user32.dll.mun",
+"fileName": "user32.dll.mun"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "StaticCache.dat",
-"fileName": "\Device\HarddiskVolume4\Windows\Fonts\StaticCache.dat"
+"path": "\Device\HarddiskVolume4\Windows\Fonts\StaticCache.dat",
+"fileName": "StaticCache.dat"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "StaticCache.dat",
-"fileName": "\Device\HarddiskVolume4\Windows\Fonts\StaticCache.dat"
+"path": "\Device\HarddiskVolume4\Windows\Fonts\StaticCache.dat",
+"fileName": "StaticCache.dat"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "TextShaping.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\TextShaping.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\TextShaping.dll",
+"fileName": "TextShaping.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "TextShaping.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\TextShaping.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\TextShaping.dll",
+"fileName": "TextShaping.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\TextShaping.dll",
-"file name": "\Windows\System32\TextShaping.dll",
+"file name": "\Windows\System32\TextShaping.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "uxtheme.dll.Config",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\uxtheme.dll.Config"
+"path": "\Device\HarddiskVolume4\Windows\System32\uxtheme.dll.Config",
+"fileName": "uxtheme.dll.Config"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "uxtheme.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\uxtheme.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\uxtheme.dll",
+"fileName": "uxtheme.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955",
-"fileName": "\Device\HarddiskVolume4\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955"
+"path": "\Device\HarddiskVolume4\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955",
+"fileName": "amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:36",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "comctl32.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\comctl32.dll"
+"path": "\Device\HarddiskVolume4\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\comctl32.dll",
+"fileName": "comctl32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "comctl32.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\comctl32.dll"
+"path": "\Device\HarddiskVolume4\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\comctl32.dll",
+"fileName": "comctl32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\comctl32.dll",
-"file name": "\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\comctl32.dll",
+"file name": "\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\comctl32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "WindowsShell.Manifest",
-"fileName": "\Device\HarddiskVolume4\Windows\WindowsShell.Manifest"
+"path": "\Device\HarddiskVolume4\Windows\WindowsShell.Manifest",
+"fileName": "WindowsShell.Manifest"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "dwmapi.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\dwmapi.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\dwmapi.dll",
+"fileName": "dwmapi.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "dwmapi.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\dwmapi.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\dwmapi.dll",
+"fileName": "dwmapi.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\dwmapi.dll",
-"file name": "\Windows\System32\dwmapi.dll",
+"file name": "\Windows\System32\dwmapi.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "TextInputFramework.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\TextInputFramework.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\TextInputFramework.dll",
+"fileName": "TextInputFramework.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "TextInputFramework.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\TextInputFramework.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\TextInputFramework.dll",
+"fileName": "TextInputFramework.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\TextInputFramework.dll",
-"file name": "\Windows\System32\TextInputFramework.dll",
+"file name": "\Windows\System32\TextInputFramework.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\oleaut32.dll",
-"file name": "\Windows\System32\oleaut32.dll",
+"file name": "\Windows\System32\oleaut32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "ole32.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\ole32.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\ole32.dll",
+"fileName": "ole32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "ole32.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\ole32.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\ole32.dll",
+"fileName": "ole32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "CoreMessaging.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\CoreMessaging.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\CoreMessaging.dll",
+"fileName": "CoreMessaging.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "CoreMessaging.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\CoreMessaging.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\CoreMessaging.dll",
+"fileName": "CoreMessaging.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\CoreMessaging.dll",
-"file name": "\Windows\System32\CoreMessaging.dll",
+"file name": "\Windows\System32\CoreMessaging.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "CoreUIComponents.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\CoreUIComponents.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\CoreUIComponents.dll",
+"fileName": "CoreUIComponents.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "CoreUIComponents.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\CoreUIComponents.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\CoreUIComponents.dll",
+"fileName": "CoreUIComponents.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\CoreUIComponents.dll",
-"file name": "\Windows\System32\CoreUIComponents.dll",
+"file name": "\Windows\System32\CoreUIComponents.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "WinTypes.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\WinTypes.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\WinTypes.dll",
+"fileName": "WinTypes.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "WinTypes.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\WinTypes.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\WinTypes.dll",
+"fileName": "WinTypes.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\WinTypes.dll",
-"file name": "\Windows\System32\WinTypes.dll",
+"file name": "\Windows\System32\WinTypes.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "cryptbase.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\cryptbase.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\cryptbase.dll",
+"fileName": "cryptbase.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "2492",
-"token type": "undefined token type 3944",
+"sid": "4668",
+"token type": "undefined token type 7564",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "cryptbase.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\cryptbase.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\cryptbase.dll",
+"fileName": "cryptbase.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "2492",
+"pid": "4668",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\cryptbase.dll",
-"file name": "\Windows\System32\cryptbase.dll",
+"file name": "\Windows\System32\cryptbase.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "apphelp.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\apphelp.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\apphelp.dll",
+"fileName": "apphelp.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "apphelp.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\apphelp.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\apphelp.dll",
+"fileName": "apphelp.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "9208",
+"pid": "5204",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\apphelp.dll",
-"file name": "\Windows\System32\apphelp.dll",
+"file name": "\Windows\System32\apphelp.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "ntdll.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\ntdll.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\ntdll.dll",
+"fileName": "ntdll.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "kernel32.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\kernel32.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\kernel32.dll",
+"fileName": "kernel32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "KernelBase.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\KernelBase.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\KernelBase.dll",
+"fileName": "KernelBase.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "sysmain.sdb",
-"fileName": "\Device\HarddiskVolume4\Windows\apppatch\sysmain.sdb"
+"path": "\Device\HarddiskVolume4\Windows\apppatch\sysmain.sdb",
+"fileName": "sysmain.sdb"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "sysMerge.sdb",
-"fileName": "\Device\HarddiskVolume4\Windows\apppatch\MergeSdbFilesSource\sysMerge.sdb"
+"path": "\Device\HarddiskVolume4\Windows\apppatch\MergeSdbFilesSource\sysMerge.sdb",
+"fileName": "sysMerge.sdb"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "BarelyBadMalware.exe",
-"fileName": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe"
+"path": "\Device\HarddiskVolume4\DriverTets\BarelyBadMalware.exe",
+"fileName": "BarelyBadMalware.exe"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "9208",
+"pid": "5204",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\advapi32.dll",
-"file name": "\Windows\System32\advapi32.dll",
+"file name": "\Windows\System32\advapi32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "9208",
+"pid": "5204",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\msvcrt.dll",
-"file name": "\Windows\System32\msvcrt.dll",
+"file name": "\Windows\System32\msvcrt.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "9208",
+"pid": "5204",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\sechost.dll",
-"file name": "\Windows\System32\sechost.dll",
+"file name": "\Windows\System32\sechost.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "9208",
+"pid": "5204",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\bcrypt.dll",
-"file name": "\Windows\System32\bcrypt.dll",
+"file name": "\Windows\System32\bcrypt.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "9208",
+"pid": "5204",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\rpcrt4.dll",
-"file name": "\Windows\System32\rpcrt4.dll",
+"file name": "\Windows\System32\rpcrt4.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "msvcrt.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\msvcrt.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\msvcrt.dll",
+"fileName": "msvcrt.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "bcrypt.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\bcrypt.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\bcrypt.dll",
+"fileName": "bcrypt.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "sechost.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\sechost.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\sechost.dll",
+"fileName": "sechost.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "rpcrt4.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\rpcrt4.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\rpcrt4.dll",
+"fileName": "rpcrt4.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "advapi32.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\advapi32.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\advapi32.dll",
+"fileName": "advapi32.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "kernel.appcore.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll",
+"fileName": "kernel.appcore.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "kernel.appcore.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll",
+"fileName": "kernel.appcore.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_LOAD",
-"pid": "9208",
+"pid": "5204",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll",
-"file name": "\Windows\System32\kernel.appcore.dll",
+"file name": "\Windows\System32\kernel.appcore.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
 "pid": "0",
 "tid": "1",
-"sid": "9208",
-"token type": "undefined token type 3164",
+"sid": "5204",
+"token type": "undefined token type 4148",
 "privileges": [
 
 ],
 "elevation status": "0",
 "image name": "",
-"path": "kernel.appcore.dll",
-"fileName": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll"
+"path": "\Device\HarddiskVolume4\Windows\System32\kernel.appcore.dll",
+"fileName": "kernel.appcore.dll"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_PROC",
-"ppid": "5092",
-"pid": "9208",
+"ppid": "4792",
+"pid": "5204",
 "operation": "kill",
 "token type": "primary token",
 "privileges": [
@@ -2553,18 +2553,42 @@
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:13",
 "info type": "INFO_REG",
 "registry operation": "not implemented",
 "name": "\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\bam\State\UserSettings\S-1-5-21-3592619374-3363074231-2459779869-1000",
-"data type": "REG_BINARY",
+"data type": "REG_BINARY"
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:14",
+"info type": "INFO_REG",
+"registry operation": "not implemented",
+"name": "\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Notifications\Data",
+"data type": "REG_BINARY"
+},
+{
+"date": "25/6/2024",
+"time": "14:55:14",
+"info type": "INFO_REG",
+"registry operation": "not implemented",
+"name": "\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Notifications\Data",
+"data type": "REG_BINARY"
+},
+{
+"date": "25/6/2024",
+"time": "14:55:14",
+"info type": "INFO_REG",
+"registry operation": "not implemented",
+"name": "\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Notifications\Data",
+"data type": "REG_BINARY"
+},
+{
+"date": "25/6/2024",
+"time": "14:55:14",
 "info type": "INFO_PROC",
-"ppid": "9208",
-"pid": "2492",
+"ppid": "5204",
+"pid": "4668",
 "operation": "kill",
 "token type": "primary token",
 "privileges": [
@@ -2599,9 +2623,9 @@
 },
 {
 "date": "25/6/2024",
-"time": "10:24:37",
+"time": "14:55:14",
 "info type": "INFO_REG",
 "registry operation": "not implemented",
 "name": "\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\bam\State\UserSettings\S-1-5-21-3592619374-3363074231-2459779869-1000",
-"data type": "REG_BINARY",
+"data type": "REG_BINARY"
 },
