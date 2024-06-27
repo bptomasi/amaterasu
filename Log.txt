@@ -1,10 +1,10 @@
 [
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_PROC",
-"ppid": "4492",
-"pid": "4852",
+"ppid": "5012",
+"pid": "2504",
 "operation": "create",
 "token type": "primary token",
 "privileges": [
@@ -16,39 +16,39 @@
 ],
 "elevation status": "0",
 "parent name": "\Device\HarddiskVolume4\Windows\explorer.exe",
-"child name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe"
+"child name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
-"full image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"file name": "\DriverTets\infected\verybadmalware.exe1e10a6be3431e1166286a9e7761f2de9de79d7fda9c397.exe"
+"pid": "2504",
+"full image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"file name": "\DriverTets\infected\HermeticWiper.exef1e10a6be3431e1166286a9e7761f2de9de79d7fda9c397.exe"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\ntdll.dll",
 "file name": "\Windows\System32\ntdll.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\ntdll.dll",
 "file name": "\Windows\SysWOW64\ntdll.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -78,17 +78,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\Prefetch\VERYBADMALWARE.EXE-520AF2FD.pf",
-"fileName": "VERYBADMALWARE.EXE-520AF2FD.pf"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\Prefetch\HERMETICWIPER.EXE-E8A53817.pf",
+"fileName": "HERMETICWIPER.EXE-E8A53817.pf"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -118,49 +118,49 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows",
 "fileName": "Windows"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\wow64.dll",
 "file name": "\Windows\System32\wow64.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\wow64base.dll",
 "file name": "\Windows\System32\wow64base.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\wow64win.dll",
 "file name": "\Windows\System32\wow64win.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\wow64con.dll",
 "file name": "\Windows\System32\wow64con.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -190,17 +190,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\System32\wow64log.dll",
 "fileName": "wow64log.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -230,25 +230,25 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows",
 "fileName": "Windows"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\System32\wow64cpu.dll",
 "file name": "\Windows\System32\wow64cpu.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -278,33 +278,33 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\DriverTets\infected",
 "fileName": "infected"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\kernel32.dll",
 "file name": "\Windows\SysWOW64\kernel32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\KernelBase.dll",
 "file name": "\Windows\SysWOW64\KernelBase.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -334,17 +334,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\apphelp.dll",
 "fileName": "apphelp.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -374,25 +374,25 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\apphelp.dll",
 "fileName": "apphelp.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\apphelp.dll",
 "file name": "\Windows\SysWOW64\apphelp.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -422,17 +422,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"fileName": "verybadmalware.exe"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"fileName": "HermeticWiper.exe"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -462,17 +462,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\ntdll.dll",
 "fileName": "ntdll.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -502,17 +502,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\kernel32.dll",
 "fileName": "kernel32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -542,17 +542,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\KernelBase.dll",
 "fileName": "KernelBase.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -582,17 +582,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\apppatch\sysmain.sdb",
 "fileName": "sysmain.sdb"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -622,17 +622,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\apppatch\MergeSdbFilesSource\sysMerge.sdb",
 "fileName": "sysMerge.sdb"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -662,17 +662,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"fileName": "verybadmalware.exe"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"fileName": "HermeticWiper.exe"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -702,17 +702,85 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"fileName": "verybadmalware.exe"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"fileName": "HermeticWiper.exe"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -742,121 +810,209 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"fileName": "verybadmalware.exe"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"fileName": "HermeticWiper.exe"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\shlwapi.dll",
 "file name": "\Windows\SysWOW64\shlwapi.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\msvcrt.dll",
 "file name": "\Windows\SysWOW64\msvcrt.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\user32.dll",
 "file name": "\Windows\SysWOW64\user32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\win32u.dll",
 "file name": "\Windows\SysWOW64\win32u.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\gdi32.dll",
 "file name": "\Windows\SysWOW64\gdi32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\gdi32full.dll",
 "file name": "\Windows\SysWOW64\gdi32full.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\msvcp_win.dll",
 "file name": "\Windows\SysWOW64\msvcp_win.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
-"info type": "INFO_LOAD",
-"pid": "4852",
-"full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\ucrtbase.dll",
-"file name": "\Windows\SysWOW64\ucrtbase.dll"
-},
-{
-"date": "27/6/2024",
-"time": "14:21:5",
-"info type": "INFO_LOAD",
-"pid": "4852",
-"full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\advapi32.dll",
-"file name": "\Windows\SysWOW64\advapi32.dll"
-},
-{
-"date": "27/6/2024",
-"time": "14:21:5",
-"info type": "INFO_LOAD",
-"pid": "4852",
-"full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\sechost.dll",
-"file name": "\Windows\SysWOW64\sechost.dll"
-},
-{
-"date": "27/6/2024",
-"time": "14:21:5",
-"info type": "INFO_LOAD",
-"pid": "4852",
-"full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\bcrypt.dll",
-"file name": "\Windows\SysWOW64\bcrypt.dll"
-},
-{
-"date": "27/6/2024",
-"time": "14:21:5",
-"info type": "INFO_LOAD",
-"pid": "4852",
-"full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\rpcrt4.dll",
-"file name": "\Windows\SysWOW64\rpcrt4.dll"
-},
-{
-"date": "27/6/2024",
-"time": "14:21:5",
-"info type": "INFO_LOAD",
-"pid": "4852",
-"full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\shell32.dll",
-"file name": "\Windows\SysWOW64\shell32.dll"
-},
-{
-"date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8296",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -886,105 +1042,233 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\DriverTets\infected\LZ32.dll",
 "fileName": "LZ32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
-"info type": "INFO_FS",
-"mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
-"sid": "1",
-"token type": "primary token",
-"privileges": [
-  { "SeIncreaseQuotaPrivilege": "Disabled" },
-  { "SeSecurityPrivilege": "Disabled" },
-  { "SeTakeOwnershipPrivilege": "Disabled" },
-  { "SeLoadDriverPrivilege": "Disabled" },
-  { "SeSystemProfilePrivilege": "Disabled" },
-  { "SeSystemtimePrivilege": "Disabled" },
-  { "SeProfileSingleProcessPrivilege": "Disabled" },
-  { "SeIncreaseBasePriorityPrivilege": "Disabled" },
-  { "SeCreatePagefilePrivilege": "Disabled" },
-  { "SeBackupPrivilege": "Disabled" },
-  { "SeRestorePrivilege": "Disabled" },
-  { "SeShutdownPrivilege": "Disabled" },
-  { "SeDebugPrivilege": "Disabled" },
-  { "SeSystemEnvironmentPrivilege": "Disabled" },
-  { "SeChangeNotifyPrivilege": "Enabled" },
-  { "SeRemoteShutdownPrivilege": "Disabled" },
-  { "SeUndockPrivilege": "Disabled" },
-  { "SeManageVolumePrivilege": "Disabled" },
-  { "SeImpersonatePrivilege": "Enabled" },
-  { "SeCreateGlobalPrivilege": "Enabled" },
-  { "SeIncreaseWorkingSetPrivilege": "Disabled" },
-  { "SeTimeZonePrivilege": "Disabled" },
-  { "SeCreateSymbolicLinkPrivilege": "Disabled" },
-  { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
-],
-"elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\SysWOW64\lz32.dll",
-"fileName": "lz32.dll"
-},
-{
-"date": "27/6/2024",
-"time": "14:21:5",
-"info type": "INFO_FS",
-"mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
-"sid": "1",
-"token type": "primary token",
-"privileges": [
-  { "SeIncreaseQuotaPrivilege": "Disabled" },
-  { "SeSecurityPrivilege": "Disabled" },
-  { "SeTakeOwnershipPrivilege": "Disabled" },
-  { "SeLoadDriverPrivilege": "Disabled" },
-  { "SeSystemProfilePrivilege": "Disabled" },
-  { "SeSystemtimePrivilege": "Disabled" },
-  { "SeProfileSingleProcessPrivilege": "Disabled" },
-  { "SeIncreaseBasePriorityPrivilege": "Disabled" },
-  { "SeCreatePagefilePrivilege": "Disabled" },
-  { "SeBackupPrivilege": "Disabled" },
-  { "SeRestorePrivilege": "Disabled" },
-  { "SeShutdownPrivilege": "Disabled" },
-  { "SeDebugPrivilege": "Disabled" },
-  { "SeSystemEnvironmentPrivilege": "Disabled" },
-  { "SeChangeNotifyPrivilege": "Enabled" },
-  { "SeRemoteShutdownPrivilege": "Disabled" },
-  { "SeUndockPrivilege": "Disabled" },
-  { "SeManageVolumePrivilege": "Disabled" },
-  { "SeImpersonatePrivilege": "Enabled" },
-  { "SeCreateGlobalPrivilege": "Enabled" },
-  { "SeIncreaseWorkingSetPrivilege": "Disabled" },
-  { "SeTimeZonePrivilege": "Disabled" },
-  { "SeCreateSymbolicLinkPrivilege": "Disabled" },
-  { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
-],
-"elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\SysWOW64\lz32.dll",
-"fileName": "lz32.dll"
-},
-{
-"date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
+"full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\ucrtbase.dll",
+"file name": "\Windows\SysWOW64\ucrtbase.dll"
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_CREATE",
+"pid": "2504",
+"tid": "8296",
+"sid": "1",
+"token type": "primary token",
+"privileges": [
+  { "SeIncreaseQuotaPrivilege": "Disabled" },
+  { "SeSecurityPrivilege": "Disabled" },
+  { "SeTakeOwnershipPrivilege": "Disabled" },
+  { "SeLoadDriverPrivilege": "Disabled" },
+  { "SeSystemProfilePrivilege": "Disabled" },
+  { "SeSystemtimePrivilege": "Disabled" },
+  { "SeProfileSingleProcessPrivilege": "Disabled" },
+  { "SeIncreaseBasePriorityPrivilege": "Disabled" },
+  { "SeCreatePagefilePrivilege": "Disabled" },
+  { "SeBackupPrivilege": "Disabled" },
+  { "SeRestorePrivilege": "Disabled" },
+  { "SeShutdownPrivilege": "Disabled" },
+  { "SeDebugPrivilege": "Disabled" },
+  { "SeSystemEnvironmentPrivilege": "Disabled" },
+  { "SeChangeNotifyPrivilege": "Enabled" },
+  { "SeRemoteShutdownPrivilege": "Disabled" },
+  { "SeUndockPrivilege": "Disabled" },
+  { "SeManageVolumePrivilege": "Disabled" },
+  { "SeImpersonatePrivilege": "Enabled" },
+  { "SeCreateGlobalPrivilege": "Enabled" },
+  { "SeIncreaseWorkingSetPrivilege": "Disabled" },
+  { "SeTimeZonePrivilege": "Disabled" },
+  { "SeCreateSymbolicLinkPrivilege": "Disabled" },
+  { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
+],
+"elevation status": "1",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\SysWOW64\lz32.dll",
+"fileName": "lz32.dll"
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_LOAD",
+"pid": "2504",
+"full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\advapi32.dll",
+"file name": "\Windows\SysWOW64\advapi32.dll"
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_LOAD",
+"pid": "2504",
+"full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\sechost.dll",
+"file name": "\Windows\SysWOW64\sechost.dll"
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_CREATE",
+"pid": "2504",
+"tid": "8296",
+"sid": "1",
+"token type": "primary token",
+"privileges": [
+  { "SeIncreaseQuotaPrivilege": "Disabled" },
+  { "SeSecurityPrivilege": "Disabled" },
+  { "SeTakeOwnershipPrivilege": "Disabled" },
+  { "SeLoadDriverPrivilege": "Disabled" },
+  { "SeSystemProfilePrivilege": "Disabled" },
+  { "SeSystemtimePrivilege": "Disabled" },
+  { "SeProfileSingleProcessPrivilege": "Disabled" },
+  { "SeIncreaseBasePriorityPrivilege": "Disabled" },
+  { "SeCreatePagefilePrivilege": "Disabled" },
+  { "SeBackupPrivilege": "Disabled" },
+  { "SeRestorePrivilege": "Disabled" },
+  { "SeShutdownPrivilege": "Disabled" },
+  { "SeDebugPrivilege": "Disabled" },
+  { "SeSystemEnvironmentPrivilege": "Disabled" },
+  { "SeChangeNotifyPrivilege": "Enabled" },
+  { "SeRemoteShutdownPrivilege": "Disabled" },
+  { "SeUndockPrivilege": "Disabled" },
+  { "SeManageVolumePrivilege": "Disabled" },
+  { "SeImpersonatePrivilege": "Enabled" },
+  { "SeCreateGlobalPrivilege": "Enabled" },
+  { "SeIncreaseWorkingSetPrivilege": "Disabled" },
+  { "SeTimeZonePrivilege": "Disabled" },
+  { "SeCreateSymbolicLinkPrivilege": "Disabled" },
+  { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
+],
+"elevation status": "1",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\SysWOW64\lz32.dll",
+"fileName": "lz32.dll"
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "2504",
+"tid": "8296",
+"sid": "1",
+"token type": "primary token",
+"privileges": [
+  { "SeIncreaseQuotaPrivilege": "Disabled" },
+  { "SeSecurityPrivilege": "Disabled" },
+  { "SeTakeOwnershipPrivilege": "Disabled" },
+  { "SeLoadDriverPrivilege": "Disabled" },
+  { "SeSystemProfilePrivilege": "Disabled" },
+  { "SeSystemtimePrivilege": "Disabled" },
+  { "SeProfileSingleProcessPrivilege": "Disabled" },
+  { "SeIncreaseBasePriorityPrivilege": "Disabled" },
+  { "SeCreatePagefilePrivilege": "Disabled" },
+  { "SeBackupPrivilege": "Disabled" },
+  { "SeRestorePrivilege": "Disabled" },
+  { "SeShutdownPrivilege": "Disabled" },
+  { "SeDebugPrivilege": "Disabled" },
+  { "SeSystemEnvironmentPrivilege": "Disabled" },
+  { "SeChangeNotifyPrivilege": "Enabled" },
+  { "SeRemoteShutdownPrivilege": "Disabled" },
+  { "SeUndockPrivilege": "Disabled" },
+  { "SeManageVolumePrivilege": "Disabled" },
+  { "SeImpersonatePrivilege": "Enabled" },
+  { "SeCreateGlobalPrivilege": "Enabled" },
+  { "SeIncreaseWorkingSetPrivilege": "Disabled" },
+  { "SeTimeZonePrivilege": "Disabled" },
+  { "SeCreateSymbolicLinkPrivilege": "Disabled" },
+  { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
+],
+"elevation status": "1",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\SysWOW64\lz32.dll",
+"fileName": "lz32.dll"
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_LOAD",
+"pid": "2504",
+"full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\bcrypt.dll",
+"file name": "\Windows\SysWOW64\bcrypt.dll"
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_LOAD",
+"pid": "2504",
+"full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\rpcrt4.dll",
+"file name": "\Windows\SysWOW64\rpcrt4.dll"
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_LOAD",
+"pid": "2504",
+"full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\shell32.dll",
+"file name": "\Windows\SysWOW64\shell32.dll"
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "2504",
+"tid": "8296",
+"sid": "1",
+"token type": "primary token",
+"privileges": [
+  { "SeIncreaseQuotaPrivilege": "Disabled" },
+  { "SeSecurityPrivilege": "Disabled" },
+  { "SeTakeOwnershipPrivilege": "Disabled" },
+  { "SeLoadDriverPrivilege": "Disabled" },
+  { "SeSystemProfilePrivilege": "Disabled" },
+  { "SeSystemtimePrivilege": "Disabled" },
+  { "SeProfileSingleProcessPrivilege": "Disabled" },
+  { "SeIncreaseBasePriorityPrivilege": "Disabled" },
+  { "SeCreatePagefilePrivilege": "Disabled" },
+  { "SeBackupPrivilege": "Disabled" },
+  { "SeRestorePrivilege": "Disabled" },
+  { "SeShutdownPrivilege": "Disabled" },
+  { "SeDebugPrivilege": "Disabled" },
+  { "SeSystemEnvironmentPrivilege": "Disabled" },
+  { "SeChangeNotifyPrivilege": "Enabled" },
+  { "SeRemoteShutdownPrivilege": "Disabled" },
+  { "SeUndockPrivilege": "Disabled" },
+  { "SeManageVolumePrivilege": "Disabled" },
+  { "SeImpersonatePrivilege": "Enabled" },
+  { "SeCreateGlobalPrivilege": "Enabled" },
+  { "SeIncreaseWorkingSetPrivilege": "Disabled" },
+  { "SeTimeZonePrivilege": "Disabled" },
+  { "SeCreateSymbolicLinkPrivilege": "Disabled" },
+  { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
+],
+"elevation status": "1",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\SysWOW64\lz32.dll",
+"fileName": "lz32.dll"
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_LOAD",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\lz32.dll",
 "file name": "\Windows\SysWOW64\lz32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1014,17 +1298,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\lz32.dll",
 "fileName": "lz32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1054,25 +1338,25 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\lz32.dll",
 "fileName": "lz32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\lz32.dll",
 "file name": "\Windows\SysWOW64\lz32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
-"mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"mjFunc": "IRP_MJ_READ",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1102,17 +1386,57 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\SysWOW64\lz32.dll",
+"fileName": "lz32.dll"
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_CREATE",
+"pid": "2504",
+"tid": "8040",
+"sid": "1",
+"token type": "primary token",
+"privileges": [
+  { "SeIncreaseQuotaPrivilege": "Disabled" },
+  { "SeSecurityPrivilege": "Disabled" },
+  { "SeTakeOwnershipPrivilege": "Disabled" },
+  { "SeLoadDriverPrivilege": "Disabled" },
+  { "SeSystemProfilePrivilege": "Disabled" },
+  { "SeSystemtimePrivilege": "Disabled" },
+  { "SeProfileSingleProcessPrivilege": "Disabled" },
+  { "SeIncreaseBasePriorityPrivilege": "Disabled" },
+  { "SeCreatePagefilePrivilege": "Disabled" },
+  { "SeBackupPrivilege": "Disabled" },
+  { "SeRestorePrivilege": "Disabled" },
+  { "SeShutdownPrivilege": "Disabled" },
+  { "SeDebugPrivilege": "Disabled" },
+  { "SeSystemEnvironmentPrivilege": "Disabled" },
+  { "SeChangeNotifyPrivilege": "Enabled" },
+  { "SeRemoteShutdownPrivilege": "Disabled" },
+  { "SeUndockPrivilege": "Disabled" },
+  { "SeManageVolumePrivilege": "Disabled" },
+  { "SeImpersonatePrivilege": "Enabled" },
+  { "SeCreateGlobalPrivilege": "Enabled" },
+  { "SeIncreaseWorkingSetPrivilege": "Disabled" },
+  { "SeTimeZonePrivilege": "Disabled" },
+  { "SeCreateSymbolicLinkPrivilege": "Disabled" },
+  { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
+],
+"elevation status": "1",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\msvcrt.dll",
 "fileName": "msvcrt.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1142,17 +1466,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\shlwapi.dll",
 "fileName": "shlwapi.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1182,17 +1506,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\lz32.dll",
 "fileName": "lz32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1222,17 +1546,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\win32u.dll",
 "fileName": "win32u.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1262,17 +1586,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\ucrtbase.dll",
 "fileName": "ucrtbase.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1302,17 +1626,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\msvcp_win.dll",
 "fileName": "msvcp_win.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1342,17 +1666,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\gdi32full.dll",
 "fileName": "gdi32full.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1382,17 +1706,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\gdi32.dll",
 "fileName": "gdi32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1422,17 +1746,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\user32.dll",
 "fileName": "user32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1462,17 +1786,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\bcrypt.dll",
 "fileName": "bcrypt.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1502,17 +1826,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\sechost.dll",
 "fileName": "sechost.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1542,17 +1866,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\rpcrt4.dll",
 "fileName": "rpcrt4.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1582,17 +1906,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\advapi32.dll",
 "fileName": "advapi32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1622,17 +1946,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\shell32.dll",
 "fileName": "shell32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1662,17 +1986,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\imm32.dll",
 "fileName": "imm32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1702,25 +2026,93 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\imm32.dll",
 "fileName": "imm32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\imm32.dll",
 "file name": "\Windows\SysWOW64\imm32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1750,17 +2142,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\imm32.dll",
 "fileName": "imm32.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1790,17 +2182,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\DriverTets\SystemResources\verybadmalware.exe.mun",
-"fileName": "verybadmalware.exe.mun"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\DriverTets\SystemResources\HermeticWiper.exe.mun",
+"fileName": "HermeticWiper.exe.mun"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1830,25 +2222,25 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\DriverTets\SystemResources\verybadmalware.exe.mun",
-"fileName": "verybadmalware.exe.mun"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\DriverTets\SystemResources\HermeticWiper.exe.mun",
+"fileName": "HermeticWiper.exe.mun"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\SHCore.dll",
 "file name": "\Windows\SysWOW64\SHCore.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1878,17 +2270,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\SHCore.dll",
 "fileName": "SHCore.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1918,25 +2310,43 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\DriverTets\infected",
 "fileName": "infected"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
 "info type": "INFO_REG",
 "registry operation": "not implemented",
 "name": "\REGISTRY\MACHINE\SYSTEM\ControlSet001\Control\CrashControl",
 "data type": "REG_DWORD"
+"data": "8C 0 0 0 ",
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -1966,17 +2376,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr",
-"fileName": "dbdr"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr",
+"fileName": "xrdr"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2006,17 +2416,34 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr",
-"fileName": "dbdr"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr",
+"fileName": "xrdr"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
+"info type": "INFO_FS",
+"mjFunc": "IRP_MJ_READ",
+"pid": "0",
+"tid": "0",
+"sid": "0",
+"token type": "undefined token type 0",
+"privileges": [
+
+],
+"elevation status": "0",
+"image name": "",
+"path": "",
+"fileName": ""
+},
+{
+"date": "27/6/2024",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_WRITE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2046,17 +2473,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr",
-"fileName": "dbdr"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr",
+"fileName": "xrdr"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_WRITE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2086,13 +2513,13 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr",
-"fileName": "dbdr"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr",
+"fileName": "xrdr"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_WRITE",
 "pid": "0",
@@ -2109,7 +2536,7 @@
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_WRITE",
 "pid": "0",
@@ -2126,11 +2553,11 @@
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2160,17 +2587,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr",
-"fileName": "dbdr"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr",
+"fileName": "xrdr"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2200,17 +2627,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\Globalization\Sorting\SortDefault.nls",
 "fileName": "SortDefault.nls"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2240,17 +2667,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\DriverTets\infected",
 "fileName": "infected"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2280,17 +2707,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4",
 "fileName": ""
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2320,17 +2747,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\DriverTets\infected\CRYPTSP.dll",
 "fileName": "CRYPTSP.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2360,17 +2787,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\cryptsp.dll",
 "fileName": "cryptsp.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2400,25 +2827,25 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\cryptsp.dll",
 "fileName": "cryptsp.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\cryptsp.dll",
 "file name": "\Windows\SysWOW64\cryptsp.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2448,17 +2875,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\System32\cryptsp.dll",
 "fileName": "cryptsp.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2488,17 +2915,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\rsaenh.dll",
 "fileName": "rsaenh.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2528,25 +2955,25 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\rsaenh.dll",
 "fileName": "rsaenh.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\rsaenh.dll",
 "file name": "\Windows\SysWOW64\rsaenh.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2576,17 +3003,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\System32\rsaenh.dll",
 "fileName": "rsaenh.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2616,17 +3043,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\DriverTets\infected\CRYPTBASE.dll",
 "fileName": "CRYPTBASE.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2656,17 +3083,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\cryptbase.dll",
 "fileName": "cryptbase.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2696,25 +3123,25 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\SysWOW64\cryptbase.dll",
 "fileName": "cryptbase.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\cryptbase.dll",
 "file name": "\Windows\SysWOW64\cryptbase.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2744,25 +3171,25 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\System32\cryptbase.dll",
 "fileName": "cryptbase.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_LOAD",
-"pid": "4852",
+"pid": "2504",
 "full image name": "\Device\HarddiskVolume4\Windows\SysWOW64\bcryptprimitives.dll",
 "file name": "\Windows\SysWOW64\bcryptprimitives.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2792,17 +3219,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\Windows\System32\bcryptprimitives.dll",
 "fileName": "bcryptprimitives.dll"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2832,17 +3259,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr",
-"fileName": "dbdr"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr",
+"fileName": "xrdr"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2872,17 +3299,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr",
-"fileName": "dbdr"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr",
+"fileName": "xrdr"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2912,17 +3339,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr.sys",
-"fileName": "dbdr.sys"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr.sys",
+"fileName": "xrdr.sys"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2952,17 +3379,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr.sys",
-"fileName": "dbdr.sys"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr.sys",
+"fileName": "xrdr.sys"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -2992,17 +3419,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr.sys",
-"fileName": "dbdr.sys"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr.sys",
+"fileName": "xrdr.sys"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3032,17 +3459,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr",
-"fileName": "dbdr"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr",
+"fileName": "xrdr"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3072,17 +3499,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr",
-"fileName": "dbdr"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr",
+"fileName": "xrdr"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3112,17 +3539,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr",
-"fileName": "dbdr"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr",
+"fileName": "xrdr"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:5",
+"time": "15:36:23",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_WRITE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3152,34 +3579,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr.sys",
-"fileName": "dbdr.sys"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr.sys",
+"fileName": "xrdr.sys"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
-"info type": "INFO_FS",
-"mjFunc": "IRP_MJ_READ",
-"pid": "0",
-"tid": "0",
-"sid": "0",
-"token type": "undefined token type 0",
-"privileges": [
-
-],
-"elevation status": "0",
-"image name": "",
-"path": "",
-"fileName": ""
-},
-{
-"date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3209,17 +3619,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr.sys",
-"fileName": "dbdr.sys"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr.sys",
+"fileName": "xrdr.sys"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3249,17 +3659,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\DriverTets\infected",
 "fileName": "infected"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3289,17 +3699,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4",
 "fileName": ""
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3329,17 +3739,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr.sys",
-"fileName": "dbdr.sys"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr.sys",
+"fileName": "xrdr.sys"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3369,17 +3779,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\Windows\System32\drivers\dbdr",
-"fileName": "dbdr"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\Windows\System32\drivers\xrdr",
+"fileName": "xrdr"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3409,17 +3819,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"path": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
-"fileName": "verybadmalware.exe"
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"path": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
+"fileName": "HermeticWiper.exe"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3449,17 +3859,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\DriverTets\infected",
 "fileName": "infected"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3489,17 +3899,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4",
 "fileName": ""
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3529,17 +3939,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\Harddisk0\DR0",
 "fileName": ""
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3569,17 +3979,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\Harddisk0\DR0",
 "fileName": ""
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3609,17 +4019,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\Harddisk0\DR0",
 "fileName": ""
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3649,17 +4059,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\Harddisk0\DR0",
 "fileName": ""
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3689,17 +4099,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\Harddisk0\DR0",
 "fileName": ""
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3729,17 +4139,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4\System Volume Information::$INDEX_ALLOCATION",
 "fileName": "System Volume Information::$INDEX_ALLOCATION"
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_CREATE",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3769,17 +4179,17 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4",
 "fileName": ""
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_READ",
-"pid": "4852",
-"tid": "7688",
+"pid": "2504",
+"tid": "8040",
 "sid": "1",
 "token type": "primary token",
 "privileges": [
@@ -3809,13 +4219,13 @@
   { "SeDelegateSessionUserImpersonatePrivilege": "Disabled" }
 ],
 "elevation status": "1",
-"image name": "\Device\HarddiskVolume4\DriverTets\infected\verybadmalware.exe",
+"image name": "\Device\HarddiskVolume4\DriverTets\infected\HermeticWiper.exe",
 "path": "\Device\HarddiskVolume4",
 "fileName": ""
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_WRITE",
 "pid": "0",
@@ -3832,7 +4242,7 @@
 },
 {
 "date": "27/6/2024",
-"time": "14:21:7",
+"time": "15:36:24",
 "info type": "INFO_FS",
 "mjFunc": "IRP_MJ_WRITE",
 "pid": "0",
